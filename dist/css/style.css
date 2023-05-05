@@ -4293,7 +4293,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 .hero:has(.hero__page-address) {
-    padding-top: 10px
+    padding-top: 16px
 }
 
 .hero__bg {
