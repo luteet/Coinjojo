@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Document</title>
 	<style>
 		.image-body {
@@ -19,6 +18,14 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+
+		.lazy {
+			opacity: 0;
+		}
+
+		.lazy.loaded {
+			opacity: 1;
 		}
 	</style>
 	<link rel="stylesheet" href="css/style-critical.min.css">
@@ -901,7 +908,7 @@
 					<h2 class="contact-us__title main-title">
 						Want to know more about us? Follow our accounts
 					</h2>
-					<ul class="contact-us__social">
+					<div class="contact-us__social">
 						<ul>
 							<li>
 								<a href="#" title="Instagram">
@@ -939,13 +946,13 @@
 								</a>
 							</li>
 						</ul>
-					</ul>
+					</div>
 				</div>
 				<div class="contact-us__image">
 					<div class="contact-us__image--body image-body" style="padding-top: 100%;">
 						<picture>
-							<source srcset="img/index/contact-us/image.webp" type="image/webp">
-							<img src="img/index/contact-us/image.png" alt="" width="329" height="329" loading="lazy">
+							<source data-srcset="img/index/contact-us/image.webp" type="image/webp">
+							<img data-src="img/index/contact-us/image.png" alt="" width="329" height="329" class="lazy">
 						</picture>
 					</div>
 				</div>

@@ -879,6 +879,8 @@ if(toOrderBtn) {
 }
 
 
+let lazy = new LazyLoad();
+console.log(lazy)
 //new ClipboardJS("[data-clipboard-target]");
 
 /* 

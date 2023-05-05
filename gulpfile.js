@@ -74,6 +74,7 @@ function scriptsLib() {
 		//'app/js/OverlayScrollbars.min.js', // Custom scrollbar
 		'node_modules/clipboard/dist/clipboard.js', // Копирование в буфер обмена | npm i clipboard --save-dev | https://www.npmjs.com/package/clipboard
 		'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
+		'node_modules/vanilla-lazyload/dist/lazyload.min.js',
 	])
 	.pipe(concat('libs.min.js'))
 	//.pipe(uglify())
