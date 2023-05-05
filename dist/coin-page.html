@@ -199,7 +199,11 @@
 			<section class="coin">
 				<div class="hero-banner container">
 					<div class="hero-banner__bg">
-						<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
+						<picture>
+							<source data-srcset="img/index/hero/bg.webp" type="image/webp" media="(min-width: 550px)">
+							<source data-srcset="img/index/hero/bg-mob.webp" type="image/webp">
+							<img data-src="img/index/hero/bg.png" alt="" width="0" height="0" class="lazy">
+						</picture>
 					</div>
 					<div class="hero-banner__page-address page-address">
 						<ul>

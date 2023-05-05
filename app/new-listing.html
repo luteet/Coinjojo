@@ -22,7 +22,11 @@
 				</ul>
 			</div>
 			<div class="hero__bg" aria-hidden="true">
-				<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
+				<picture>
+					<source data-srcset="img/index/hero/bg.webp" type="image/webp" media="(min-width: 550px)">
+					<source data-srcset="img/index/hero/bg-mob-2.webp" type="image/webp">
+					<img data-src="img/index/hero/bg.png" alt="" width="0" height="0" class="lazy">
+				</picture>
 			</div>
 			<h1 class="hero__title main-title">
 				Live Cryptocurrency Prices and Charts by Crypto Market Cap

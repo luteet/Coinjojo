@@ -7,10 +7,10 @@ $container: 1080;
 	left: 0; top: 0;
 	width: 100%; height: 100%;
 	object-fit: cover;
-	filter: blur(70px);
+	//filter: blur(70px);
 	transform: translate(0,20%) scale(1.5) rotate(-15deg);
 	@include _550 {
-		transform: none
+		transform: scale(1.2);
 	}
 }
 
@@ -19,7 +19,10 @@ $container: 1080;
 	left: 0; top: 0;
 	width: 100%; height: 200%;
 	object-fit: cover;
-	filter: blur(70px);
+	@include _550 {
+		transform: scale(1.2);
+	}
+	//filter: blur(70px);
 }
 
 @import 'pages/index/promoted';

@@ -720,6 +720,7 @@ headerNavLink.forEach(headerNavLink => {
 // =-=-=-=-=-=-=-=-=-=-=-=- </header-drop-down-on-hover> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
+
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
 let resizeCheck = {}, windowSize;
@@ -923,8 +924,6 @@ if(toOrderBtn) {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <lozyload> -=-=-=-=-=-=-=-=-=-=-=-=
 
-let lazy = new LazyLoad();
+new LazyLoad();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </lozyload> -=-=-=-=-=-=-=-=-=-=-=-=
-
-
