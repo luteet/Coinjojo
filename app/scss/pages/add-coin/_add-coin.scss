@@ -70,6 +70,7 @@
 
 		label {
 			display: grid;
+			cursor: pointer;
 			& > * {
 				grid-area: 1/1;
 			}

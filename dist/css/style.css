@@ -244,6 +244,12 @@
     width: 50%
 }
 
+.filter__item--param input,.switch__input {
+    margin: -1px;
+    white-space: nowrap;
+    overflow: hidden
+}
+
 .filter__item--element._full {
     flex: 1 1 100%;
     width: 100%
@@ -262,14 +268,11 @@
     position: absolute;
     width: 1px;
     height: 1px;
-    margin: -1px;
     padding: 0;
     border: 0;
-    white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden
+    clip: rect(0 0 0 0)
 }
 
 .filter__item--param input:checked+span {
@@ -335,14 +338,11 @@
     position: absolute;
     width: 1px;
     height: 1px;
-    margin: -1px;
     padding: 0;
     border: 0;
-    white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden
+    clip: rect(0 0 0 0)
 }
 
 .switch__input:checked+.switch__element {
@@ -796,7 +796,8 @@
 }
 
 .add-coin__avatar label {
-    display: grid
+    display: grid;
+    cursor: pointer
 }
 
 .add-coin__avatar label>* {
