@@ -2321,10 +2321,6 @@ progress,sub,sup {
     padding: 0
 }
 
-.jsCalendar thead .jsCalendar-nav-left,.jsCalendar thead .jsCalendar-title-left {
-    float: left
-}
-
 body {
     margin: 0
 }
@@ -2373,11 +2369,6 @@ sub {
 
 sup {
     top: -.5em
-}
-
-.hero-banner__bg,.popup,.popup-bg,.section-bg {
-    top: 0;
-    height: 100%
 }
 
 img {
@@ -2470,6 +2461,10 @@ summary {
     line-height: 40px
 }
 
+.jsCalendar thead .jsCalendar-title-left {
+    float: left
+}
+
 .jsCalendar thead .jsCalendar-title-right {
     float: right
 }
@@ -2492,6 +2487,10 @@ summary {
 .jsCalendar thead .jsCalendar-nav-left:hover,.jsCalendar thead .jsCalendar-nav-right:hover {
     background-color: #e2e2e2;
     color: #000
+}
+
+.jsCalendar thead .jsCalendar-nav-left {
+    float: left
 }
 
 .jsCalendar thead .jsCalendar-nav-right {
@@ -3011,10 +3010,6 @@ body {
     font-family: var(--title-font)
 }
 
-.container,.scroll-wrapper {
-    padding-right: var(--container-padding)
-}
-
 body._mob-menu-active,body._popup-active {
     overflow: hidden
 }
@@ -3038,7 +3033,8 @@ body._mob-menu-active,body._popup-active {
 }
 
 .container {
-    padding-left: var(--container-padding)
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding)
 }
 
 .section-padding {
@@ -3291,6 +3287,11 @@ svg {
     border-radius: 10px
 }
 
+.hero-banner__bg,.popup,.popup-bg,.section-bg {
+    top: 0;
+    height: 100%
+}
+
 .table-coins__number::before {
     counter-increment: table-coins-number;
     content: counter(table-coins-number);
@@ -3330,6 +3331,12 @@ svg {
     fill: var(--white)
 }
 
+.drop-value,.grow-value {
+    align-items: center;
+    fill: currentColor;
+    display: flex
+}
+
 .table-coins__btn svg {
     margin-right: 10px
 }
@@ -3344,25 +3351,17 @@ svg {
 }
 
 .grow-value {
-    display: flex;
-    align-items: center;
-    color: var(--success);
-    fill: currentColor
-}
-
-.drop-value,.page-address ul {
-    display: flex;
-    align-items: center
+    color: var(--success)
 }
 
 .drop-value {
-    color: var(--danger);
-    fill: currentColor
+    color: var(--danger)
 }
 
 .scroll-wrapper {
     overflow-x: auto;
-    margin-right: calc(1px - var(--container-padding))
+    margin-right: calc(1px - var(--container-padding));
+    padding-right: var(--container-padding)
 }
 
 .section-bg {
@@ -3392,6 +3391,11 @@ svg {
 
 .custom-scrollbar .os-scrollbar-track {
     background: var(--shade)
+}
+
+.page-address ul {
+    display: flex;
+    align-items: center
 }
 
 .page-address li svg {
@@ -3475,11 +3479,10 @@ svg {
 }
 
 .hero-banner__nav {
-    margin-top: 10px;
     overflow-x: auto;
     -webkit-transform: translate3d(0,3px,0);
     transform: translate3d(0,3px,0);
-    margin: 0 calc(1px - var(--container-padding) - 1px)
+    margin: 10px calc(1px - var(--container-padding) - 1px) 0
 }
 
 .hero-banner__nav ul {
@@ -4367,7 +4370,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 @media (min-width:550px) {
     .hero-banner__nav {
-        margin: 0
+        margin: 10px 0 0
     }
 
     .hero-banner__nav li {

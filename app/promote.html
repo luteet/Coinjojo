@@ -203,11 +203,11 @@
 							</div>
 						</div>
 						<script>
-							const calendar = document.querySelectorAll(".calendar"),
+							const calendarElements = document.querySelectorAll(".calendar"),
 								  currentDate = new Date();
 
 
-							calendar.forEach(calendar => {
+							calendarElements.forEach(calendar => {
 								calendar.dataset.calendarDates = "";
 
 								for(let index = 1, lastChar = "", date; index <= 6; index++) {

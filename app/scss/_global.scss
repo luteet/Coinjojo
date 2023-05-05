@@ -693,12 +693,11 @@ svg {
 	}
 
 	&__nav {
-		margin-top: 10px;
 		overflow-x: auto;
 		transform: translate3d(0,3px,0);
-		margin: 0 calc(1px - var(--container-padding) - 1px);
+		margin: 10px calc(1px - var(--container-padding) - 1px) 0;
 		@include _550 {
-			margin: 0;
+			margin: 10px 0 0;
 		}
 		ul {
 			display: flex;
