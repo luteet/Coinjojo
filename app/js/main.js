@@ -461,14 +461,21 @@ body.addEventListener('click', function (event) {
 	const headerNavItem = $(".header__nav--list > li:has(ul)");
 	if(headerNavItem && getDeviceType() != "desktop") {
 	
-		event.preventDefault();
-		headerNavItem.classList.toggle('active');
-		header.classList.add('_bg-active');
+		if(!headerNavItem.classList.contains('active')) {
+			event.preventDefault();
+			headerNavItem.classList.toggle('active');
+			header.classList.add('_bg-active');
+		} else {
+			headerNavItem.classList.remove('active');
+			header.classList.remove('_bg-active');
+		}
+		
 	
 	} else if(document.querySelector('.header__nav--list li.active')) {
 
 		document.querySelector('.header__nav--list li.active').classList.remove('active');
 		header.classList.remove('_bg-active');
+		
 
 	}
 	
@@ -671,7 +678,9 @@ const headerNavLink = document.querySelectorAll(".header__nav--list > li:has(ul)
 headerNavLink.forEach(headerNavLink => {
 
 	headerNavLink.addEventListener('pointerenter', function() {
-		header.classList.add('_bg-active');
+		if(getDeviceType() == "desktop") {
+			header.classList.add('_bg-active');
+		}
 	})
 
 	headerNavLink.addEventListener('pointerleave', function() {

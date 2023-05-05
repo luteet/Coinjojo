@@ -520,7 +520,7 @@
     margin: 0 auto
 }
 
-.coin {
+.coin__container {
     display: grid;
     gap: 20px
 }
@@ -759,7 +759,7 @@
     color: var(--danger)
 }
 
-.add-coin {
+.add-coin__container {
     margin-top: 10px
 }
 
@@ -2033,7 +2033,7 @@
         flex: 0 1 30%
     }
 
-    .coin {
+    .coin__container {
         grid-template-columns: 255px auto
     }
 

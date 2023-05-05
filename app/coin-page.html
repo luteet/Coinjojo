@@ -1,229 +1,231 @@
 @@include("html/_header.html")
 
 	<main class="main">
-		<section class="hero-banner container">
-			<div class="hero-banner__bg">
-				<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
-			</div>
-			<div class="hero-banner__page-address page-address">
-				<ul>
-					<li>
-						<a href="#">
-							Home
-						</a>
-					</li>
-					<li>
-						<svg width="16" height="16" viewBox="0 0 16 16">
-							<use xlink:href="img/sprites.svg#arrow-next"></use>
-						</svg>
-					</li>
-					<li>
-						<a href="#">
-							Coin page
-						</a>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<section class="coin container">
-			<div class="coin__header">
-				<div class="coin__avatar">
-					<picture>
-						<source srcset="img/coin/avatar.webp" type="image/webp">
-						<img src="img/coin/avatar.jpg" alt="" width="185" height="185" loading="lazy">
-					</picture>
+		<section class="coin">
+			<div class="hero-banner container">
+				<div class="hero-banner__bg">
+					<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
 				</div>
-				<div class="coin__header-info">
-					<h2 class="coin__title title">
-						Lucky
-					</h2>
-					<span class="coin__name">
-						LUCKY
-					</span>
-					<span class="coin__category name-section">
-						METAVERSE
-					</span>
-				</div>
-				<div class="coin__vote">
-					<span class="coin__vote--today">Today's Vote: 1147</span>
-					<button class="coin__vote--btn btn vote-btn" type="button">
-						<svg width="10" height="14" viewBox="0 0 10 14">
-							<use xlink:href="img/sprites.svg#arrow-to-up"></use>
-						</svg>
-						90,345
-					</button>
+				<div class="hero-banner__page-address page-address">
+					<ul>
+						<li>
+							<a href="#">
+								Home
+							</a>
+						</li>
+						<li>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</li>
+						<li>
+							<a href="#">
+								Coin page
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<div class="coin__main">
-				<div class="coin__chain">
-					<div class="coin__chain--block">
-						<div class="coin__chain--avatar">
-							<img src="img/icons/bnb.svg" width="40" height="40" loading="lazy" alt="">
+			<div class="coin__container container">
+				<div class="coin__header">
+					<div class="coin__avatar">
+						<picture>
+							<source srcset="img/coin/avatar.webp" type="image/webp">
+							<img src="img/coin/avatar.jpg" alt="" width="185" height="185" loading="lazy">
+						</picture>
+					</div>
+					<div class="coin__header-info">
+						<h2 class="coin__title title">
+							Lucky
+						</h2>
+						<span class="coin__name">
+							LUCKY
+						</span>
+						<span class="coin__category name-section">
+							METAVERSE
+						</span>
+					</div>
+					<div class="coin__vote">
+						<span class="coin__vote--today">Today's Vote: 1147</span>
+						<button class="coin__vote--btn btn vote-btn" type="button">
+							<svg width="10" height="14" viewBox="0 0 10 14">
+								<use xlink:href="img/sprites.svg#arrow-to-up"></use>
+							</svg>
+							90,345
+						</button>
+					</div>
+				</div>
+				<div class="coin__main">
+					<div class="coin__chain">
+						<div class="coin__chain--block">
+							<div class="coin__chain--avatar">
+								<img src="img/icons/bnb.svg" width="40" height="40" loading="lazy" alt="">
+							</div>
+							<h3 class="coin__chain--title title _min-2">
+								Binance Smart Chain
+							</h3>
+							<div class="coin__chain--address">
+								<label>
+									<input type="text" name="wallet" id="chain" readonly value="0x673315d0D15265010324DA979B0eC9634ab18f3E">
+								</label>
+								<button type="button" title="Copy" data-clipboard-target="#chain">
+									<svg width="16" height="16" viewBox="0 0 16 16">
+										<use xlink:href="img/sprites.svg#copy"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
-						<h3 class="coin__chain--title title _min-2">
-							Binance Smart Chain
-						</h3>
-						<div class="coin__chain--address">
-							<label>
-								<input type="text" name="wallet" id="chain" readonly value="0x673315d0D15265010324DA979B0eC9634ab18f3E">
-							</label>
-							<button type="button" title="Copy" data-clipboard-target="#chain">
-								<svg width="16" height="16" viewBox="0 0 16 16">
-									<use xlink:href="img/sprites.svg#copy"></use>
-								</svg>
-							</button>
+						<div class="coin__chain--footer">
+							<div class="coin__social">
+								<ul>
+									<li>
+										<a href="#">
+											<svg width="16" height="17" viewBox="0 0 16 17">
+												<use xlink:href="img/sprites.svg#link"></use>
+											</svg>
+											Website
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<svg width="16" height="17" viewBox="0 0 16 17">
+												<use xlink:href="img/sprites.svg#twitter"></use>
+											</svg>
+											Twitter
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<svg width="16" height="17" viewBox="0 0 16 17">
+												<use xlink:href="img/sprites.svg#telegram"></use>
+											</svg>
+											Telegram
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<svg width="16" height="17" viewBox="0 0 16 17">
+												<use xlink:href="img/sprites.svg#discord"></use>
+											</svg>
+											Discord
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div class="coin__chain--footer">
-						<div class="coin__social">
-							<ul>
+					<div class="coin__descr">
+						<h3 class="coin__descr--title">
+							<img src="img/icons/descr.svg" width="16" height="16" loading="lazy" alt="">
+							Description
+						</h3>
+						<div class="coin__descr--text">
+							<p>
+								Lucky Token aims to work on Web3 technologies and offer alternative platforms to its users... Crypto Lottery, Crypto Wallet, Crypto Swap (DEX) We focused on 3 main projects and our first project, Crypto Lottery, is now ready for use. Users can purchase tickets and win prizes in the pool by connecting with a metamask wallet. Search for luckytokenlottery.com and buy tickets by logging into the browser section of your metamask wallet
+							</p>
+						</div>
+					</div>
+					<ul class="coin__min-info">
+						<li class="coin__min-info--element">
+							<span>
+								Marketcap
+								<svg width="10" height="14" viewBox="0 0 10 14">
+									<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+								</svg>
+							</span>
+							<b>$70,394</b>
+						</li>
+						<li class="coin__min-info--element">
+							<span>
+								Price
+								<svg width="10" height="14" viewBox="0 0 10 14">
+									<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+								</svg>
+							</span>
+							<b>$70,394</b>
+						</li>
+						<li class="coin__min-info--element">
+							<span>
+								Launch Date
+								<svg width="10" height="14" viewBox="0 0 10 14">
+									<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+								</svg>
+							</span>
+							<b>In 1 week</b>
+						</li>
+						<li class="coin__min-info--element">
+							<span>
+								24H
+								<svg width="10" height="14" viewBox="0 0 10 14">
+									<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+								</svg>
+							</span>
+							<b class="grow-value">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#arrow-grow"></use>
+								</svg>
+								56,6%
+							</b>
+						</li>
+					</ul>
+				</div>
+				<div class="coin__aside">
+					<div class="coin__info-block">
+						<h3 class="coin__info-block--title title _min-2">
+							<img src="img/icons/stats.svg" width="24" height="24" loading="lazy" alt="">
+							Stats
+						</h3>
+						<ul class="coin__info-block--list">
+							<li>
+								<span>Sell Tax</span>
+								<b>0%</b>
+							</li>
+							<li>
+								<span>Buy Tax</span>
+								<b>0,003%</b>
+							</li>
+						</ul>
+					</div>
+					<div class="coin__info-block">
+						<h3 class="coin__info-block--title title _min-2">
+							<img src="img/icons/security.svg" width="24" height="24" loading="lazy" alt="">
+							Safety Checks
+						</h3>
+						<ul class="coin__info-block--list">
+							<li>
+								<span>Honeypot</span>
+								<b class="param _danger">NO</b>
+							</li>
+							<li>
+								<span>Mint</span>
+								<b class="param _success">YES</b>
+							</li>
+						</ul>
+						<div class="coin__info-block--drop-down drop-down">
+							<button class="drop-down__target" type="button">
+								Show more
+								<svg width="17" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#select-arrow"></use>
+								</svg>
+							</button>
+							<ul class="drop-down__list">
 								<li>
 									<a href="#">
-										<svg width="16" height="17" viewBox="0 0 16 17">
-											<use xlink:href="img/sprites.svg#link"></use>
-										</svg>
-										Website
+										Param 1
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<svg width="16" height="17" viewBox="0 0 16 17">
-											<use xlink:href="img/sprites.svg#twitter"></use>
-										</svg>
-										Twitter
+										Param 2
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<svg width="16" height="17" viewBox="0 0 16 17">
-											<use xlink:href="img/sprites.svg#telegram"></use>
-										</svg>
-										Telegram
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<svg width="16" height="17" viewBox="0 0 16 17">
-											<use xlink:href="img/sprites.svg#discord"></use>
-										</svg>
-										Discord
+										Param 3
 									</a>
 								</li>
 							</ul>
 						</div>
-					</div>
-				</div>
-				<div class="coin__descr">
-					<h3 class="coin__descr--title">
-						<img src="img/icons/descr.svg" width="16" height="16" loading="lazy" alt="">
-						Description
-					</h3>
-					<div class="coin__descr--text">
-						<p>
-							Lucky Token aims to work on Web3 technologies and offer alternative platforms to its users... Crypto Lottery, Crypto Wallet, Crypto Swap (DEX) We focused on 3 main projects and our first project, Crypto Lottery, is now ready for use. Users can purchase tickets and win prizes in the pool by connecting with a metamask wallet. Search for luckytokenlottery.com and buy tickets by logging into the browser section of your metamask wallet
-						</p>
-					</div>
-				</div>
-				<ul class="coin__min-info">
-					<li class="coin__min-info--element">
-						<span>
-							Marketcap
-							<svg width="10" height="14" viewBox="0 0 10 14">
-								<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-							</svg>
-						</span>
-						<b>$70,394</b>
-					</li>
-					<li class="coin__min-info--element">
-						<span>
-							Price
-							<svg width="10" height="14" viewBox="0 0 10 14">
-								<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-							</svg>
-						</span>
-						<b>$70,394</b>
-					</li>
-					<li class="coin__min-info--element">
-						<span>
-							Launch Date
-							<svg width="10" height="14" viewBox="0 0 10 14">
-								<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-							</svg>
-						</span>
-						<b>In 1 week</b>
-					</li>
-					<li class="coin__min-info--element">
-						<span>
-							24H
-							<svg width="10" height="14" viewBox="0 0 10 14">
-								<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-							</svg>
-						</span>
-						<b class="grow-value">
-							<svg width="16" height="16" viewBox="0 0 16 16">
-								<use xlink:href="img/sprites.svg#arrow-grow"></use>
-							</svg>
-							56,6%
-						</b>
-					</li>
-				</ul>
-			</div>
-			<div class="coin__aside">
-				<div class="coin__info-block">
-					<h3 class="coin__info-block--title title _min-2">
-						<img src="img/icons/stats.svg" width="24" height="24" loading="lazy" alt="">
-						Stats
-					</h3>
-					<ul class="coin__info-block--list">
-						<li>
-							<span>Sell Tax</span>
-							<b>0%</b>
-						</li>
-						<li>
-							<span>Buy Tax</span>
-							<b>0,003%</b>
-						</li>
-					</ul>
-				</div>
-				<div class="coin__info-block">
-					<h3 class="coin__info-block--title title _min-2">
-						<img src="img/icons/security.svg" width="24" height="24" loading="lazy" alt="">
-						Safety Checks
-					</h3>
-					<ul class="coin__info-block--list">
-						<li>
-							<span>Honeypot</span>
-							<b class="param _danger">NO</b>
-						</li>
-						<li>
-							<span>Mint</span>
-							<b class="param _success">YES</b>
-						</li>
-					</ul>
-					<div class="coin__info-block--drop-down drop-down">
-						<button class="drop-down__target" type="button">
-							Show more
-							<svg width="17" height="16" viewBox="0 0 16 16">
-								<use xlink:href="img/sprites.svg#select-arrow"></use>
-							</svg>
-						</button>
-						<ul class="drop-down__list">
-							<li>
-								<a href="#">
-									Param 1
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Param 2
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Param 3
-								</a>
-							</li>
-						</ul>
 					</div>
 				</div>
 			</div>

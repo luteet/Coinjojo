@@ -1,184 +1,186 @@
 @@include("html/_header.html")
 
 	<main class="main">
-		<section class="hero-banner container">
-			<div class="hero-banner__bg">
-				<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
-			</div>
-			<div class="hero-banner__page-address page-address">
-				<ul>
-					<li>
-						<a href="#">
-							Home
-						</a>
-					</li>
-					<li>
-						<svg width="16" height="16" viewBox="0 0 16 16">
-							<use xlink:href="img/sprites.svg#arrow-next"></use>
-						</svg>
-					</li>
-					<li>
-						<a href="#">
-							Coin page
-						</a>
-					</li>
-				</ul>
-			</div>
-			<h1 class="hero-banner__title title">
-				Add Your Coin
-			</h1>
-		</section>
-		<section class="add-coin container">
-			<form class="add-coin__form">
-				<div class="add-coin__avatar">
-					<label>
-						<input type="file" name="avatar" class="visually-hidden" required>
-						<b>
-							<svg width="40" height="40" viewBox="0 0 40 40">
-								<use xlink:href="img/sprites.svg#upload"></use>
-							</svg>
-							Add coin image <br> (400x400px)
-						</b>
-					</label>
+		<section class="add-coin">
+			<div class="hero-banner container">
+				<div class="hero-banner__bg">
+					<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
 				</div>
-				<div class="add-coin__form-block">
-					<fieldset class="add-coin__fieldset">
-						<div class="add-coin__form--row">
-							<label>
-								<span>Coin Name</span>
-								<input type="text" name="coin-name" placeholder="Bitcoin" required class="input">
-							</label>
-							<label>
-								<span>Coin Symbol</span>
-								<input type="text" name="coin-symbol" placeholder="BTC" required class="input">
-							</label>
-							<label>
-								<span>Network/Chain</span>
-								<span class="select">
-									<select name="network-chain" required>
-										<option value="" disabled checked>
-											Binance Smart Chain (BSC)
-										</option>
-										<option value="uniswap-1">
-											Binance Smart Chain (BSC) 1
-										</option>
-										<option value="uniswap-2">
-											Binance Smart Chain (BSC) 2
-										</option>
-									</select>
-									<svg width="16" height="16" viewBox="0 0 16 16">
-										<use xlink:href="img/sprites.svg#select-arrow"></use>
-									</svg>
-								</span>
-							</label>
-							<label>
-								<span>Launch Date</span>
-								<input type="text" name="launch-date" placeholder="12.09.2022" required class="input">
-							</label>
-						</div>
-					</fieldset>
-					<fieldset class="add-coin__fieldset">
-						<div class="add-coin__question">
-							<span>Project in presale phase?</span>
-							<div class="add-coin__question--answear">
-								<label class="add-coin__question--btn">
-									<input type="radio" name="presale-phase" checked required value="yes">
-									<span>Yes</span>
+				<div class="hero-banner__page-address page-address">
+					<ul>
+						<li>
+							<a href="#">
+								Home
+							</a>
+						</li>
+						<li>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</li>
+						<li>
+							<a href="#">
+								Coin page
+							</a>
+						</li>
+					</ul>
+				</div>
+				<h1 class="hero-banner__title title">
+					Add Your Coin
+				</h1>
+			</div>
+			<div class="add-coin__container container">
+				<form class="add-coin__form">
+					<div class="add-coin__avatar">
+						<label>
+							<input type="file" name="avatar" class="visually-hidden" required>
+							<b>
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#upload"></use>
+								</svg>
+								Add coin image <br> (400x400px)
+							</b>
+						</label>
+					</div>
+					<div class="add-coin__form-block">
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__form--row">
+								<label>
+									<span>Coin Name</span>
+									<input type="text" name="coin-name" placeholder="Bitcoin" required class="input">
 								</label>
-								<label class="add-coin__question--btn">
-									<input type="radio" name="presale-phase" required value="no">
-									<span>No</span>
+								<label>
+									<span>Coin Symbol</span>
+									<input type="text" name="coin-symbol" placeholder="BTC" required class="input">
+								</label>
+								<label>
+									<span>Network/Chain</span>
+									<span class="select">
+										<select name="network-chain" required>
+											<option value="" disabled checked>
+												Binance Smart Chain (BSC)
+											</option>
+											<option value="uniswap-1">
+												Binance Smart Chain (BSC) 1
+											</option>
+											<option value="uniswap-2">
+												Binance Smart Chain (BSC) 2
+											</option>
+										</select>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#select-arrow"></use>
+										</svg>
+									</span>
+								</label>
+								<label>
+									<span>Launch Date</span>
+									<input type="text" name="launch-date" placeholder="12.09.2022" required class="input">
 								</label>
 							</div>
-						</div>
-					</fieldset>
-					<fieldset class="add-coin__fieldset">
-						<div class="add-coin__form--row">
-							<label>
-								<span>Listing Platform</span>
-								<span class="select">
-									<select name="listing-platform" required>
-										<option value="" disabled checked>
-											UniSwap
-										</option>
-										<option value="uniswap-1">
-											UniSwap 1
-										</option>
-										<option value="uniswap-2">
-											UniSwap 2
-										</option>
-									</select>
-									<svg width="16" height="16" viewBox="0 0 16 16">
-										<use xlink:href="img/sprites.svg#select-arrow"></use>
-									</svg>
-								</span>
-							</label>
-							<label>
-								<span>Listing Link</span>
-								<input type="text" name="listing-link" placeholder="Listing Link" required class="input">
-							</label>
-							<label>
-								<span>Category</span>
-								<span class="select">
-									<select name="category" required>
-										<option value="" disabled checked>
-											Select Category
-										</option>
-										<option value="category-1">
-											category 1
-										</option>
-										<option value="category-2">
-											category 2
-										</option>
-									</select>
-									<svg width="16" height="16" viewBox="0 0 16 16">
-										<use xlink:href="img/sprites.svg#select-arrow"></use>
-									</svg>
-								</span>
-							</label>
-							<label>
-								<span>Contract Address</span>
-								<input type="text" name="contract-address" placeholder="Contract Address" class="input">
-							</label>
-							<label class="full">
-								<span>Coin Description</span>
-								<textarea name="description" placeholder="Add description" rows="7" required class="textarea"></textarea>
-							</label>
-						</div>
-					</fieldset>
-					<fieldset class="add-coin__fieldset">
-						<div class="add-coin__form--row">
-							<label>
-								<span>Website Link</span>
-								<input type="text" name="website-link" placeholder="Website Link" required class="input">
-							</label>
-							<label>
-								<span>Twitter Link</span>
-								<input type="text" name="twitter-link" placeholder="Twitter Link" class="input">
-							</label>
-							<label>
-								<span>Telegram Link</span>
-								<input type="text" name="telegram-link" placeholder="Telegram Link" class="input">
-							</label>
-							<label>
-								<span>Discord Link</span>
-								<input type="text" name="discord-link" placeholder="Discord Link" class="input">
-							</label>
-							<label>
-								<span>Telegram Contact</span>
-								<input type="text" name="telegram-contact" placeholder="Telegram Contact" required class="input">
-							</label>
-							<label>
-								<span>Reddit Link</span>
-								<input type="text" name="reddit-link" placeholder="Reddit Link" class="input">
-							</label>
-						</div>
-					</fieldset>
-					<button class="add-coin__form--submit btn" type="submit">
-						Connect
-					</button>
-				</div>
-			</form>
+						</fieldset>
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__question">
+								<span>Project in presale phase?</span>
+								<div class="add-coin__question--answear">
+									<label class="add-coin__question--btn">
+										<input type="radio" name="presale-phase" checked required value="yes">
+										<span>Yes</span>
+									</label>
+									<label class="add-coin__question--btn">
+										<input type="radio" name="presale-phase" required value="no">
+										<span>No</span>
+									</label>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__form--row">
+								<label>
+									<span>Listing Platform</span>
+									<span class="select">
+										<select name="listing-platform" required>
+											<option value="" disabled checked>
+												UniSwap
+											</option>
+											<option value="uniswap-1">
+												UniSwap 1
+											</option>
+											<option value="uniswap-2">
+												UniSwap 2
+											</option>
+										</select>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#select-arrow"></use>
+										</svg>
+									</span>
+								</label>
+								<label>
+									<span>Listing Link</span>
+									<input type="text" name="listing-link" placeholder="Listing Link" required class="input">
+								</label>
+								<label>
+									<span>Category</span>
+									<span class="select">
+										<select name="category" required>
+											<option value="" disabled checked>
+												Select Category
+											</option>
+											<option value="category-1">
+												category 1
+											</option>
+											<option value="category-2">
+												category 2
+											</option>
+										</select>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#select-arrow"></use>
+										</svg>
+									</span>
+								</label>
+								<label>
+									<span>Contract Address</span>
+									<input type="text" name="contract-address" placeholder="Contract Address" class="input">
+								</label>
+								<label class="full">
+									<span>Coin Description</span>
+									<textarea name="description" placeholder="Add description" rows="7" required class="textarea"></textarea>
+								</label>
+							</div>
+						</fieldset>
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__form--row">
+								<label>
+									<span>Website Link</span>
+									<input type="text" name="website-link" placeholder="Website Link" required class="input">
+								</label>
+								<label>
+									<span>Twitter Link</span>
+									<input type="text" name="twitter-link" placeholder="Twitter Link" class="input">
+								</label>
+								<label>
+									<span>Telegram Link</span>
+									<input type="text" name="telegram-link" placeholder="Telegram Link" class="input">
+								</label>
+								<label>
+									<span>Discord Link</span>
+									<input type="text" name="discord-link" placeholder="Discord Link" class="input">
+								</label>
+								<label>
+									<span>Telegram Contact</span>
+									<input type="text" name="telegram-contact" placeholder="Telegram Contact" required class="input">
+								</label>
+								<label>
+									<span>Reddit Link</span>
+									<input type="text" name="reddit-link" placeholder="Reddit Link" class="input">
+								</label>
+							</div>
+						</fieldset>
+						<button class="add-coin__form--submit btn" type="submit">
+							Connect
+						</button>
+					</div>
+				</form>
+			</div>
 		</section>
 	</main>
 

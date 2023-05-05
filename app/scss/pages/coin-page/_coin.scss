@@ -1,10 +1,12 @@
 .coin {
 
-	display: grid;
-	gap: 20px;
+	&__container {
+		display: grid;
+		gap: 20px;
 
-	@include _768 {
-		grid-template-columns: 255px auto;
+		@include _768 {
+			grid-template-columns: 255px auto;
+		}
 	}
 
 	// .coin__header
