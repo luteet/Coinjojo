@@ -14,8 +14,11 @@ const
 	header = document.querySelector('.header');
 
 
+// =-=-=-=-=-=-=-=-=-=- <image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
+
 const imageBody = document.querySelectorAll('.image-body, figure');
 imageBody.forEach(imageBody => {
+
 	const img = imageBody.querySelector('img'), style = getComputedStyle(imageBody);
 	if(img) {
 		if(img.getAttribute('width') && img.getAttribute('height') && style.position == "relative")
@@ -23,6 +26,10 @@ imageBody.forEach(imageBody => {
 	}
 	
 })
+
+// =-=-=-=-=-=-=-=-=-=- </image-aspect-ratio> -=-=-=-=-=-=-=-=-=-=-
+
+
 	
 // =-=-=-=-=-=-=-=-=-=- <Get-device-type> -=-=-=-=-=-=-=-=-=-=-
 
@@ -45,6 +52,10 @@ const getDeviceType = () => {
 };
 
 // =-=-=-=-=-=-=-=-=-=- </Get-device-type> -=-=-=-=-=-=-=-=-=-=-
+
+
+
+// =-=-=-=-=-=-=-=-=-=- <anim-slides> -=-=-=-=-=-=-=-=-=-=-
 
 function slideUp (target, duration=300) {
 	target.style.transitionProperty = 'height, margin, padding';
@@ -102,6 +113,11 @@ function slideDown (target, duration=300) {
 	  target.style.removeProperty('transition-property');
 	}, duration);
 }
+
+// =-=-=-=-=-=-=-=-=-=- </anim-slides> -=-=-=-=-=-=-=-=-=-=-
+
+
+// =-=-=-=-=-=-=-=-=-=- <popup> -=-=-=-=-=-=-=-=-=-=-
 
 function Popup(arg) {
 
@@ -240,8 +256,13 @@ function Popup(arg) {
 
 const popup = new Popup();
 
-popup.init()
+popup.init();
 
+// =-=-=-=-=-=-=-=-=-=- </popup> -=-=-=-=-=-=-=-=-=-=-
+
+
+
+// =-=-=-=-=-=-=-=-=-=- <drop-down> -=-=-=-=-=-=-=-=-=-=-
 
 function dropDown() {
 	const dropDown = document.querySelectorAll('.drop-down');
@@ -430,6 +451,8 @@ function dropDown() {
 
 dropDown();
 
+// =-=-=-=-=-=-=-=-=-=- </drop-down> -=-=-=-=-=-=-=-=-=-=-
+
 // =-=-=-=-=-=-=-=-=-=- <click events> -=-=-=-=-=-=-=-=-=-=-
 
 body.addEventListener('click', function (event) {
@@ -456,7 +479,7 @@ body.addEventListener('click', function (event) {
 
 
 
-	// =-=-=-=-=-=-=-=-=-=-=-=- <click> -=-=-=-=-=-=-=-=-=-=-=-=
+	// =-=-=-=-=-=-=-=-=-=-=-=- <header-drop-down-open-on-mobile> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 	const headerNavItem = $(".header__nav--list > li:has(ul)");
 	if(headerNavItem && getDeviceType() != "desktop") {
@@ -479,7 +502,7 @@ body.addEventListener('click', function (event) {
 
 	}
 	
-	// =-=-=-=-=-=-=-=-=-=-=-=- </click> -=-=-=-=-=-=-=-=-=-=-=-=
+	// =-=-=-=-=-=-=-=-=-=-=-=- </header-drop-down-open-on-mobile> -=-=-=-=-=-=-=-=-=-=-=-=
 
 	
 	
@@ -497,6 +520,7 @@ body.addEventListener('click', function (event) {
 	}
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </check-input-focus> -=-=-=-=-=-=-=-=-=-=-=-=
+
 
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <header-search-hide> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -559,6 +583,7 @@ body.addEventListener('click', function (event) {
 	}
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </header-search-open-on-mob> -=-=-=-=-=-=-=-=-=-=-=-=
+
 
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <favorite> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -674,6 +699,9 @@ body.addEventListener('click', function (event) {
 // =-=-=-=-=-=-=-=-=-=- </click events> -=-=-=-=-=-=-=-=-=-=-
 
 
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <header-drop-down-on-hover> -=-=-=-=-=-=-=-=-=-=-=-=
+
 const headerNavLink = document.querySelectorAll(".header__nav--list > li:has(ul)");
 headerNavLink.forEach(headerNavLink => {
 
@@ -688,6 +716,8 @@ headerNavLink.forEach(headerNavLink => {
 	})
 
 })
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </header-drop-down-on-hover> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -761,8 +791,11 @@ resize();
 
 window.onresize = resize;
 
+// =-=-=-=-=-=-=-=-=-=-=-=- </resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=- <switch> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <switch-in-form> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 const switchInput = document.querySelectorAll('.switch__input');
 switchInput.forEach(switchInput => {
@@ -793,10 +826,11 @@ switchInput.forEach(switchInput => {
 	
 })
 
+// =-=-=-=-=-=-=-=-=-=-=-=- </switch-in-form> -=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </switch> -=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </resize> -=-=-=-=-=-=-=-=-=-=-=-=
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <show-result-search-on-focus> -=-=-=-=-=-=-=-=-=-=-=-=
 
 const checkInputFocus = document.querySelectorAll('.check-input-focus');
 checkInputFocus.forEach(input => {
@@ -807,10 +841,11 @@ checkInputFocus.forEach(input => {
 		header.classList.add('_search-active')
 	})
 
-	/* input.addEventListener("blur", function () {
-		if(label) label.classList.remove('focus');
-	}) */
 })
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </show-result-search-on-focus> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <calendar> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -845,15 +880,19 @@ calendar.forEach(calendar => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </calendar> -=-=-=-=-=-=-=-=-=-=-=-=
 
-/* document.querySelectorAll('.custom-scrollbar').forEach(customScrollbar => {
-	OverlayScrollbars(customScrollbar, {});
-}) */
 
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <clipboard> -=-=-=-=-=-=-=-=-=-=-=-=
 
 document.querySelectorAll('[data-clipboard-target]').forEach(btn => {
 	new ClipboardJS(btn);
 })
 
+// =-=-=-=-=-=-=-=-=-=-=-=- </clipboard> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <scroll-to-order> -=-=-=-=-=-=-=-=-=-=-=-=
 
 const toOrderBtn = document.querySelector('.to-order-btn');
 
@@ -878,19 +917,14 @@ if(toOrderBtn) {
 	})
 }
 
+// =-=-=-=-=-=-=-=-=-=-=-=- </scroll-to-order> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <lozyload> -=-=-=-=-=-=-=-=-=-=-=-=
 
 let lazy = new LazyLoad();
-console.log(lazy)
-//new ClipboardJS("[data-clipboard-target]");
 
-/* 
-// =-=-=-=-=-=-=-=-=-=-=-=- <animation> -=-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=- </lozyload> -=-=-=-=-=-=-=-=-=-=-=-=
 
-AOS.init({
-	disable: "mobile",
-});
-
-// =-=-=-=-=-=-=-=-=-=-=-=- </animation> -=-=-=-=-=-=-=-=-=-=-=-=
-
-*/
 
