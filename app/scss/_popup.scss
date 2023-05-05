@@ -11,7 +11,10 @@
 	z-index: 100;
 
 	opacity: 0; visibility: hidden;
-	transition: opacity .4s ease, visibility .4s ease;
+	/* transition: opacity .4s ease, visibility .4s ease; */
+	animation-duration: 0.4s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
 
 	perspective: 400px;
 
@@ -30,9 +33,9 @@
 	will-change: opacity, visibility;
 	backdrop-filter: blur(4.5px);
 
-	&._active {
+	/* &._active {
 		opacity: 1; visibility: visible;
-	}
+	} */
 
 	/* &._active &-body {
 		transform: translate3d(0,0,0);

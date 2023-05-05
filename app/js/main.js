@@ -153,11 +153,16 @@ function Popup(arg) {
 				setTimeout(() => {
 					if (!initStart) {
 						popup.classList.add('_active');
+						popup.classList.remove('fade-out');
+						popup.classList.add('fade-in');
 						function openFunc() {
 							popupCheck = true;
 							popup.removeEventListener('transitionend', openFunc);
 						}
-						popup.addEventListener('transitionend', openFunc)
+						setTimeout(() => {
+							openFunc()
+						},400)
+						//popup.addEventListener('transitionend', openFunc)
 					} else {
 						popup.classList.add('_transition-none');
 						popup.classList.add('_active');
@@ -187,6 +192,9 @@ function Popup(arg) {
 
 			setTimeout(() => {
 				popup.classList.remove('_active');
+				popup.classList.remove('fade-in');
+				popup.classList.add('fade-out');
+				
 				function closeFunc() {
 					const activePopups = document.querySelectorAll('.popup._active');
 
@@ -206,7 +214,9 @@ function Popup(arg) {
 					popup.removeEventListener('transitionend', closeFunc)
 				}
 
-				popup.addEventListener('transitionend', closeFunc)
+				setTimeout(() => {
+					closeFunc()
+				},400)
 
 			}, 0)
 
@@ -313,7 +323,6 @@ function dropDown() {
 					})
 	
 					list.style.display = "none";
-					//console.log(target.getBoundingClientRect().bottom)
 	
 					if(dropDownCoords.x >= widthDropDownList && dropDownCoords.x < (window.innerWidth - widthDropDownList)) {
 	
@@ -332,9 +341,7 @@ function dropDown() {
 						list.style.transform = "translate3d(0,0,0)";
 	
 					}
-					//console.log((dropDownCoords.y + heightDropDownList) + " " + wrapper.offsetHeight)
 					
-					//console.log(dropDownCoords)
 					if(target.getBoundingClientRect().bottom + heightDropDownList >= window.innerHeight) {
 						
 						list.style.top = (dropDownCoords.y - heightDropDownList - 9) + "px";

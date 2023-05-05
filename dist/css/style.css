@@ -2316,6 +2316,10 @@ progress,sub,sup {
     padding: 0
 }
 
+.drop-down__list,.to-order-btn {
+    -webkit-animation-timing-function: ease
+}
+
 body {
     margin: 0
 }
@@ -2947,11 +2951,6 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
-.drop-down__list,.header__nav,.popup {
-    opacity: 0;
-    visibility: hidden
-}
-
 .fade-in {
     -webkit-animation-name: fade-in;
     animation-name: fade-in
@@ -2999,10 +2998,6 @@ body {
     flex-direction: column;
     background: var(--background);
     padding-right: var(--popup-padding)
-}
-
-.main-title,.section-title,.title {
-    font-family: var(--title-font)
 }
 
 body._mob-menu-active,body._popup-active {
@@ -3146,9 +3141,10 @@ svg {
     left: 0;
     top: 0;
     z-index: 2;
+    opacity: 0;
+    visibility: hidden;
     -webkit-animation-duration: .3s;
     animation-duration: .3s;
-    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -3282,11 +3278,6 @@ svg {
     border-radius: 10px
 }
 
-.hero-banner__bg,.popup,.popup-bg,.section-bg {
-    top: 0;
-    height: 100%
-}
-
 .table-coins__number::before {
     counter-increment: table-coins-number;
     content: counter(table-coins-number);
@@ -3326,12 +3317,6 @@ svg {
     fill: var(--white)
 }
 
-.drop-value,.grow-value {
-    align-items: center;
-    fill: currentColor;
-    display: flex
-}
-
 .table-coins__btn svg {
     margin-right: 10px
 }
@@ -3346,11 +3331,20 @@ svg {
 }
 
 .grow-value {
-    color: var(--success)
+    display: flex;
+    align-items: center;
+    color: var(--success);
+    fill: currentColor
+}
+
+.drop-value,.page-address ul {
+    display: flex;
+    align-items: center
 }
 
 .drop-value {
-    color: var(--danger)
+    color: var(--danger);
+    fill: currentColor
 }
 
 .scroll-wrapper {
@@ -3362,9 +3356,11 @@ svg {
 .section-bg {
     position: absolute;
     left: 50%;
+    top: 0;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     width: 100%;
+    height: 100%;
     max-width: min(1333px,100% - var(--container-padding) *2);
     background: #0d111c;
     border-radius: 20px;
@@ -3386,11 +3382,6 @@ svg {
 
 .custom-scrollbar .os-scrollbar-track {
     background: var(--shade)
-}
-
-.page-address ul {
-    display: flex;
-    align-items: center
 }
 
 .page-address li svg {
@@ -3439,7 +3430,9 @@ svg {
 .hero-banner__bg {
     position: absolute;
     left: 0;
+    top: 0;
     width: 100%;
+    height: 100%;
     overflow: hidden;
     z-index: -1
 }
@@ -3560,7 +3553,6 @@ svg {
     justify-content: center;
     -webkit-animation-duration: .3s;
     animation-duration: .3s;
-    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -3572,12 +3564,14 @@ svg {
 }
 
 .main-title {
+    font-family: var(--title-font);
     font-weight: 700;
     line-height: 122.5%;
     font-size: 1.625rem
 }
 
 .title {
+    font-family: var(--title-font);
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 122.727273%
@@ -3601,6 +3595,7 @@ svg {
 }
 
 .section-title {
+    font-family: var(--title-font);
     font-weight: 700
 }
 
@@ -3621,12 +3616,21 @@ svg {
 .popup {
     position: fixed;
     left: 0;
+    top: 0;
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     padding: 30px var(--container-padding);
     z-index: 100;
-    transition: opacity .4s ease,visibility .4s ease;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     -webkit-perspective: 400px;
     perspective: 400px;
     will-change: opacity,visibility;
@@ -3636,11 +3640,6 @@ svg {
 
 .popup._active._transition-none .popup-body,.popup._transition-none,.popup._transition-none .popup-body {
     transition: none
-}
-
-.popup._active {
-    opacity: 1;
-    visibility: visible
 }
 
 .popup-wrapper {
@@ -3654,7 +3653,9 @@ svg {
 .popup-bg {
     position: absolute;
     left: 0;
+    top: 0;
     width: 100%;
+    height: 100%;
     background: rgba(0,0,0,.71)
 }
 
@@ -3879,6 +3880,8 @@ input:focus::placeholder,textarea:focus::placeholder {
     background: var(--shade-2);
     overflow-y: auto;
     overflow-x: hidden;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity .3s ease,visibility .3s ease
 }
 
