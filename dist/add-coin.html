@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__bg"></div>
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="Logo" width="113" height="25" loading="lazy" class="header__logo--img">
+			</a>
+			<nav class="header__nav">
+				<div class="header__nav--body">
+					<ul class="header__nav--list">
+						<li>
+							<a href="#">
+								Cryptocurrency
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#select-arrow"></use>
+								</svg>
+							</a>
+							<ul>
+								<li>
+									<a href="#">
+										<img src="img/icons/bomb.svg" width="20" height="20" alt="">
+										<b>Cryptocurrency</b>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="">
+										<span>Новые листинги</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Продвигаемые">
+										<span>Продвигаемые</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Лучшие за все время">
+										<span>Лучшие за все время</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Лучшие на сегодняшний день">
+										<span>Лучшие на сегодняшний день</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/icons/phone.svg" width="20" height="20" loading="lazy" alt="" class="visible-on-tablet">
+								Contacts
+								<svg width="16" height="16" viewBox="0 0 16 16" class="visible-on-tablet">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="header__nav--add"></div>
+				</div>
+			</nav>
+			<div class="header__nav-bg"></div>
+			<div class="header__mob-add visible-on-tablet">
+				<ul>
+					<li>
+						<a href="#" class="btn">
+							Sign up
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="header__search check-input-focus-wrapper">
+				<button class="header__search--toggle visible-on-tablet" type="button" title="Search">
+					<svg width="16" height="16" viewBox="0 0 16 16">
+						<use xlink:href="img/sprites.svg#search"></use>
+					</svg>
+				</button>
+				<div class="header__search--body">
+					<label class="header__search--label">
+						<svg width="16" height="16" viewBox="0 0 16 16">
+							<use xlink:href="img/sprites.svg#search"></use>
+						</svg>
+						<input type="search" name="search" placeholder="Search.." class="header__search--input check-input-focus">
+					</label>
+					<div class="header__search--result">
+						<ul class="header__search--list">
+							<li>
+								<a href="#">
+									<b>Bit</b>coin
+								</a>
+								<button type="button" aria-label="paste">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#arrow-link"></use>
+									</svg>
+								</button>
+							</li>
+							<li>
+								<a href="#">
+									<b>Bit</b>coin additional
+								</a>
+								<button type="button" aria-label="paste">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#arrow-link"></use>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<button class="header__search--hide" type="button">
+							<span>Hide search</span>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#select-arrow"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="header__search--bg check-input-focus-bg"></div>
+				</div>
+			</div>
+			<div class="header__add">
+				<ul data-append-to-on-tablet=".header__nav--add" style="display: none;">
+					<li>
+						<a href="#" class="btn _clear">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#plus"></use>
+							</svg>
+							Add coin
+						</a>
+					</li>
+					<li>
+						<a href="#" class="btn _clear">
+							<svg width="16" height="16" viewBox="0 0 24 24">
+								<use xlink:href="img/sprites.svg#arrow-link"></use>
+							</svg>
+							Promote coin
+						</a>
+					</li>
+					<li>
+						<a href="#authorization-popup" class="btn open-popup">
+							Authorization
+						</a>
+					</li>
+				</ul>
+			</div>
+			<button class="header__burger" type="button" aria-label="Menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</header>
+
+		<main class="main">
+			<section class="hero-banner container">
+				<div class="hero-banner__bg">
+					<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
+				</div>
+				<div class="hero-banner__page-address page-address">
+					<ul>
+						<li>
+							<a href="#">
+								Home
+							</a>
+						</li>
+						<li>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</li>
+						<li>
+							<a href="#">
+								Coin page
+							</a>
+						</li>
+					</ul>
+				</div>
+				<h1 class="hero-banner__title title">
+					Add Your Coin
+				</h1>
+			</section>
+			<section class="add-coin container">
+				<form class="add-coin__form">
+					<div class="add-coin__avatar">
+						<label>
+							<input type="file" name="avatar" class="visually-hidden" required>
+							<b>
+								<svg width="40" height="40" viewBox="0 0 40 40">
+									<use xlink:href="img/sprites.svg#upload"></use>
+								</svg>
+								Add coin image <br> (400x400px)
+							</b>
+						</label>
+					</div>
+					<div class="add-coin__form-block">
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__form--row">
+								<label>
+									<span>Coin Name</span>
+									<input type="text" name="coin-name" placeholder="Bitcoin" required class="input">
+								</label>
+								<label>
+									<span>Coin Symbol</span>
+									<input type="text" name="coin-symbol" placeholder="BTC" required class="input">
+								</label>
+								<label>
+									<span>Network/Chain</span>
+									<span class="select">
+										<select name="network-chain" required>
+											<option value="" disabled checked>
+												Binance Smart Chain (BSC)
+											</option>
+											<option value="uniswap-1">
+												Binance Smart Chain (BSC) 1
+											</option>
+											<option value="uniswap-2">
+												Binance Smart Chain (BSC) 2
+											</option>
+										</select>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#select-arrow"></use>
+										</svg>
+									</span>
+								</label>
+								<label>
+									<span>Launch Date</span>
+									<input type="text" name="launch-date" placeholder="12.09.2022" required class="input">
+								</label>
+							</div>
+						</fieldset>
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__question">
+								<span>Project in presale phase?</span>
+								<div class="add-coin__question--answear">
+									<label class="add-coin__question--btn">
+										<input type="radio" name="presale-phase" checked required value="yes">
+										<span>Yes</span>
+									</label>
+									<label class="add-coin__question--btn">
+										<input type="radio" name="presale-phase" required value="no">
+										<span>No</span>
+									</label>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__form--row">
+								<label>
+									<span>Listing Platform</span>
+									<span class="select">
+										<select name="listing-platform" required>
+											<option value="" disabled checked>
+												UniSwap
+											</option>
+											<option value="uniswap-1">
+												UniSwap 1
+											</option>
+											<option value="uniswap-2">
+												UniSwap 2
+											</option>
+										</select>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#select-arrow"></use>
+										</svg>
+									</span>
+								</label>
+								<label>
+									<span>Listing Link</span>
+									<input type="text" name="listing-link" placeholder="Listing Link" required class="input">
+								</label>
+								<label>
+									<span>Category</span>
+									<span class="select">
+										<select name="category" required>
+											<option value="" disabled checked>
+												Select Category
+											</option>
+											<option value="category-1">
+												category 1
+											</option>
+											<option value="category-2">
+												category 2
+											</option>
+										</select>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#select-arrow"></use>
+										</svg>
+									</span>
+								</label>
+								<label>
+									<span>Contract Address</span>
+									<input type="text" name="contract-address" placeholder="Contract Address" class="input">
+								</label>
+								<label class="full">
+									<span>Coin Description</span>
+									<textarea name="description" placeholder="Add description" rows="7" required class="textarea"></textarea>
+								</label>
+							</div>
+						</fieldset>
+						<fieldset class="add-coin__fieldset">
+							<div class="add-coin__form--row">
+								<label>
+									<span>Website Link</span>
+									<input type="text" name="website-link" placeholder="Website Link" required class="input">
+								</label>
+								<label>
+									<span>Twitter Link</span>
+									<input type="text" name="twitter-link" placeholder="Twitter Link" class="input">
+								</label>
+								<label>
+									<span>Telegram Link</span>
+									<input type="text" name="telegram-link" placeholder="Telegram Link" class="input">
+								</label>
+								<label>
+									<span>Discord Link</span>
+									<input type="text" name="discord-link" placeholder="Discord Link" class="input">
+								</label>
+								<label>
+									<span>Telegram Contact</span>
+									<input type="text" name="telegram-contact" placeholder="Telegram Contact" required class="input">
+								</label>
+								<label>
+									<span>Reddit Link</span>
+									<input type="text" name="reddit-link" placeholder="Reddit Link" class="input">
+								</label>
+							</div>
+						</fieldset>
+						<button class="add-coin__form--submit btn" type="submit">
+							Connect
+						</button>
+					</div>
+				</form>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__row container">
+				<a href="index.html" class="footer__logo">
+					<img src="img/logo.svg" width="143" height="32" loading="lazy" alt="Logo" class="footer__logo--img">
+				</a>
+				<div class="footer__lang drop-down">
+					<button class="drop-down__target" type="button">
+						English
+						<svg width="17" height="16" viewBox="0 0 16 16">
+							<use xlink:href="img/sprites.svg#select-arrow"></use>
+						</svg>
+					</button>
+					<ul class="drop-down__list">
+						<li>
+							<a href="#">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Ukrainian
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Russian
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__accent-text">
+					<b>#1 Platform to discover newest coins</b>
+				</div>
+			</div>
+			<div class="footer__row container">
+				<div class="footer__social">
+					<ul>
+						<li>
+							<a href="#" title="Instagram">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Twitter">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#twitter"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="YouTube">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#youtube"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Telegram">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#telegram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Facebook">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#facebook"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__privacy">
+					<ul>
+						<li>
+							<a href="#">
+								Terms of Use
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Privacy policy
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__copy">
+					© 2022, All rights reserved
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="authorization-popup popup" style="--container: 344px" id="authorization-popup">
+		<div class="authorization-popup__wrapper popup-wrapper">
+			<div class="authorization-popup__bg popup-bg popup-close"></div>
+			<div class="authorization-popup__body popup-body">
+				<div class="authorization-popup__header popup-header">
+					<h2 class="authorization-popup__title title _min-2">
+						Authorization
+					</h2>
+					<button type="button" class="authorization-popup__close-btn popup-close-btn popup-close" title="Close">
+						<svg width="14" height="14" viewBox="0 0 8 8">
+							<use xlink:href="img/sprites.svg#close"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="authorization-popup__container popup-container">
+					<ul class="authorization-popup__list">
+						<li>
+							<a href="#" class="authorization-popup__card">
+								<picture>
+									<source srcset="img/authorization/wallet-connect.webp" type="image/webp">
+									<img src="img/authorization/wallet-connect.png" alt="" width="48" height="48" loading="lazy" class="authorization-popup__card--logo">
+								</picture>
+								<h3 class="authorization-popup__card--title">
+									WalletConnect
+								</h3>
+								<p class="authorization-popup__card--text">
+									Scan with WalletConnect to connect
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="authorization-popup__card">
+								<picture>
+									<source srcset="img/authorization/coinbase.webp" type="image/webp">
+									<img src="img/authorization/coinbase.png" alt="" width="48" height="48" loading="lazy" class="authorization-popup__card--logo">
+								</picture>
+								<h3 class="authorization-popup__card--title">
+									Coinbase
+								</h3>
+								<p class="authorization-popup__card--text">
+									Connect to your Coinbase Wallet
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="js/libs.min.js" defer></script>
+	<script src="js/main.js" defer></script>
+
+</body>
+
+</html>

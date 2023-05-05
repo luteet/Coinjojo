@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<style>
+		
+		.image-body {
+			width: 100%; position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			object-fit: cover;
+		}
+
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="Logo" width="113" height="25" loading="lazy" class="header__logo--img">
+			</a>
+			<nav class="header__nav">
+				<div class="header__nav--body">
+					<ul class="header__nav--list">
+						<li>
+							<a href="#">
+								Cryptocurrency
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#select-arrow"></use>
+								</svg>
+							</a>
+							<ul>
+								<li>
+									<a href="#">
+										<img src="img/icons/bomb.svg" width="20" height="20" alt="">
+										<b>Cryptocurrency</b>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="">
+										<span>Новые листинги</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Продвигаемые">
+										<span>Продвигаемые</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Лучшие за все время">
+										<span>Лучшие за все время</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Лучшие на сегодняшний день">
+										<span>Лучшие на сегодняшний день</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/icons/phone.svg" width="20" height="20" loading="lazy" alt="" class="visible-on-tablet">
+								Contacts
+								<svg width="16" height="16" viewBox="0 0 16 16" class="visible-on-tablet">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="header__nav--add"></div>
+				</div>
+			</nav>
+			<div class="header__nav-bg"></div>
+			<div class="header__mob-add visible-on-tablet">
+				<ul>
+					<li>
+						<a href="#" class="btn">
+							Sign up
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="header__search check-input-focus-wrapper">
+				<button class="header__search--toggle visible-on-tablet" type="button" title="Search">
+					<svg width="16" height="16" viewBox="0 0 16 16">
+						<use xlink:href="img/sprites.svg#search"></use>
+					</svg>
+				</button>
+				<div class="header__search--body">
+					<label class="header__search--label">
+						<svg width="16" height="16" viewBox="0 0 16 16">
+							<use xlink:href="img/sprites.svg#search"></use>
+						</svg>
+						<input type="search" name="search" placeholder="Search.." class="header__search--input check-input-focus">
+					</label>
+					<div class="header__search--result">
+						<ul class="header__search--list">
+							<li>
+								<a href="#">
+									<b>Bit</b>coin
+								</a>
+								<button type="button" aria-label="paste">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#arrow-link"></use>
+									</svg>
+								</button>
+							</li>
+							<li>
+								<a href="#">
+									<b>Bit</b>coin additional
+								</a>
+								<button type="button" aria-label="paste">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#arrow-link"></use>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<button class="header__search--hide" type="button">
+							<span>Hide search</span>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#select-arrow"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="header__search--bg check-input-focus-bg"></div>
+				</div>
+			</div>
+			<div class="header__add">
+				<ul data-append-to-on-tablet=".header__nav--add" style="display: none;">
+					<li>
+						<a href="#" class="btn _clear">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#plus"></use>
+							</svg>
+							Add coin
+						</a>
+					</li>
+					<li>
+						<a href="#" class="btn _clear">
+							<svg width="16" height="16" viewBox="0 0 24 24">
+								<use xlink:href="img/sprites.svg#arrow-link"></use>
+							</svg>
+							Promote coin
+						</a>
+					</li>
+					<li>
+						<a href="#" class="btn">
+							Sign up
+						</a>
+					</li>
+				</ul>
+			</div>
+			<button class="header__burger" type="button" aria-label="Menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</header>

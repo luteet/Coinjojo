@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<style>
+		.image-body {
+			width: 100%;
+			position: relative;
+		}
+
+		.image-body img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style-critical.min.css">
+	<link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
+	<script>
+		document.querySelector('html').style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+	</script>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header class="header container">
+			<div class="header__bg"></div>
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="Logo" width="113" height="25" loading="lazy" class="header__logo--img">
+			</a>
+			<nav class="header__nav">
+				<div class="header__nav--body">
+					<ul class="header__nav--list">
+						<li>
+							<a href="#">
+								Cryptocurrency
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#select-arrow"></use>
+								</svg>
+							</a>
+							<ul>
+								<li>
+									<a href="#">
+										<img src="img/icons/bomb.svg" width="20" height="20" alt="">
+										<b>Cryptocurrency</b>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="">
+										<span>Новые листинги</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Продвигаемые">
+										<span>Продвигаемые</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Лучшие за все время">
+										<span>Лучшие за все время</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Лучшие на сегодняшний день">
+										<span>Лучшие на сегодняшний день</span>
+										<svg width="16" height="16" viewBox="0 0 16 16">
+											<use xlink:href="img/sprites.svg#arrow-next"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/icons/phone.svg" width="20" height="20" loading="lazy" alt="" class="visible-on-tablet">
+								Contacts
+								<svg width="16" height="16" viewBox="0 0 16 16" class="visible-on-tablet">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<div class="header__nav--add"></div>
+				</div>
+			</nav>
+			<div class="header__nav-bg"></div>
+			<div class="header__mob-add visible-on-tablet">
+				<ul>
+					<li>
+						<a href="#" class="btn">
+							Sign up
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="header__search check-input-focus-wrapper">
+				<button class="header__search--toggle visible-on-tablet" type="button" title="Search">
+					<svg width="16" height="16" viewBox="0 0 16 16">
+						<use xlink:href="img/sprites.svg#search"></use>
+					</svg>
+				</button>
+				<div class="header__search--body">
+					<label class="header__search--label">
+						<svg width="16" height="16" viewBox="0 0 16 16">
+							<use xlink:href="img/sprites.svg#search"></use>
+						</svg>
+						<input type="search" name="search" placeholder="Search.." class="header__search--input check-input-focus">
+					</label>
+					<div class="header__search--result">
+						<ul class="header__search--list">
+							<li>
+								<a href="#">
+									<b>Bit</b>coin
+								</a>
+								<button type="button" aria-label="paste">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#arrow-link"></use>
+									</svg>
+								</button>
+							</li>
+							<li>
+								<a href="#">
+									<b>Bit</b>coin additional
+								</a>
+								<button type="button" aria-label="paste">
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<use xlink:href="img/sprites.svg#arrow-link"></use>
+									</svg>
+								</button>
+							</li>
+						</ul>
+						<button class="header__search--hide" type="button">
+							<span>Hide search</span>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#select-arrow"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="header__search--bg check-input-focus-bg"></div>
+				</div>
+			</div>
+			<div class="header__add">
+				<ul data-append-to-on-tablet=".header__nav--add" style="display: none;">
+					<li>
+						<a href="#" class="btn _clear">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#plus"></use>
+							</svg>
+							Add coin
+						</a>
+					</li>
+					<li>
+						<a href="#" class="btn _clear">
+							<svg width="16" height="16" viewBox="0 0 24 24">
+								<use xlink:href="img/sprites.svg#arrow-link"></use>
+							</svg>
+							Promote coin
+						</a>
+					</li>
+					<li>
+						<a href="#authorization-popup" class="btn open-popup">
+							Authorization
+						</a>
+					</li>
+				</ul>
+			</div>
+			<button class="header__burger" type="button" aria-label="Menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</header>
+
+		<main class="main">
+			<section class="order">
+				<div class="hero-banner container">
+					<div class="hero-banner__bg">
+						<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
+					</div>
+					<div class="hero-banner__page-address page-address">
+						<ul>
+							<li>
+								<a href="#">
+									Home
+								</a>
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</li>
+							<li>
+								<a href="#">
+									Coin page
+								</a>
+							</li>
+						</ul>
+					</div>
+					<h1 class="hero-banner__title title">
+						Order Lookup
+					</h1>
+				</div>
+				<div class="order__container container">
+					<div class="order__main">
+						<div class="order__wallet">
+							<span class="order__wallet--text">Please send 0.04713872 eth to</span>
+							<div class="order__wallet--block">
+								<label>
+									<input type="text" name="wallet" id="wallet" readonly value="0x673315d0D15265010324DA979B0eC9634ab18f3E" class="order__wallet--input">
+								</label>
+								<button class="order__wallet--copy" type="button" title="Copy" data-clipboard-target="#wallet">
+									<svg width="16" height="16" viewBox="0 0 16 16">
+										<use xlink:href="img/sprites.svg#copy"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+						<div class="order__info">
+							<div class="order__number">
+								<span>Your oder</span>
+								<strong>5348637733</strong>
+								<b>Lookup</b>
+							</div>
+							<div class="order__status">
+								<span>Status</span>
+								<b class="status-secondary">Waiting</b>
+							</div>
+						</div>
+						<div class="order__payment-info">
+							<h3 class="title _min">
+								Payment Information
+							</h3>
+							<ul>
+								<li>
+									<span>Currency</span>
+									<b>ETH</b>
+								</li>
+								<li>
+									<span>Total</span>
+									<b>0.3 BNB</b>
+								</li>
+								<li>
+									<span>Received</span>
+									<b>0</b>
+								</li>
+								<li>
+									<span>Remaining</span>
+									<b>0.04713872</b>
+								</li>
+							</ul>
+						</div>
+						<div class="order__note">
+							<p>
+								Note: It may take 5-10mins for this page to update once the payment goes through <br>
+								Important: By sending any funds or crypto assets to this address, you agree that there will be absolutely no refunds issued unless decided otherwise by the Team. By using our services, you accept our Terms of Use.
+							</p>
+						</div>
+					</div>
+					<div class="order__aside">
+						<div class="order__block order-block">
+							<h3 class="order-block__title title _min">
+								Your Order
+							</h3>
+							<table class="order-block__table">
+								<colgroup>
+									<col>
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th>
+											Date
+										</th>
+										<th>
+											Type
+										</th>
+										<th>
+											Price
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											2023/04/14
+										</td>
+										<td>
+											VIP Spot
+										</td>
+										<td>
+											0.1 BNB
+										</td>
+										<td>
+											<button class="close" type="button" title="Remove">
+												<svg width="8" height="8" viewBox="0 0 8 8">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											2023/04/14
+										</td>
+										<td>
+											VIP Spot
+										</td>
+										<td>
+											0.1 BNB
+										</td>
+										<td>
+											<button class="close" type="button" title="Remove">
+												<svg width="8" height="8" viewBox="0 0 8 8">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											2023/04/14
+										</td>
+										<td>
+											VIP Spot
+										</td>
+										<td>
+											0.1 BNB
+										</td>
+										<td>
+											<button class="close" type="button" title="Remove">
+												<svg width="8" height="8" viewBox="0 0 8 8">
+													<use xlink:href="img/sprites.svg#close"></use>
+												</svg>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="order-block__total">
+								<span>Subtotal</span>
+								<b>0.3 BNB</b>
+							</div>
+							<div class="order-block__total">
+								<span>Total</span>
+								<b>0.3 BNB</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__row container">
+				<a href="index.html" class="footer__logo">
+					<img src="img/logo.svg" width="143" height="32" loading="lazy" alt="Logo" class="footer__logo--img">
+				</a>
+				<div class="footer__lang drop-down">
+					<button class="drop-down__target" type="button">
+						English
+						<svg width="17" height="16" viewBox="0 0 16 16">
+							<use xlink:href="img/sprites.svg#select-arrow"></use>
+						</svg>
+					</button>
+					<ul class="drop-down__list">
+						<li>
+							<a href="#">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Ukrainian
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Russian
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__accent-text">
+					<b>#1 Platform to discover newest coins</b>
+				</div>
+			</div>
+			<div class="footer__row container">
+				<div class="footer__social">
+					<ul>
+						<li>
+							<a href="#" title="Instagram">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Twitter">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#twitter"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="YouTube">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#youtube"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Telegram">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#telegram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" title="Facebook">
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#facebook"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__privacy">
+					<ul>
+						<li>
+							<a href="#">
+								Terms of Use
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Privacy policy
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__copy">
+					© 2022, All rights reserved
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="authorization-popup popup" style="--container: 344px" id="authorization-popup">
+		<div class="authorization-popup__wrapper popup-wrapper">
+			<div class="authorization-popup__bg popup-bg popup-close"></div>
+			<div class="authorization-popup__body popup-body">
+				<div class="authorization-popup__header popup-header">
+					<h2 class="authorization-popup__title title _min-2">
+						Authorization
+					</h2>
+					<button type="button" class="authorization-popup__close-btn popup-close-btn popup-close" title="Close">
+						<svg width="14" height="14" viewBox="0 0 8 8">
+							<use xlink:href="img/sprites.svg#close"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="authorization-popup__container popup-container">
+					<ul class="authorization-popup__list">
+						<li>
+							<a href="#" class="authorization-popup__card">
+								<picture>
+									<source srcset="img/authorization/wallet-connect.webp" type="image/webp">
+									<img src="img/authorization/wallet-connect.png" alt="" width="48" height="48" loading="lazy" class="authorization-popup__card--logo">
+								</picture>
+								<h3 class="authorization-popup__card--title">
+									WalletConnect
+								</h3>
+								<p class="authorization-popup__card--text">
+									Scan with WalletConnect to connect
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="authorization-popup__card">
+								<picture>
+									<source srcset="img/authorization/coinbase.webp" type="image/webp">
+									<img src="img/authorization/coinbase.png" alt="" width="48" height="48" loading="lazy" class="authorization-popup__card--logo">
+								</picture>
+								<h3 class="authorization-popup__card--title">
+									Coinbase
+								</h3>
+								<p class="authorization-popup__card--text">
+									Connect to your Coinbase Wallet
+								</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="js/libs.min.js" defer></script>
+	<script src="js/main.js" defer></script>
+
+</body>
+
+</html>

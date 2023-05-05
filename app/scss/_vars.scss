@@ -1,0 +1,78 @@
+
+@use 'sass:math';
+
+$container: 1080;
+
+:root {
+	--title-font: 'Commissioner', sans-serif;
+	--main-font: 'Commissioner', sans-serif;
+	
+	--background: #050810;
+	--secondary: #C8C9CA;
+	--secondary-2: #97999A;
+	--secondary-hover: #e6e6e6;
+	--secondary-active: #d8d8d8;
+	--primary: #1E74FE;
+	--primary-hover: #3C86FF;
+	--primary-active: #285BAD;
+	--shade: #282B31;
+	--shade-hover: #272F3F;
+	--shade-2: #11141C;
+	--tertiary: #4E535C;
+	--tertiary-2: #5F6B85;
+	--success: #96EA43;
+	--success-hover: #B3FF67;
+	--danger: #FF5449;
+	--danger-2: #D52115;
+	--dark-danger: #492623;
+	--secondary-accent: #D1FC26;
+	--stroke: #1C2029;
+	--shade-lighter: #1D2027;
+
+	--white: #FFF;
+	--black: #000;
+
+	--container-padding: 15px;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0; visibility: hidden;
+	}
+	to {
+		opacity: 1; visibility: visible
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1; visibility: visible
+	}
+	to {
+		opacity: 0; visibility: hidden;
+	}
+}
+
+.fade-in {
+	animation-name: fade-in;
+}
+
+.fade-out {
+	animation-name: fade-out;
+}
+
+@font-face {
+	@include font-include('Commissioner', 400, swap, normal, 'Commissioner-Regular');
+}
+
+@font-face {
+	@include font-include('Commissioner', 500, swap, normal, 'Commissioner-Medium');
+}
+
+@font-face {
+	@include font-include('Commissioner', 600, swap, normal, 'Commissioner-SemiBold');
+}
+
+@font-face {
+	@include font-include('Commissioner', 700, swap, normal, 'Commissioner-Bold');
+}

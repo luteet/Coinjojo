@@ -1,0 +1,36 @@
+@import 'mixin';
+
+$container: 1080;
+
+.hero__bg img {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	object-fit: cover;
+	filter: blur(70px);
+	transform: translate(0,20%) scale(1.5) rotate(-15deg);
+	@include _550 {
+		transform: none
+	}
+}
+
+.hero-banner__bg img {
+	position: absolute;
+	left: 0; top: 0;
+	width: 100%; height: 200%;
+	object-fit: cover;
+	filter: blur(70px);
+}
+
+@import 'pages/index/promoted';
+@import 'pages/index/statistics';
+@import 'pages/index/best';
+@import 'pages/index/contact-us';
+@import 'pages/coin-page/coin';
+@import 'pages/add-coin/add-coin';
+@import 'pages/promote/promote';
+@import 'pages/order-lookup/order';
+@import 'pages/text-section/text-section';
+@import 'pages/account/account';
+
+@import 'components/footer';

@@ -1,0 +1,173 @@
+.footer {
+
+	flex: 0 0 auto;
+
+	background: var(--shade-2);
+
+	// .footer__row
+
+	&__row {
+		&:nth-child(1) {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			padding-top: 20px; padding-bottom: 20px;
+		}
+		&:nth-child(2) {
+			border-top: 1px solid var(--stroke);
+			
+			display: grid;
+			@include _992 {
+				grid-template-columns: 35% auto 35%;
+			}
+
+			& > * {
+				align-self: center;
+			}
+		}
+	}
+
+	// .footer__logo
+
+	&__logo {
+
+		order: 1;
+
+		// .footer__logo--img
+
+		&--img {
+		}
+	}
+
+	// .footer__accent-text
+
+	&__accent-text {
+		flex: 1 1 100%;
+		padding: 5px 25px 0 0;
+		order: 3;
+
+		font-size: 0.875rem;
+		line-height: 142.857143%;
+
+		@include _992 {
+			flex: 1 1 auto;
+			order: 2;
+			padding: 0 25px;
+		}
+		& b {
+			font-weight: 600;
+		}
+	}
+
+	// .footer__lang
+
+	&__lang {
+		order: 2;
+		@include _992 {
+			order: 3;
+		}
+	}
+
+	// .footer__copy
+
+	&__copy {
+		font-size: 0.875rem;
+		line-height: 128.571429%;
+		position: relative;
+
+		padding-top: 24px; padding-bottom: 27px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%; top: 0;
+			transform: translate(-50%,0);
+			width: calc(100% + (var(--container-padding) * 2)); height: 1px;
+			background: var(--stroke);
+		}
+
+		@include _992 {
+			grid-column: 1; grid-row: 1;
+			padding-top: 0; padding-bottom: 0;
+			text-align: left;
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	// .footer__social
+
+	&__social {
+		& ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+		}
+
+		& a {
+			display: block;
+			padding: 8px;
+
+			fill: var(--secondary);
+			&:hover {
+				fill: var(--secondary-hover);
+			}
+			
+			&:active {
+				fill: var(--secondary-active);
+			}
+		}
+	}
+
+	// .footer__privacy
+
+	&__privacy {
+		& ul {
+			display: flex;
+			flex-direction: column;
+			@include _992 {
+				flex-direction: row;
+				justify-content: flex-end;
+			}
+		}
+
+		& li:first-child a {
+			@include _992 {
+				border-left: 1px solid var(--stroke);
+			}
+		}
+
+		& a {
+			font-size: 0.875rem;
+			line-height: 128.571429%;
+			
+			display: block;
+			position: relative;
+			padding: 13px 38px;
+			color: var(--secondary);
+			text-align: center;
+			
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%; top: 0;
+				transform: translate(-50%,0);
+				width: calc(100% + (var(--container-padding) * 2)); height: 1px;
+				background: var(--stroke);
+			}
+
+			@include _992 {
+				border-right: 1px solid var(--stroke);
+				&::before {
+					display: none;
+				}
+			}
+
+			transition: color .3s ease;
+		}
+	}
+}

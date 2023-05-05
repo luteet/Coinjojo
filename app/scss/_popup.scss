@@ -1,0 +1,199 @@
+.popup {
+	position: fixed;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+
+	display: flex;
+	align-items: center;
+
+	padding: 30px var(--container-padding);
+
+	z-index: 100;
+
+	opacity: 0; visibility: hidden;
+	transition: opacity .4s ease, visibility .4s ease;
+
+	perspective: 400px;
+
+	&._transition-none {
+		transition: none;
+	}
+
+	&._transition-none &-body {
+		transition: none;
+	}
+
+	&._active._transition-none &-body {
+		transition: none;
+	}
+
+	will-change: opacity, visibility;
+	backdrop-filter: blur(4.5px);
+
+	&._active {
+		opacity: 1; visibility: visible;
+	}
+
+	/* &._active &-body {
+		transform: translate3d(0,0,0);
+		transition: transform .2s ease;
+	} */
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		//justify-content: center;
+
+		min-height: 100%; width: 100%;
+
+		z-index: 2;
+	}
+	&-bg {
+		position: absolute;
+		left: 0; top: 0;
+		width: 100%; height: 100%;
+
+		background: rgba(0, 0, 0, 0.71);
+
+	}
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		color: var(--white);
+
+		//padding-top: 30px;
+	}
+	&-body {
+		margin: auto;
+		position: relative;
+
+		/* transform: translate3d(0,15px,0);
+		transition: transform .4s ease; */
+		
+		max-width: var(--container, 700px);
+		width: 100%;
+
+		z-index: 2;
+	}
+	&-container {
+		overflow-y: auto;
+		max-height: calc(calc(var(--vh) * 100) - 100px);
+		margin-top: 12px;
+		background: var(--shade-2);
+		filter: drop-shadow(0px 32px 49px rgba(0, 0, 0, 0.55));
+		border-radius: 16px;
+		padding: 12px;
+	}
+	&-close-btn {
+		line-height: 100%;
+		width: 28px; height: 28px;
+	  
+		& svg {
+		  width: 40%;
+		  fill: var(--tertiary);
+		}
+
+		background: white;
+		transition: background .3s ease;
+		&:hover {
+			background: var(--success-hover);
+		}
+		
+		&:active {
+			background: var(--success);
+		}
+		border-radius: 50%;
+	}
+}
+
+.authorization-popup {
+
+	// .authorization-popup__wrapper
+
+	&__wrapper {
+	}
+
+	// .authorization-popup__bg
+
+	&__bg {
+	}
+
+	// .authorization-popup__body
+
+	&__body {
+	}
+
+	// .authorization-popup__header
+
+	&__header {
+	}
+
+	// .authorization-popup__title
+
+	&__title {
+	}
+
+	// .authorization-popup__close-btn
+
+	&__close-btn {
+	}
+
+	// .authorization-popup__container
+
+	&__container {
+	}
+
+	// .authorization-popup__list
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+
+		& li:not(:first-child) {
+			margin-top: 8px;
+		}
+	}
+
+	// .authorization-popup__card
+
+	&__card {
+
+		display: block;
+		padding: 17px 15px;
+
+		background: var(--shade-lighter);
+		border-radius: 12px;
+
+		transition: background .3s ease;
+		&:hover {
+			background: var(--shade);
+		}
+		
+		&:active {
+			background: var(--stroke);
+		}
+
+		// .authorization-popup__card--logo
+
+		&--logo {
+		}
+
+		// .authorization-popup__card--title
+
+		&--title {
+			padding-top: 13px;
+
+			color: var(--white);
+			font-weight: 700;
+		}
+
+		// .authorization-popup__card--text
+
+		&--text {
+			color: var(--tertiary);
+			padding-top: 4px;
+			display: block;
+		}
+	}
+}
+

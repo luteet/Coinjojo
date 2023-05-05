@@ -1,0 +1,226 @@
+@@include("html/_header-2.html")
+
+	<main class="main">
+		<section class="account">
+			<div class="hero-banner container">
+				<div class="hero-banner__bg">
+					<img src="img/index/hero/bg.svg" width="0" height="0" loading="lazy" alt="">
+				</div>
+				<div class="hero-banner__header">
+					<div class="hero-banner__page-address page-address">
+						<ul>
+							<li>
+								<a href="#">
+									Home
+								</a>
+							</li>
+							<li>
+								<svg width="16" height="16" viewBox="0 0 16 16">
+									<use xlink:href="img/sprites.svg#arrow-next"></use>
+								</svg>
+							</li>
+							<li>
+								<a href="#">
+									Coin page
+								</a>
+							</li>
+						</ul>
+					</div>
+					<a href="#" class="hero-banner__btn visible-on-tablet">
+						<img src="img/icons/log-out.svg" width="24" height="24" loading="lazy" alt="">
+						Log out
+					</a>
+				</div>
+				<h1 class="hero-banner__title title">
+					My account
+				</h1>
+				<nav class="hero-banner__nav">
+					<ul>
+						<li>
+							<a href="account-liked-coins.html" class="current">
+								<img src="img/icons/dollar.svg" width="24" height="24" loading="lazy" alt="">
+								Liked coins
+							</a>
+						</li>
+						<li>
+							<a href="account-profile.html">
+								<img src="img/icons/profile.svg" width="24" height="24" loading="lazy" alt="">
+								Profile
+							</a>
+						</li>
+						<li class="hide-on-tablet">
+							<a href="#" class="hide-on-tablet">
+								<img src="img/icons/log-out.svg" width="24" height="24" loading="lazy" alt="">
+								Log out
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="account__container container">
+				<div class="account__table">
+					<div class="account__table--wrapper scroll-wrapper">
+						<table class="table-coins">
+							<colgroup>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>
+										Rank
+									</th>
+									<th>
+										Coin
+									</th>
+									<th>
+										Category
+									</th>
+									<th>
+										Chain
+									</th>
+									<th>
+										<button type="button">
+											24H
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Marketcap
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Price
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Votes
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								@@loop("html/_table-coins-item.html", [
+									{
+										"coin_avatar": "ethereum",
+										"coin_name": "Ethereum",
+										"coin_abbreviation": "ETH",
+										"favorite": "",
+									},
+									{
+										"coin_avatar": "BakeCoin",
+										"coin_name": "BakeCoin",
+										"coin_abbreviation": "BSD",
+										"favorite": " _active",
+									},
+									{
+										"coin_avatar": "ethereum",
+										"coin_name": "ChainConnect",
+										"coin_abbreviation": "CNCT",
+										"favorite": "",
+									},
+									{
+										"coin_avatar": "ethereum",
+										"coin_name": "Bloomster",
+										"coin_abbreviation": "ETH",
+										"favorite": "",
+									},
+									{
+										"coin_avatar": "ethereum",
+										"coin_name": "Ethereum",
+										"coin_abbreviation": "ETH",
+										"favorite": "",
+									},
+								])
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="account__footer table-footer">
+					<div class="table-footer__drop-down drop-down">
+						<button class="drop-down__target" type="button">
+							Show more
+							<svg width="17" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#select-arrow"></use>
+							</svg>
+						</button>
+						<ul class="drop-down__list">
+							<li>
+								<a href="#">
+									Param 1
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 2
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 3
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="table-footer__pagination pagination hide-on-tablet">
+						<a href="#" class="pagination__arrow _prev" title="Prev">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</a>
+						<div class="pagination__list">
+							<a href="#">
+								1
+							</a>
+							<a href="#">
+								2
+							</a>
+							<a href="#">
+								3
+							</a>
+							<a href="#">
+								...
+							</a>
+							<a href="#">
+								8
+							</a>
+							<a href="#" class="current">
+								9
+							</a>
+							<a href="#">
+								10
+							</a>
+						</div>
+						<a href="#" class="pagination__arrow _next" title="Next">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+@@include("html/_footer.html")

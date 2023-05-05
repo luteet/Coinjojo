@@ -1,0 +1,63 @@
+input, textarea {
+	&::placeholder {
+		transition: opacity .2s ease;
+		opacity: 1;
+	}
+	
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+.input, .textarea {
+	padding: 16px 24px;
+
+	background: var(--shade-2);
+	border-radius: 12px;
+
+	line-height: 150%;
+	&::placeholder {
+		color: var(--tertiary);
+	}
+
+	transition: color .2s ease;
+
+	color: var(--secondary-2);
+	&:focus {
+		color: var(--white);
+	}
+}
+
+.textarea {
+	resize: none;
+}
+
+.select {
+	position: relative;
+
+	select {
+		cursor: pointer;
+		width: 100%;
+		-webkit-appearance: none;
+
+		padding: 16px 54px 16px 24px;
+
+		background: var(--shade-2);
+		border-radius: 12px;
+
+		line-height: 150%;
+		color: var(--tertiary);
+		:focus {
+			color: var(--white);
+		}
+
+	}
+
+	& svg {
+		position: absolute;
+		right: 20px; top: 50%;
+		transform: translate(0,-50%);
+		fill: var(--secondary);
+		pointer-events: none;
+	}
+}

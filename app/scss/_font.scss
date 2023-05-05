@@ -1,0 +1,93 @@
+
+.main-title {
+	font-family: var(--title-font);
+	font-weight: 700;
+	line-height: 122.5%;
+
+	font-size: 1.625rem;
+	color: var(--white);
+
+	@include _768 {
+		font-size: 2rem;
+	}
+
+	@include _992 {
+		font-size: 2.5rem;
+	}
+}
+
+.title {
+	
+	font-family: var(--title-font);
+	font-weight: 700;
+	font-size: 1.375rem;
+	line-height: 122.727273%;
+	color: var(--white);
+
+	&._min {
+		font-size: 1.3rem;
+		line-height: 123.076923%;
+	}
+
+	&._min-2 {
+		font-size: 1.25rem;
+		line-height: 120%;
+	}
+
+	@include _768 {
+		font-size: 1.5rem;
+		&._min {
+			font-size: 1.35rem;
+			line-height: 123.076923%;
+		}
+		&._min-2 {
+			font-size: 1.25rem;
+			line-height: 120%;
+		}
+	}
+
+	@include _992 {
+		font-size: 2rem;
+		line-height: 121.875%;
+		&._min {
+			font-size: 1.625rem;
+			line-height: 123.076923%;
+		}
+		&._min-2 {
+			font-size: 1.25rem;
+			line-height: 120%;
+		}
+	}
+
+}
+
+.section-title {
+
+	font-family: var(--title-font);
+	font-weight: 700;
+
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.status-secondary {
+	padding: 6px 12px;
+	background: var(--secondary-accent);
+	border-radius: 100px;
+
+	color: var(--background);
+	font-weight: 700;
+	line-height: 130%;
+}
+
+.status-success {
+	padding: 6px 12px;
+	background: var(--success);
+	border-radius: 100px;
+
+	color: var(--background);
+	font-weight: 700;
+	line-height: 130%;
+}

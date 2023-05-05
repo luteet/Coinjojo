@@ -1,0 +1,198 @@
+.account {
+
+	// .account__container
+
+	&__container {
+		margin-top: 20px;
+	}
+
+	// .account__table
+
+	&__table {
+
+		// .account__table--wrapper
+
+		&--wrapper {
+		}
+	}
+
+	// .account__profile-table
+
+	&__profile-table {
+
+		// .account__profile-table--wrapper
+
+		&--profile-wrapper {
+		}
+
+		table {
+			width: 100%;
+		}
+	}
+
+	// .account__footer
+
+	&__footer {
+	}
+
+	// .account__profile-table
+
+	&__profile-table {
+
+		// .account__profile-table--wrapper
+
+		&--wrapper {
+
+			table {
+				width: 100%;
+
+				border-spacing: 0;
+			}
+
+			thead {
+				display: none;
+			}
+
+			@include _768 {
+				thead {
+					display: table-header-group;
+				}
+				col {
+					&:nth-child(1) {
+						width: 20%;
+					}
+	
+					&:nth-child(2) {
+						width: 15%;
+					}
+	
+					&:nth-child(3) {
+						width: 15%;
+					}
+	
+					&:nth-child(4) {
+						width: 40%;	
+					}
+					
+					&:nth-child(5) {
+						width: 150px;
+					}
+				}
+
+				thead th {
+					font-weight: 400;
+					font-size: 0.875rem;
+					line-height: 128.571429%;
+					
+					padding: 14px 16px;
+	
+					text-align: left;
+					&:last-child {
+						text-align: right;
+					}
+				}
+			}
+
+			tbody tr {
+				display: block;
+				background: var(--shade-2);
+				border-radius: 8px;
+				&:not(:first-child) {
+					margin-top: 8px;
+				}
+				@include _768 {
+					display: table-row;
+					margin: 0;
+				}
+			}
+
+			tbody td {
+				padding: 14px 0;
+				margin: 0 16px;
+				background: var(--shade-2);
+
+				&:not(:first-child) {
+					border-top: 1px solid var(--stroke);
+				}
+
+				@include _768 {
+					padding: 14px 16px;
+					margin: 0;
+
+					display: table-cell;
+					border-top: 2px solid var(--background);
+					&:not(:first-child) {
+						border-top: 2px solid var(--background);
+					}
+				}
+
+				font-size: 0.875rem;
+				line-height: 128.571429%;
+				font-weight: 700;
+				color: var(--white);
+
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				&:first-child {
+					border-radius: 8px 0 0 8px;
+				}
+
+				&:last-child {
+					border-radius: 0 8px 8px 0;
+				}
+				
+				span {
+					font-weight: 400;
+					color: var(--secondary);
+					@include _768 {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	// .account__table-coin
+
+	&__table-coin {
+
+		display: grid;
+		grid-template-columns: 44px auto;
+
+		// .account__table-coin--logo
+
+		&--logo {
+			margin-right: 12px;
+
+			grid-column: 1; grid-row: 2 span;
+			align-self: center;
+		}
+
+		// .account__table-coin--name
+
+		&--name {
+			color: var(--white);
+			font-weight: 700;
+			font-size: 1rem;
+		}
+
+		// .account__table-coin--abbreviation
+
+		&--abbreviation {
+			color: var(--secondary);
+			font-weight: 400;
+		}
+	}
+
+	// .account__table
+
+	&__table {
+
+		// .account__table--btn
+
+		&--btn {
+		}
+	}
+}

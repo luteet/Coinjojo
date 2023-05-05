@@ -1,0 +1,42 @@
+@mixin _container {
+	@media (min-width: #{$container}px) {
+		@content;
+	}
+}
+
+@mixin _992 {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin _768 {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin _550 {
+	@media (min-width: 550px) {
+		@content;
+	}
+}
+
+@mixin _426 {
+	@media (min-width: 426px) {
+		@content;
+	}
+}
+
+$maxWidth: 1650;
+
+@mixin font-include($font_name, $font_weight, $font_display, $font_style, $font_src) {
+
+	font-weight: $font_weight;
+	font-family: $font_name;
+	font-display: $font_display;
+	font-style: $font_style;
+
+	src: local($font_name), url('#{$font_src}.woff') format('woff'), url('#{$font_src}.woff2') format('woff2');
+
+}
