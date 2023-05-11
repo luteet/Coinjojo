@@ -204,10 +204,6 @@ svg {
 			background: #272F3F;
 		}
 		
-		/* &:active {
-			background: #272F3F;
-		} */
-
 		& svg {
 			margin-left: 8px;
 		}
@@ -249,6 +245,32 @@ svg {
 				color: var(--secondary-active);
 			}
 		}
+	}
+}
+
+.btn-2 {
+	display: flex;
+	align-items: center;
+
+	padding: 12px 16px;
+
+	background: var(--shade);
+	border-radius: 29px;
+
+	fill: var(--white);
+	color: var(--secondary);
+	font-size: 0.875rem;
+	line-height: 142.857143%;
+	font-weight: 700;
+
+	border: 1px solid var(--shade);
+	transition: background .3s ease, border-color .3s ease;
+	&:hover {
+		background: #272F3F;
+	}
+	
+	& svg {
+		margin-left: 8px;
 	}
 }
 

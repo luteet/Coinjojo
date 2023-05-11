@@ -392,6 +392,11 @@
     margin-top: 24px
 }
 
+.table-footer__btn {
+    margin-top: 24px;
+    align-self: self-end
+}
+
 .pagination {
     flex: 1 1 auto;
     display: flex;
@@ -2340,10 +2345,6 @@ progress,sub,sup {
     padding: 0
 }
 
-.jsCalendar thead .jsCalendar-nav-left,.jsCalendar thead .jsCalendar-title-left {
-    float: left
-}
-
 body {
     margin: 0
 }
@@ -2434,10 +2435,6 @@ textarea {
     overflow: auto
 }
 
-.main,.visually-hidden,body._mob-menu-active,body._popup-active {
-    overflow: hidden
-}
-
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
     height: auto
 }
@@ -2488,6 +2485,10 @@ summary {
     line-height: 40px
 }
 
+.jsCalendar thead .jsCalendar-title-left {
+    float: left
+}
+
 .jsCalendar thead .jsCalendar-title-right {
     float: right
 }
@@ -2510,6 +2511,10 @@ summary {
 .jsCalendar thead .jsCalendar-nav-left:hover,.jsCalendar thead .jsCalendar-nav-right:hover {
     background-color: #e2e2e2;
     color: #000
+}
+
+.jsCalendar thead .jsCalendar-nav-left {
+    float: left
 }
 
 .jsCalendar thead .jsCalendar-nav-right {
@@ -2654,6 +2659,10 @@ summary {
     z-index: 1
 }
 
+.hero-banner,.hero-banner+*,.jsCalendar.classic-theme thead .jsCalendar-title,.main,section {
+    position: relative
+}
+
 .jsCalendar.material-theme thead .jsCalendar-nav-left,.jsCalendar.material-theme thead .jsCalendar-nav-right {
     color: #fff
 }
@@ -2714,10 +2723,6 @@ summary {
     width: 100%
 }
 
-.jsCalendar.classic-theme thead .jsCalendar-title {
-    position: relative
-}
-
 .jsCalendar.classic-theme thead .jsCalendar-title-name {
     color: #fff;
     font-size: 16px;
@@ -2731,10 +2736,6 @@ summary {
 .jsCalendar.classic-theme thead .jsCalendar-title-left,.jsCalendar.classic-theme thead .jsCalendar-title-right {
     position: absolute;
     z-index: 1
-}
-
-.hero-banner,.hero-banner+*,.main,section {
-    position: relative
 }
 
 .jsCalendar.classic-theme thead .jsCalendar-title-right {
@@ -3024,8 +3025,8 @@ body {
     padding-right: var(--popup-padding)
 }
 
-.main-title,.section-title,.title {
-    font-family: var(--title-font)
+body._mob-menu-active,body._popup-active {
+    overflow: hidden
 }
 
 .wrapper {
@@ -3035,14 +3036,9 @@ body {
 }
 
 .main {
+    overflow: hidden;
     flex: 1 0 auto;
     padding-bottom: 34px
-}
-
-.btn,.drop-down__target {
-    align-items: center;
-    font-weight: 700;
-    font-size: .875rem
 }
 
 .container {
@@ -3061,8 +3057,11 @@ svg {
 
 .btn {
     display: inline-flex;
+    align-items: center;
     text-align: center;
     padding: 12px 16px;
+    font-weight: 700;
+    font-size: .875rem;
     line-height: 121.428571%;
     background: var(--primary);
     color: var(--white);
@@ -3121,7 +3120,12 @@ svg {
     white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0)
+    clip: rect(0 0 0 0);
+    overflow: hidden
+}
+
+.btn-2 svg,.drop-down__target svg {
+    margin-left: 8px
 }
 
 .drop-down {
@@ -3133,24 +3137,26 @@ svg {
     background: #272f3f
 }
 
+.btn-2,.drop-down__target {
+    background: var(--shade);
+    font-size: .875rem;
+    line-height: 142.857143%;
+    font-weight: 700
+}
+
 .drop-down__target {
     display: flex;
+    align-items: center;
     padding: 12px 16px;
-    background: var(--shade);
     border-radius: 29px;
     fill: var(--white);
     color: var(--secondary);
-    line-height: 142.857143%;
     border: 1px solid var(--shade);
     transition: background .3s ease,border-color .3s ease
 }
 
 .drop-down__target:hover {
     background: #272f3f
-}
-
-.drop-down__target svg {
-    margin-left: 8px
 }
 
 .drop-down__list {
@@ -3189,11 +3195,29 @@ svg {
     color: var(--secondary-active)
 }
 
+.btn-2 {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 29px;
+    fill: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--shade);
+    transition: background .3s ease,border-color .3s ease
+}
+
+.name-section,.table-coins tbody td,.table-coins thead th,.table-coins__number::before {
+    font-size: .875rem;
+    line-height: 128.571429%
+}
+
+.btn-2:hover {
+    background: #272f3f
+}
+
 .name-section {
     padding: 6px 8px;
     display: inline-block;
-    font-size: .875rem;
-    line-height: 128.571429%;
     color: var(--success);
     text-transform: uppercase;
     background: rgba(150,234,67,.15);
@@ -3224,9 +3248,7 @@ svg {
 
 .table-coins thead th {
     color: var(--secondary-2);
-    font-weight: 400;
-    font-size: .875rem;
-    line-height: 128.571429%
+    font-weight: 400
 }
 
 .table-coins thead th:not(:last-child) {
@@ -3267,8 +3289,6 @@ svg {
 .table-coins tbody td {
     color: var(--white);
     font-weight: 600;
-    font-size: .875rem;
-    line-height: 128.571429%;
     padding-right: 15px
 }
 
@@ -3307,8 +3327,6 @@ svg {
 .table-coins__number::before {
     counter-increment: table-coins-number;
     content: counter(table-coins-number);
-    font-size: .875rem;
-    line-height: 128.571429%;
     font-weight: 400
 }
 
@@ -3591,12 +3609,14 @@ svg {
 }
 
 .main-title {
+    font-family: var(--title-font);
     font-weight: 700;
     line-height: 122.5%;
     font-size: 1.625rem
 }
 
 .title {
+    font-family: var(--title-font);
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 122.727273%
@@ -3620,6 +3640,7 @@ svg {
 }
 
 .section-title {
+    font-family: var(--title-font);
     font-weight: 700
 }
 
