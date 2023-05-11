@@ -808,6 +808,7 @@ window.onresize = resize;
 const switchInput = document.querySelectorAll('.switch__input');
 switchInput.forEach(switchInput => {
 	const switchBlock = switchInput.closest('.switch'),
+	title = (switchInput.dataset.titleId) ? document.querySelector(switchInput.dataset.titleId) : false,
 	switchPseudoEl = switchBlock.querySelector('.switch__pseudo-btn');
 
 	if(switchInput.checked) {
@@ -829,6 +830,13 @@ switchInput.forEach(switchInput => {
 			switchPseudoEl.style.transform = "translate3d(-100%,0,0)";
 			switchPseudoEl.style.left = "100%";
 			switchPseudoEl.style.width = btn.offsetWidth + "px";
+		}
+
+		if(title && switchInput.dataset.titleClass) {
+			title.classList.remove('_mode-1');
+			title.classList.remove('_mode-2');
+
+			title.classList.add(switchInput.dataset.titleClass);
 		}
 	})
 	
@@ -884,6 +892,19 @@ calendar.forEach(calendar => {
 		calendarElement.next();
 		if(calendarName) calendarName.textContent = calendarWrapper.querySelector('.jsCalendar-title-name').textContent;
 	})
+
+	calendarElement.onDateClick(function(event, date){
+		if(!event.target.classList.contains('jsCalendar-next') && !event.target.classList.contains('jsCalendar-previous')) {
+			if(event.target.classList.contains('jsCalendar-selected')) {
+				calendarElement.unselect(date)
+			} else {
+				calendarElement.select(date)
+			}
+		}
+		
+		
+        //console.log(date)
+    });
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </calendar> -=-=-=-=-=-=-=-=-=-=-=-=
@@ -927,6 +948,17 @@ if(toOrderBtn) {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </scroll-to-order> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+const headerNavList = document.querySelectorAll('.header__nav--list');
+headerNavList.forEach(list => {
+	const li = list.querySelectorAll('li');
+	li.forEach(li => {
+		if(li.querySelector('ul')) {
+			li.classList.add('has-list');
+		}
+	})
+	
+})
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <lozyload> -=-=-=-=-=-=-=-=-=-=-=-=

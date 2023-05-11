@@ -55,13 +55,13 @@
 							</a>
 							<ul>
 								<li>
-									<a href="#">
+									<a href="#" aria-label="Cryptocurrency">
 										<img src="img/icons/bomb.svg" width="20" height="20" alt="">
 										<b>Cryptocurrency</b>
 									</a>
 								</li>
 								<li>
-									<a href="#" aria-label="">
+									<a href="#" aria-label="Новые листинги">
 										<span>Новые листинги</span>
 										<svg width="16" height="16" viewBox="0 0 16 16">
 											<use xlink:href="img/sprites.svg#arrow-next"></use>
@@ -266,8 +266,9 @@
 			</section>
 			<section class="best container">
 				<form class="best__filter filter">
-					<h2 class="best__title title">
-						Todays's Best
+					<h2 class="best__title title title-switch _mode-1" id="best-title">
+						<span>Todays's Best</span>
+						<span>All Time Best</span>
 					</h2>
 					<button class="filter__btn btn _clear" type="button">
 						<svg width="20" height="20" viewBox="0 0 20 20">
@@ -279,11 +280,11 @@
 						<div class="switch__wrapper">
 							<div class="switch__pseudo-btn"></div>
 							<label class="switch__btn">
-								<input type="radio" name="time" value="todays" checked class="switch__input">
+								<input type="radio" name="time" value="todays" checked class="switch__input" data-title-id="#best-title" data-title-class="_mode-1">
 								<span class="switch__element">Todays's Best</span>
 							</label>
 							<label class="switch__btn">
-								<input type="radio" name="time" value="all-time" class="switch__input">
+								<input type="radio" name="time" value="all-time" class="switch__input" data-title-id="#best-title" data-title-class="_mode-2">
 								<span class="switch__element">All Time Best</span>
 							</label>
 						</div>
@@ -509,6 +510,8 @@
 								<col>
 								<col>
 								<col>
+								<col>
+								<col>
 							</colgroup>
 							<thead>
 								<tr>
@@ -543,6 +546,22 @@
 									<th>
 										<button type="button">
 											Price
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Launch
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Submitted
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
 											</svg>
@@ -597,6 +616,12 @@
 									</td>
 									<td>
 										$0,0003
+									</td>
+									<td>
+										7 July
+									</td>
+									<td>
+										1h ago
 									</td>
 									<td>
 										<button class="vote-btn btn" type="button">
@@ -654,6 +679,12 @@
 										$0,0003
 									</td>
 									<td>
+										7 July
+									</td>
+									<td>
+										1h ago
+									</td>
+									<td>
 										<button class="vote-btn btn" type="button">
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrow-to-up"></use>
@@ -707,6 +738,12 @@
 									</td>
 									<td>
 										$0,0003
+									</td>
+									<td>
+										7 July
+									</td>
+									<td>
+										1h ago
 									</td>
 									<td>
 										<button class="vote-btn btn" type="button">
@@ -764,6 +801,12 @@
 										$0,0003
 									</td>
 									<td>
+										7 July
+									</td>
+									<td>
+										1h ago
+									</td>
+									<td>
 										<button class="vote-btn btn" type="button">
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrow-to-up"></use>
@@ -819,6 +862,12 @@
 										$0,0003
 									</td>
 									<td>
+										7 July
+									</td>
+									<td>
+										1h ago
+									</td>
+									<td>
 										<button class="vote-btn btn" type="button">
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrow-to-up"></use>
@@ -860,6 +909,41 @@
 							<li>
 								<a href="#">
 									Param 3
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 4
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 5
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 6
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 7
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 8
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 9
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 10
 								</a>
 							</li>
 						</ul>

@@ -1,9 +1,9 @@
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
-    top: 0;
     -o-object-fit: cover;
     width: 100%;
-    left: 0
+    left: 0;
+    top: 0
 }
 
 .hero__bg img {
@@ -206,6 +206,11 @@
     fill: var(--success-hover)
 }
 
+.contact-us__social ul a,.pagination__arrow {
+    fill: var(--success);
+    transition: background .2s ease
+}
+
 .filter__popup--close:active {
     fill: var(--success)
 }
@@ -244,12 +249,6 @@
     width: 50%
 }
 
-.filter__item--param input,.switch__input {
-    margin: -1px;
-    white-space: nowrap;
-    overflow: hidden
-}
-
 .filter__item--element._full {
     flex: 1 1 100%;
     width: 100%
@@ -268,11 +267,14 @@
     position: absolute;
     width: 1px;
     height: 1px;
+    margin: -1px;
     padding: 0;
     border: 0;
+    white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0)
+    clip: rect(0 0 0 0);
+    overflow: hidden
 }
 
 .filter__item--param input:checked+span {
@@ -296,6 +298,20 @@
 
 .filter__item--param span:active {
     color: var(--success)
+}
+
+.title-switch {
+    display: inline-grid
+}
+
+.title-switch._mode-1 span:first-child,.title-switch._mode-2 span:last-child {
+    opacity: 1
+}
+
+.title-switch>* {
+    grid-area: 1/1;
+    opacity: 0;
+    transition: opacity .3s ease
 }
 
 .switch {
@@ -325,6 +341,16 @@
     transition: width .2s ease,left .2s ease,transform .2s ease,-webkit-transform .2s ease
 }
 
+.add-coin__question--btn input,.switch__input {
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+    position: absolute;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%)
+}
+
 .switch__btn {
     display: grid;
     flex: 1 1 auto
@@ -335,12 +361,8 @@
 }
 
 .switch__input {
-    position: absolute;
-    width: 1px;
     height: 1px;
-    padding: 0;
-    border: 0;
-    -webkit-clip-path: inset(100%);
+    margin: -1px;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -386,9 +408,7 @@
     justify-content: center;
     border: 1px solid var(--shade);
     border-radius: 12px;
-    fill: var(--success);
-    background: rgba(0,0,0,0);
-    transition: background .2s ease
+    background: rgba(0,0,0,0)
 }
 
 .pagination__arrow:hover {
@@ -484,9 +504,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--shade);
-    fill: var(--success);
-    transition: background .2s ease
+    background: var(--shade)
 }
 
 .contact-us__social ul a svg {
@@ -499,13 +517,8 @@
     fill: var(--background)
 }
 
-.contact-us__social ul a:active,.promote__block--arrow {
+.contact-us__social ul a:active {
     background: var(--secondary-accent)
-}
-
-.coin__chain,.coin__info-block {
-    background: var(--shade-2);
-    border-radius: 20px
 }
 
 .contact-us__image {
@@ -535,6 +548,11 @@
     border: 6px solid var(--background);
     width: 126px;
     height: 126px
+}
+
+.coin__chain,.coin__info-block {
+    border-radius: 20px;
+    background: var(--shade-2)
 }
 
 .coin__chain--footer,.coin__info-block--list li:not(:first-child) {
@@ -857,21 +875,11 @@
     display: grid!important
 }
 
-.add-coin__question--btn input,.promote__block--banner input {
-    position: absolute;
-    margin: -1px;
-    white-space: nowrap;
-    -webkit-clip-path: inset(100%)
-}
-
 .add-coin__question--btn input {
-    width: 1px;
     height: 1px;
-    padding: 0;
-    border: 0;
+    margin: -1px;
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden
+    clip: rect(0 0 0 0)
 }
 
 .add-coin__question--btn input:checked+span {
@@ -1014,6 +1022,7 @@
     height: 26px;
     flex: 0 0 26px;
     border-radius: 50%;
+    background: var(--secondary-accent);
     transition: -webkit-transform .2s ease;
     transition: transform .2s ease;
     transition: transform .2s ease,-webkit-transform .2s ease
@@ -1072,10 +1081,14 @@
 }
 
 .promote__block--banner input {
+    position: absolute;
     width: 1px;
     height: 1px;
+    margin: -1px;
     padding: 0;
     border: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden
@@ -1202,7 +1215,25 @@
     width: 36px;
     height: 36px;
     line-height: 2.25rem;
-    font-size: .875rem
+    font-size: .875rem;
+    cursor: pointer
+}
+
+.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th,.promote__block--calendar-element.jsCalendar tbody td {
+    width: 36px;
+    height: 36px;
+    line-height: 2.25rem;
+    font-size: .875rem;
+    color: var(--secondary)
+}
+
+.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-next,.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-previous,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-next,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-previous {
+    color: #4e535c;
+    cursor: default
+}
+
+.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-next:hover,.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-previous:hover,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-next:hover,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-previous:hover {
+    color: #4e535c
 }
 
 .promote__block--calendar-element.jsCalendar tbody td.jsCalendar-selected {
@@ -1222,11 +1253,6 @@
 }
 
 .promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th,.promote__block--calendar-element.jsCalendar tbody td {
-    width: 36px;
-    height: 36px;
-    line-height: 2.25rem;
-    font-size: .875rem;
-    color: var(--secondary);
     border-radius: 50%
 }
 
@@ -1849,12 +1875,9 @@
         border-top: 0
     }
 
-    .filter__btn {
-        margin-right: 16px
-    }
-
     .filter__switch {
         margin-top: 0;
+        margin-left: 16px;
         flex: none
     }
 
@@ -2317,8 +2340,8 @@ progress,sub,sup {
     padding: 0
 }
 
-.drop-down__list,.to-order-btn {
-    -webkit-animation-timing-function: ease
+.jsCalendar thead .jsCalendar-nav-left,.jsCalendar thead .jsCalendar-title-left {
+    float: left
 }
 
 body {
@@ -2411,6 +2434,10 @@ textarea {
     overflow: auto
 }
 
+.main,.visually-hidden,body._mob-menu-active,body._popup-active {
+    overflow: hidden
+}
+
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
     height: auto
 }
@@ -2461,10 +2488,6 @@ summary {
     line-height: 40px
 }
 
-.jsCalendar thead .jsCalendar-title-left {
-    float: left
-}
-
 .jsCalendar thead .jsCalendar-title-right {
     float: right
 }
@@ -2487,10 +2510,6 @@ summary {
 .jsCalendar thead .jsCalendar-nav-left:hover,.jsCalendar thead .jsCalendar-nav-right:hover {
     background-color: #e2e2e2;
     color: #000
-}
-
-.jsCalendar thead .jsCalendar-nav-left {
-    float: left
 }
 
 .jsCalendar thead .jsCalendar-nav-right {
@@ -2635,10 +2654,6 @@ summary {
     z-index: 1
 }
 
-.hero-banner,.hero-banner+*,.jsCalendar.classic-theme thead .jsCalendar-title,.main,section {
-    position: relative
-}
-
 .jsCalendar.material-theme thead .jsCalendar-nav-left,.jsCalendar.material-theme thead .jsCalendar-nav-right {
     color: #fff
 }
@@ -2699,6 +2714,10 @@ summary {
     width: 100%
 }
 
+.jsCalendar.classic-theme thead .jsCalendar-title {
+    position: relative
+}
+
 .jsCalendar.classic-theme thead .jsCalendar-title-name {
     color: #fff;
     font-size: 16px;
@@ -2712,6 +2731,10 @@ summary {
 .jsCalendar.classic-theme thead .jsCalendar-title-left,.jsCalendar.classic-theme thead .jsCalendar-title-right {
     position: absolute;
     z-index: 1
+}
+
+.hero-banner,.hero-banner+*,.main,section {
+    position: relative
 }
 
 .jsCalendar.classic-theme thead .jsCalendar-title-right {
@@ -3001,8 +3024,8 @@ body {
     padding-right: var(--popup-padding)
 }
 
-body._mob-menu-active,body._popup-active {
-    overflow: hidden
+.main-title,.section-title,.title {
+    font-family: var(--title-font)
 }
 
 .wrapper {
@@ -3012,15 +3035,14 @@ body._mob-menu-active,body._popup-active {
 }
 
 .main {
-    overflow: hidden;
     flex: 1 0 auto;
     padding-bottom: 34px
 }
 
 .btn,.drop-down__target {
     align-items: center;
-    font-size: .875rem;
-    font-weight: 700
+    font-weight: 700;
+    font-size: .875rem
 }
 
 .container {
@@ -3099,8 +3121,7 @@ svg {
     white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden
+    clip: rect(0 0 0 0)
 }
 
 .drop-down {
@@ -3124,11 +3145,6 @@ svg {
     transition: background .3s ease,border-color .3s ease
 }
 
-.name-section,.table-coins tbody td,.table-coins thead th,.table-coins__number::before {
-    font-size: .875rem;
-    line-height: 128.571429%
-}
-
 .drop-down__target:hover {
     background: #272f3f
 }
@@ -3146,13 +3162,16 @@ svg {
     visibility: hidden;
     -webkit-animation-duration: .3s;
     animation-duration: .3s;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     padding: 10px 0;
     background: var(--shade-2);
     border: 1px solid var(--shade);
-    border-radius: 12px
+    border-radius: 12px;
+    max-height: 215px;
+    overflow-y: auto
 }
 
 .drop-down__list a {
@@ -3173,6 +3192,8 @@ svg {
 .name-section {
     padding: 6px 8px;
     display: inline-block;
+    font-size: .875rem;
+    line-height: 128.571429%;
     color: var(--success);
     text-transform: uppercase;
     background: rgba(150,234,67,.15);
@@ -3198,12 +3219,14 @@ svg {
     width: 100%;
     text-align: left;
     border-spacing: 0;
-    min-width: 880px
+    min-width: 950px
 }
 
 .table-coins thead th {
     color: var(--secondary-2);
-    font-weight: 400
+    font-weight: 400;
+    font-size: .875rem;
+    line-height: 128.571429%
 }
 
 .table-coins thead th:not(:last-child) {
@@ -3244,6 +3267,8 @@ svg {
 .table-coins tbody td {
     color: var(--white);
     font-weight: 600;
+    font-size: .875rem;
+    line-height: 128.571429%;
     padding-right: 15px
 }
 
@@ -3282,6 +3307,8 @@ svg {
 .table-coins__number::before {
     counter-increment: table-coins-number;
     content: counter(table-coins-number);
+    font-size: .875rem;
+    line-height: 128.571429%;
     font-weight: 400
 }
 
@@ -3313,7 +3340,6 @@ svg {
 }
 
 .table-coins__btn {
-    min-width: 125px;
     justify-content: center;
     fill: var(--white)
 }
@@ -3322,7 +3348,7 @@ svg {
     margin-right: 10px
 }
 
-.drop-value svg,.grow-value svg,.header__nav--list>li>ul>li>a img {
+.danger-value svg,.drop-value svg,.grow-value svg,.header__nav--list>li>ul>li>a img {
     margin-right: 5px
 }
 
@@ -3338,12 +3364,12 @@ svg {
     fill: currentColor
 }
 
-.drop-value,.page-address ul {
+.danger-value,.drop-value,.page-address ul {
     display: flex;
     align-items: center
 }
 
-.drop-value {
+.danger-value,.drop-value {
     color: var(--danger);
     fill: currentColor
 }
@@ -3422,7 +3448,7 @@ svg {
     padding-bottom: 23px
 }
 
-.hero-banner:has(.hero-banner__nav) {
+.hero-banner._has-nav {
     padding-bottom: 0;
     margin-bottom: 0;
     min-height: 0
@@ -3514,7 +3540,6 @@ svg {
 }
 
 .vote-btn {
-    min-width: 125px;
     border-radius: 12px;
     justify-content: center;
     fill: var(--white)
@@ -3554,6 +3579,7 @@ svg {
     justify-content: center;
     -webkit-animation-duration: .3s;
     animation-duration: .3s;
+    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -3565,14 +3591,12 @@ svg {
 }
 
 .main-title {
-    font-family: var(--title-font);
     font-weight: 700;
     line-height: 122.5%;
     font-size: 1.625rem
 }
 
 .title {
-    font-family: var(--title-font);
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 122.727273%
@@ -3596,7 +3620,6 @@ svg {
 }
 
 .section-title {
-    font-family: var(--title-font);
     font-weight: 700
 }
 
@@ -3977,7 +4000,7 @@ input:focus::placeholder,textarea:focus::placeholder {
     color: #6e9ae0
 }
 
-.header__nav--list>li:has(ul)>a {
+.header__nav--list>li.has-list>a {
     display: none
 }
 
@@ -4392,22 +4415,34 @@ input:focus::placeholder,textarea:focus::placeholder {
     }
 
     .table-coins col:nth-child(2) {
-        width: 17%
+        width: 14%
     }
 
     .table-coins col:nth-child(3) {
-        width: 12%
+        width: 11%
     }
 
-    .table-coins col:nth-child(7) {
+    .table-coins col:nth-child(4),.table-coins col:nth-child(5) {
+        width: 10%
+    }
+
+    .table-coins col:nth-child(6) {
         width: 7%
     }
 
+    .table-coins col:nth-child(7) {
+        width: 6%
+    }
+
     .table-coins col:nth-child(8) {
-        width: 13%
+        width: 11%
     }
 
     .table-coins col:nth-child(9) {
+        width: 9%
+    }
+
+    .table-coins col:nth-child(11) {
         width: 52px
     }
 
@@ -4492,7 +4527,7 @@ input:focus::placeholder,textarea:focus::placeholder {
         min-height: 200px
     }
 
-    .hero-banner._min,.hero-banner:has(.hero-banner__nav) {
+    .hero-banner._has-nav,.hero-banner._min {
         margin-bottom: 0;
         min-height: 0
     }
@@ -4546,7 +4581,7 @@ input:focus::placeholder,textarea:focus::placeholder {
         width: auto
     }
 
-    .header__nav--list>li:has(ul).active>ul {
+    .header__nav--list>li.active>ul {
         opacity: 1;
         visibility: visible;
         -webkit-transform: translate3d(0,0,0);
@@ -4590,7 +4625,7 @@ input:focus::placeholder,textarea:focus::placeholder {
         height: initial
     }
 
-    .header__nav--list>li:has(ul)>a {
+    .header__nav--list>li.has-list>a {
         display: flex
     }
 
@@ -4657,6 +4692,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 }
 
 @media (min-width:1100px) {
+    .vote-btn {
+        min-width: 125px
+    }
+
     .header__search--input {
         width: 185px
     }

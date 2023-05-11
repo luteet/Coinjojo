@@ -232,6 +232,9 @@ svg {
 		border: 1px solid var(--shade);
 		border-radius: 12px;
 
+		max-height: 215px;
+		overflow-y: auto;
+
 		& a {
 			display: block;
 			color: var(--secondary);
@@ -284,7 +287,7 @@ svg {
 
 	border-spacing: 0;
 
-	min-width: 880px;
+	min-width: 950px;
 
 	& col {
 
@@ -294,34 +297,38 @@ svg {
 			}
 	
 			&:nth-child(2) {
-				width: 17%;
+				width: 14%;
 			}
 	
 			&:nth-child(3) {
-				width: 12%;
+				width: 11%;
 			}
 	
 			&:nth-child(4) {
-				
+				width: 10%;
 			}
 	
 			&:nth-child(5) {
-				
+				width: 10%;
 			}
 	
 			&:nth-child(6) {
-				
-			}
-	
-			&:nth-child(7) {
 				width: 7%;
 			}
 	
+			&:nth-child(7) {
+				width: 6%;
+			}
+	
 			&:nth-child(8) {
-				width: 13%;
+				width: 11%;
 			}
 	
 			&:nth-child(9) {
+				width: 9%;
+			}
+
+			&:nth-child(11) {
 				width: 52px;
 			}
 		}
@@ -499,7 +506,8 @@ svg {
 	// .table-coins__btn
 
 	&__btn {
-		min-width: 125px;
+
+		
 		justify-content: center;
 
 		fill: var(--white);
@@ -529,7 +537,7 @@ svg {
 	}
 }
 
-.drop-value {
+.drop-value, .danger-value {
 	display: flex;
 	align-items: center;
 
@@ -636,7 +644,7 @@ svg {
 
 	padding-top: 20px; padding-bottom: 60px;
 
-	&:has(.hero-banner__nav) {
+	&._has-nav {
 		padding-bottom: 0;
 		margin-bottom: 0;
 		min-height: 0px;
@@ -742,7 +750,10 @@ svg {
 }
 
 .vote-btn {
-	min-width: 125px;
+	//min-width: 100px;
+	@media (min-width: 1100px) {
+		min-width: 125px;
+	}
 	border-radius: 12px;
 	justify-content: center;
 	fill: var(--white);

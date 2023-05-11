@@ -196,282 +196,299 @@
 		</header>
 
 		<main class="main">
-			<section class="coin">
-				<div class="hero-banner container">
-					<div class="hero-banner__bg">
+			<section class="hero container">
+				<div class="hero__page-address page-address">
+					<ul>
+						<li>
+							<a href="#">
+								Home
+							</a>
+						</li>
+						<li>
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</li>
+						<li>
+							<a href="#">
+								Coin page
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="hero__bg" aria-hidden="true">
+					<picture>
+						<source data-srcset="img/index/hero/bg.webp" type="image/webp" media="(min-width: 550px)">
+						<source data-srcset="img/index/hero/bg-mob-2.webp" type="image/webp">
+						<img data-src="img/index/hero/bg.png" alt="" width="0" height="0" class="lazy">
+					</picture>
+				</div>
+				<h1 class="hero__title main-title">
+					Live Cryptocurrency Prices and Charts by Crypto Market Cap
+				</h1>
+				<div class="hero__text">
+					<p>
+						Trading and investing in digital assets is highly speculative and comes with many risks.
+					</p>
+				</div>
+				<div class="hero__image" style="padding-top: 54%;">
+					<div class="hero__image--item">
 						<picture>
-							<source data-srcset="img/index/hero/bg.webp" type="image/webp" media="(min-width: 550px)">
-							<source data-srcset="img/index/hero/bg-mob.webp" type="image/webp">
-							<img data-src="img/index/hero/bg.png" alt="" width="0" height="0" class="lazy">
+							<source data-srcset="img/index/hero/bitcoin.webp" type="image/webp">
+							<img class="lazy" data-src="img/index/hero/bitcoin.png" alt="" width="425" height="425">
 						</picture>
 					</div>
-					<div class="hero-banner__page-address page-address">
-						<ul>
-							<li>
-								<a href="#">
-									Home
-								</a>
-							</li>
-							<li>
-								<svg width="16" height="16" viewBox="0 0 16 16">
-									<use xlink:href="img/sprites.svg#arrow-next"></use>
-								</svg>
-							</li>
-							<li>
-								<a href="#">
-									Coin page
-								</a>
-							</li>
-						</ul>
+					<div class="hero__image--item">
+						<picture>
+							<source data-srcset="img/index/hero/cursor.webp" type="image/webp">
+							<img class="lazy" data-src="img/index/hero/cursor.png" alt="" width="65" height="65">
+						</picture>
 					</div>
-				</div>
-				<div class="coin__container container">
-					<div class="coin__header">
-						<div class="coin__avatar">
-							<picture>
-								<source srcset="img/coin/avatar.webp" type="image/webp">
-								<img src="img/coin/avatar.jpg" alt="" width="185" height="185" loading="lazy">
-							</picture>
-						</div>
-						<div class="coin__header-info">
-							<h2 class="coin__title title">
-								Lucky
-							</h2>
-							<span class="coin__name">
-								LUCKY
-							</span>
-							<span class="coin__category name-section">
-								METAVERSE
-							</span>
-						</div>
-						<div class="coin__vote">
-							<span class="coin__vote--today">Today's Vote: 1147</span>
-							<button class="coin__vote--btn btn vote-btn" type="button">
-								<svg width="10" height="14" viewBox="0 0 10 14">
-									<use xlink:href="img/sprites.svg#arrow-to-up"></use>
-								</svg>
-								90,345
-							</button>
-						</div>
+					<div class="hero__image--item">
+						<picture>
+							<source data-srcset="img/index/hero/loading.webp" type="image/webp">
+							<img class="lazy" data-src="img/index/hero/loading.png" alt="" width="81" height="81">
+						</picture>
 					</div>
-					<div class="coin__main">
-						<div class="coin__chain">
-							<div class="coin__chain--block">
-								<div class="coin__chain--avatar">
-									<img src="img/icons/bnb.svg" width="40" height="40" loading="lazy" alt="">
-								</div>
-								<h3 class="coin__chain--title title _min-2">
-									Binance Smart Chain
-								</h3>
-								<div class="coin__chain--address">
-									<label>
-										<input type="text" name="wallet" id="chain" readonly value="0x673315d0D15265010324DA979B0eC9634ab18f3E">
-									</label>
-									<button type="button" title="Copy" data-clipboard-target="#chain">
-										<svg width="16" height="16" viewBox="0 0 16 16">
-											<use xlink:href="img/sprites.svg#copy"></use>
-										</svg>
-									</button>
-								</div>
-							</div>
-							<div class="coin__chain--footer">
-								<div class="coin__social">
-									<ul>
-										<li>
-											<a href="#">
-												<svg width="16" height="17" viewBox="0 0 16 17">
-													<use xlink:href="img/sprites.svg#link"></use>
-												</svg>
-												Website
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<svg width="16" height="17" viewBox="0 0 16 17">
-													<use xlink:href="img/sprites.svg#twitter"></use>
-												</svg>
-												Twitter
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<svg width="16" height="17" viewBox="0 0 16 17">
-													<use xlink:href="img/sprites.svg#telegram"></use>
-												</svg>
-												Telegram
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<svg width="16" height="17" viewBox="0 0 16 17">
-													<use xlink:href="img/sprites.svg#discord"></use>
-												</svg>
-												Discord
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="coin__descr">
-							<h3 class="coin__descr--title">
-								<img src="img/icons/descr.svg" width="16" height="16" loading="lazy" alt="">
-								Description
-							</h3>
-							<div class="coin__descr--text">
-								<p>
-									Lucky Token aims to work on Web3 technologies and offer alternative platforms to its users... Crypto Lottery, Crypto Wallet, Crypto Swap (DEX) We focused on 3 main projects and our first project, Crypto Lottery, is now ready for use. Users can purchase tickets and win prizes in the pool by connecting with a metamask wallet. Search for luckytokenlottery.com and buy tickets by logging into the browser section of your metamask wallet
-								</p>
-							</div>
-						</div>
-						<ul class="coin__min-info">
-							<li class="coin__min-info--element">
-								<span>
-									Marketcap
-									<svg width="10" height="14" viewBox="0 0 10 14">
-										<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-									</svg>
-								</span>
-								<b>$70,394</b>
-							</li>
-							<li class="coin__min-info--element">
-								<span>
-									Price
-									<svg width="10" height="14" viewBox="0 0 10 14">
-										<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-									</svg>
-								</span>
-								<b>$70,394</b>
-							</li>
-							<li class="coin__min-info--element">
-								<span>
-									Launch Date
-									<svg width="10" height="14" viewBox="0 0 10 14">
-										<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-									</svg>
-								</span>
-								<b>In 1 week</b>
-							</li>
-							<li class="coin__min-info--element">
-								<span>
-									24H
-									<svg width="10" height="14" viewBox="0 0 10 14">
-										<use xlink:href="img/sprites.svg#arrows-up-down"></use>
-									</svg>
-								</span>
-								<b class="grow-value">
-									<svg width="16" height="16" viewBox="0 0 16 16">
-										<use xlink:href="img/sprites.svg#arrow-grow"></use>
-									</svg>
-									56,6%
-								</b>
-							</li>
-						</ul>
+					<div class="hero__image--item">
+						<picture>
+							<source data-srcset="img/index/hero/ethereum.webp" type="image/webp">
+							<img class="lazy" data-src="img/index/hero/ethereum.png" alt="" width="150" height="150">
+						</picture>
 					</div>
-					<div class="coin__aside">
-						<div class="coin__info-block">
-							<h3 class="coin__info-block--title title _min-2">
-								<img src="img/icons/stats.svg" width="24" height="24" loading="lazy" alt="">
-								Stats
-							</h3>
-							<ul class="coin__info-block--list">
-								<li>
-									<span>Sell Tax</span>
-									<b>0%</b>
-								</li>
-								<li>
-									<span>Buy Tax</span>
-									<b>0,003%</b>
-								</li>
-							</ul>
-						</div>
-						<div class="coin__info-block">
-							<h3 class="coin__info-block--title title _min-2">
-								<img src="img/icons/security.svg" width="24" height="24" loading="lazy" alt="">
-								Safety Checks
-							</h3>
-							<ul class="coin__info-block--list">
-								<li>
-									<span>Honeypot</span>
-									<b class="param _danger">NO</b>
-								</li>
-								<li>
-									<span>Mint</span>
-									<b class="param _success">YES</b>
-								</li>
-							</ul>
-							<div class="coin__info-block--drop-down drop-down">
-								<button class="drop-down__target" type="button">
-									Show more
-									<svg width="17" height="16" viewBox="0 0 16 16">
-										<use xlink:href="img/sprites.svg#select-arrow"></use>
-									</svg>
-								</button>
-								<ul class="drop-down__list">
-									<li>
-										<a href="#">
-											Param 1
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 2
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 3
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 4
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 5
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 6
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 7
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 8
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 9
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											Param 10
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+					<div class="hero__image--item">
+						<picture>
+							<source data-srcset="img/index/hero/hashtag.webp" type="image/webp">
+							<img class="lazy" data-src="img/index/hero/hashtag.png" alt="" width="202" height="202">
+						</picture>
 					</div>
 				</div>
 			</section>
-			<section class="promoted container">
-				<h2 class="promoted__title title">
-					Promoted
-				</h2>
-				<div class="promoted__table">
-					<div class="promoted__table--wrapper scroll-wrapper">
+			<section class="best container">
+				<form class="best__filter filter">
+					<h2 class="best__title title">
+						New Listing
+					</h2>
+					<button class="filter__btn btn _clear" type="button">
+						<svg width="20" height="20" viewBox="0 0 20 20">
+							<use xlink:href="img/sprites.svg#filter"></use>
+						</svg>
+						Filter
+					</button>
+					<div class="filter__popup custom-scrollbar">
+						<button class="filter__popup--close" type="button" title="Close">
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<use xlink:href="img/sprites.svg#close-2"></use>
+							</svg>
+						</button>
+						<ul class="filter__list">
+							<li class="filter__item">
+								<h3 class="filter__item--title">
+									<img src="img/icons/pin.svg" width="16" height="16" loading="lazy" alt="">
+									Category
+								</h3>
+								<ul class="filter__item--list">
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="category" checked value="value">
+											<span>All</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>DeFi</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Adult</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Gaming</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Music</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Metaverse</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Exchange</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Yield Farm</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>DApp</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Launchpad</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Play2Earn</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>NFT</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Move2Earn</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Meme</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Web3</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Gambling</span>
+										</label>
+									</li>
+									<li class="filter__item--element">
+										<label class="filter__item--param">
+											<input type="radio" name="category" value="value">
+											<span>Other</span>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li class="filter__item">
+								<h3 class="filter__item--title">
+									<img src="img/icons/pin.svg" width="16" height="16" loading="lazy" alt="">
+									Chain
+								</h3>
+								<ul class="filter__item--list">
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" checked value="value">
+											<span>All</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Binance Smart Chain (BSC)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Ethereum Chain (ETH)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Cronos Chain (CRO)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Polygon (Matic)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Solana (SOL)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>EthereumPoW (ETHW)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Arbitrum (AETH)</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="chain" value="value">
+											<span>Aptos (APT)</span>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li class="filter__item">
+								<h3 class="filter__item--title">
+									<img src="img/icons/pin.svg" width="16" height="16" loading="lazy" alt="">
+									Type
+								</h3>
+								<ul class="filter__item--list">
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" checked name="type" value="value">
+											<span>All</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="type" value="value">
+											<span>Listed</span>
+										</label>
+									</li>
+									<li class="filter__item--element _full">
+										<label class="filter__item--param">
+											<input type="radio" name="type" value="value">
+											<span>Presale</span>
+										</label>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</form>
+				<div class="best__table">
+					<div class="best__table--wrapper scroll-wrapper">
 						<table class="table-coins">
 							<colgroup>
+								<col>
+								<col>
 								<col>
 								<col>
 								<col>
@@ -515,6 +532,22 @@
 									<th>
 										<button type="button">
 											Price
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Launch
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<button type="button">
+											Submitted
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
 											</svg>
@@ -661,12 +694,12 @@
 										<div class="table-coins__coin">
 											<div class="table-coins__coin--avatar">
 												<picture>
-													<source srcset="img/coins/ChainConnect.webp" type="image/webp">
-													<img src="img/coins/ChainConnect.png" alt="" width="32" height="32" loading="lazy">
+													<source srcset="img/coins/ethereum.webp" type="image/webp">
+													<img src="img/coins/ethereum.png" alt="" width="32" height="32" loading="lazy">
 												</picture>
 											</div>
 											<h3 class="table-coins__coin--name">ChainConnect</h3>
-											<span class="table-coins__coin--abbreviation">ETH</span>
+											<span class="table-coins__coin--abbreviation">CNCT</span>
 										</div>
 									</td>
 									<td>
@@ -722,8 +755,8 @@
 										<div class="table-coins__coin">
 											<div class="table-coins__coin--avatar">
 												<picture>
-													<source srcset="img/coins/Bloomster.webp" type="image/webp">
-													<img src="img/coins/Bloomster.png" alt="" width="32" height="32" loading="lazy">
+													<source srcset="img/coins/ethereum.webp" type="image/webp">
+													<img src="img/coins/ethereum.png" alt="" width="32" height="32" loading="lazy">
 												</picture>
 											</div>
 											<h3 class="table-coins__coin--name">Bloomster</h3>
@@ -783,12 +816,12 @@
 										<div class="table-coins__coin">
 											<div class="table-coins__coin--avatar">
 												<picture>
-													<source srcset="img/coins/Nutrifit.webp" type="image/webp">
-													<img src="img/coins/Nutrifit.png" alt="" width="32" height="32" loading="lazy">
+													<source srcset="img/coins/ethereum.webp" type="image/webp">
+													<img src="img/coins/ethereum.png" alt="" width="32" height="32" loading="lazy">
 												</picture>
 											</div>
-											<h3 class="table-coins__coin--name">Nutrifit</h3>
-											<span class="table-coins__coin--abbreviation">NFTY</span>
+											<h3 class="table-coins__coin--name">Ethereum</h3>
+											<span class="table-coins__coin--abbreviation">ETH</span>
 										</div>
 									</td>
 									<td>
@@ -829,7 +862,7 @@
 										</button>
 									</td>
 									<td>
-										<button class="table-coins__favorite favorite-btn _active" title="Add to favorite" type="button">
+										<button class="table-coins__favorite favorite-btn" title="Add to favorite" type="button">
 											<svg width="20" height="20" viewBox="0 0 20 20">
 												<use xlink:href="img/sprites.svg#star"></use>
 											</svg>
@@ -838,6 +871,103 @@
 								</tr>
 							</tbody>
 						</table>
+					</div>
+				</div>
+				<div class="best__footer table-footer">
+					<div class="table-footer__drop-down drop-down">
+						<button class="drop-down__target" type="button">
+							Show more
+							<svg width="17" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#select-arrow"></use>
+							</svg>
+						</button>
+						<ul class="drop-down__list">
+							<li>
+								<a href="#">
+									Param 1
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 2
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 3
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 4
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 5
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 6
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 7
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 8
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 9
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Param 10
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="table-footer__pagination pagination hide-on-tablet">
+						<a href="#" class="pagination__arrow _prev" title="Prev">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-prev"></use>
+							</svg>
+						</a>
+						<div class="pagination__list">
+							<a href="#">
+								1
+							</a>
+							<a href="#">
+								2
+							</a>
+							<a href="#">
+								3
+							</a>
+							<a href="#">
+								...
+							</a>
+							<a href="#">
+								8
+							</a>
+							<a href="#" class="current">
+								9
+							</a>
+							<a href="#">
+								10
+							</a>
+						</div>
+						<a href="#" class="pagination__arrow _next" title="Next">
+							<svg width="16" height="16" viewBox="0 0 16 16">
+								<use xlink:href="img/sprites.svg#arrow-next"></use>
+							</svg>
+						</a>
 					</div>
 				</div>
 			</section>
