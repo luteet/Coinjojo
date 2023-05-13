@@ -865,7 +865,28 @@ switchInput.forEach(switchInput => {
 			setTimeout(() => {
 				const btn = switchInput.closest('.switch__btn');
 				switchPseudoEl.style.width = btn.offsetWidth + "px";
+
+				
 			},0)
+		}
+		const btn = switchInput.closest('.switch__btn');
+		switchPseudoEl.style.transitionDuration = '0s';
+		if(btn == switchBlock.querySelectorAll('.switch__btn')[0]) {
+			switchPseudoEl.style.transform = "translate3d(0%,0,0)";
+			switchPseudoEl.style.left = "0%";
+			switchPseudoEl.style.width = btn.offsetWidth + "px";
+		} else {
+			switchPseudoEl.style.transform = "translate3d(-100%,0,0)";
+			switchPseudoEl.style.left = "100%";
+			switchPseudoEl.style.width = btn.offsetWidth + "px";
+		}
+		switchPseudoEl.style.removeProperty('transition-duration')
+
+		if(title && switchInput.dataset.titleClass) {
+			title.classList.remove('_mode-1');
+			title.classList.remove('_mode-2');
+
+			title.classList.add(switchInput.dataset.titleClass);
 		}
 	}
 	

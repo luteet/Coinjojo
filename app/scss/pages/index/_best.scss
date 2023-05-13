@@ -191,6 +191,7 @@
 				line-height: 150%;
 
 				border-radius: 50px;
+				
 
 				transition: background .2s ease, color .2s ease, padding .2s ease;
 				&:hover {
@@ -291,6 +292,8 @@
 		font-size: 0.875rem;
 		line-height: 142.857143%;
 		font-weight: 600;
+
+		color: var(--white);
 
 		transition: color .2s ease;
 	}
