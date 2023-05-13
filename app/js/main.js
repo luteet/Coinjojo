@@ -924,7 +924,7 @@ calendar.forEach(calendar => {
 
 	
 
-	calendarElement.onDateClick(function(event, date){
+/* 	calendarElement.onDateClick(function(event, date){
 		if(!event.target.classList.contains('jsCalendar-next') && !event.target.classList.contains('jsCalendar-previous')) {
 			if(event.target.classList.contains('jsCalendar-selected')) {
 				calendarElement.unselect(date)
@@ -933,7 +933,7 @@ calendar.forEach(calendar => {
 			}
 		}
 		
-    });
+    }); */
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </calendar> -=-=-=-=-=-=-=-=-=-=-=-=
