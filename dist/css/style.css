@@ -1211,7 +1211,6 @@
 }
 
 .promote__block--calendar-element tbody td a {
-    pointer-events: none;
     color: var(--secondary)
 }
 

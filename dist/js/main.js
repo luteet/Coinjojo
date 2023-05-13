@@ -699,7 +699,7 @@ body.addEventListener('click', function (event) {
 	// =-=-=-=-=-=-=-=-=-=-=-=- </promote-block-open-or-hide> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
-
+/* 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 	const calendarLink = $(".calendar tbody td a")
@@ -709,7 +709,7 @@ body.addEventListener('click', function (event) {
 	
 	}
 	
-	// =-=-=-=-=-=-=-=-=-=-=-=- </calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
+	// =-=-=-=-=-=-=-=-=-=-=-=- </calendar-link> -=-=-=-=-=-=-=-=-=-=-=-= */
 
 	
 	
@@ -895,7 +895,7 @@ calendar.forEach(calendar => {
 	calendarElement.onDateRender(function(date, element, info) {
 		let text = element.textContent;
 		element.textContent = '';
-		element.insertAdjacentHTML('beforeend', `<a href="#">${text}</a>`)
+		element.insertAdjacentHTML('beforeend', `<a href="promote.html">${text}</a>`)
 
 		nowDate= new Date();
 		delta=nowDate.getTime()-date.getTime();
@@ -933,8 +933,6 @@ calendar.forEach(calendar => {
 			}
 		}
 		
-		
-        //console.log(date)
     });
 })
 
