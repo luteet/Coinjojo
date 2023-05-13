@@ -899,7 +899,7 @@ calendar.forEach(calendar => {
 
 		nowDate= new Date();
 		delta=nowDate.getTime()-date.getTime();
-		if(Math.floor(delta/1000/60/60/24) > 0 && !element.classList.contains('disabled')) {
+		if(Math.floor(delta/1000/60/60/24) >= 0 && !element.classList.contains('disabled')) {
 			element.classList.add('disabled');
 		}
 		
