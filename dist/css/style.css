@@ -1,13 +1,13 @@
-.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.switch__btn>*,.title-switch>* {
-    grid-area: 1/1
-}
-
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
     top: 0;
     -o-object-fit: cover;
     width: 100%;
     left: 0
+}
+
+.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.promote__block--search .select-2 select,.promote__block--search .select-2 svg,.switch__btn>*,.title-switch>* {
+    grid-area: 1/1
 }
 
 .hero__bg img {
@@ -69,10 +69,6 @@
     grid-column: 1;
     grid-row: 2 span;
     align-self: center
-}
-
-.order__done--title,.table-footer__btn {
-    align-self: self-end
 }
 
 .promoted__info-card--coin h4 {
@@ -252,11 +248,6 @@
     width: 50%
 }
 
-.filter__item--param input,.switch__input {
-    margin: -1px;
-    -webkit-clip-path: inset(100%)
-}
-
 .filter__item--element._full {
     flex: 1 1 100%;
     width: 100%
@@ -271,9 +262,11 @@
     position: absolute;
     width: 1px;
     height: 1px;
+    margin: -1px;
     padding: 0;
     border: 0;
     white-space: nowrap;
+    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden
@@ -322,6 +315,13 @@
     padding: 5px 6px
 }
 
+.add-coin__question--btn input,.switch__input {
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    overflow: hidden
+}
+
 .switch__wrapper {
     display: flex;
     position: relative;
@@ -342,14 +342,6 @@
     transition: width .2s ease,left .2s ease,transform .2s ease,-webkit-transform .2s ease
 }
 
-.add-coin__question--btn input,.switch__input {
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap
-}
-
 .switch__btn {
     display: grid;
     flex: 1 1 auto
@@ -357,6 +349,9 @@
 
 .switch__input {
     position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
     border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
@@ -388,7 +383,8 @@
 }
 
 .table-footer__btn {
-    margin-top: 24px
+    margin-top: 24px;
+    align-self: self-end
 }
 
 .pagination {
@@ -524,6 +520,11 @@
     background: var(--secondary-accent)
 }
 
+.coin__chain,.coin__info-block {
+    background: var(--shade-2);
+    border-radius: 20px
+}
+
 .contact-us__image {
     min-height: 100%;
     max-width: 400px;
@@ -555,11 +556,6 @@
 
 .coin__chain--footer,.coin__info-block--list li:not(:first-child) {
     border-top: 1px solid var(--stroke)
-}
-
-.coin__chain,.coin__info-block {
-    border-radius: 20px;
-    background: var(--shade-2)
 }
 
 .coin__header-info {
@@ -876,9 +872,10 @@
 
 .add-coin__question--btn input {
     position: absolute;
+    width: 1px;
+    height: 1px;
     margin: -1px;
     border: 0;
-    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -1089,6 +1086,10 @@
     fill: var(--secondary)
 }
 
+.promote__block--search.error .select-wrapper select,.promote__block--search.error label {
+    background: #362121
+}
+
 .promote__block--search svg {
     width: 20px;
     height: 20px
@@ -1098,17 +1099,14 @@
     width: 100%;
     background: var(--shade-lighter);
     border-radius: 12px;
-    padding: 0 16px;
+    padding: 0 7px 0 16px;
     position: relative;
     display: flex;
-    align-items: center
+    align-items: center;
+    transition: background .2s ease
 }
 
-.promote__block--search label:has([required]) {
-    padding-right: 7px
-}
-
-.promote__block--search label:has([required])::after {
+.promote__block--search label::after {
     content: attr(data-required-text);
     text-transform: uppercase;
     padding: 8px;
@@ -1121,7 +1119,27 @@
     font-size: .75rem
 }
 
-.promote__block--search input {
+.promote__block--search .select-2 {
+    display: grid;
+    width: 100%
+}
+
+.promote__block--search .select-2 select {
+    min-height: 40px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: var(--shade-lighter);
+    padding-right: 40px;
+    transition: background .2s ease
+}
+
+.promote__block--search .select-2 svg {
+    margin-right: 10px;
+    align-self: center;
+    justify-self: end
+}
+
+.promote__block--search input,.promote__block--search select {
     width: 100%;
     padding: 12px 8px;
     background: rgba(0,0,0,0);
@@ -1130,23 +1148,23 @@
     color: var(--secondary-2)
 }
 
-.promote__block--search input::-webkit-input-placeholder {
+.promote__block--search input::-webkit-input-placeholder,.promote__block--search select::-webkit-input-placeholder {
     color: var(--tertiary)
 }
 
-.promote__block--search input:-ms-input-placeholder {
+.promote__block--search input:-ms-input-placeholder,.promote__block--search select:-ms-input-placeholder {
     color: var(--tertiary)
 }
 
-.promote__block--search input::-ms-input-placeholder {
+.promote__block--search input::-ms-input-placeholder,.promote__block--search select::-ms-input-placeholder {
     color: var(--tertiary)
 }
 
-.promote__block--search input::placeholder {
+.promote__block--search input::placeholder,.promote__block--search select::placeholder {
     color: var(--tertiary)
 }
 
-.promote__block--search input:focus {
+.promote__block--search input:focus,.promote__block--search select:focus {
     color: var(--white)
 }
 
@@ -1494,6 +1512,10 @@
     color: var(--white);
     display: grid;
     grid-template-columns: auto 92px
+}
+
+.order__done--title {
+    align-self: self-end
 }
 
 .order__done--text {
@@ -2651,7 +2673,7 @@ summary {
     z-index: 1
 }
 
-.hero-banner,.hero-banner+*,.jsCalendar.classic-theme thead .jsCalendar-title,.main,section {
+.jsCalendar.classic-theme thead .jsCalendar-title,.main,section {
     position: relative
 }
 
@@ -3015,6 +3037,10 @@ body {
     flex-direction: column;
     background: var(--background);
     padding-right: var(--popup-padding)
+}
+
+.main-title,.section-title,.title {
+    font-family: var(--title-font)
 }
 
 body._mob-menu-active,body._popup-active {
@@ -3442,6 +3468,7 @@ svg {
 }
 
 .hero-banner {
+    position: relative;
     min-height: 120px;
     margin-bottom: -60px;
     padding-top: 20px;
@@ -3449,6 +3476,7 @@ svg {
 }
 
 .hero-banner+* {
+    position: relative;
     z-index: 2
 }
 
@@ -3601,14 +3629,12 @@ svg {
 }
 
 .main-title {
-    font-family: var(--title-font);
     font-weight: 700;
     line-height: 122.5%;
     font-size: 1.625rem
 }
 
 .title {
-    font-family: var(--title-font);
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 122.727273%
@@ -3632,7 +3658,6 @@ svg {
 }
 
 .section-title {
-    font-family: var(--title-font);
     font-weight: 700
 }
 
@@ -3771,11 +3796,6 @@ svg {
     background: var(--stroke)
 }
 
-.input,.select select,.textarea {
-    background: var(--shade-2);
-    line-height: 150%
-}
-
 .authorization-popup__card--title {
     padding-top: 13px;
     color: var(--white);
@@ -3811,6 +3831,11 @@ input::placeholder,textarea::placeholder {
     opacity: 1
 }
 
+.header__search--input,.input,.textarea {
+    transition: color .2s ease;
+    border-radius: 12px
+}
+
 input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder {
     opacity: 0
 }
@@ -3829,8 +3854,8 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .input,.textarea {
     padding: 16px 24px;
-    border-radius: 12px;
-    transition: color .2s ease;
+    background: var(--shade-2);
+    line-height: 150%;
     color: var(--secondary-2)
 }
 
@@ -3858,12 +3883,18 @@ input:focus::placeholder,textarea:focus::placeholder {
     resize: none
 }
 
+.select._alt select {
+    background: var(--shade-lighter)
+}
+
 .select select {
     cursor: pointer;
     width: 100%;
     -webkit-appearance: none;
     padding: 16px 54px 16px 24px;
+    background: var(--shade-2);
     border-radius: 12px;
+    line-height: 150%;
     color: var(--tertiary)
 }
 
@@ -4113,9 +4144,7 @@ input:focus::placeholder,textarea:focus::placeholder {
 .header__search--input {
     background: var(--shade-2);
     color: var(--secondary);
-    transition: color .2s ease;
     padding: 12px 16px 12px 8px;
-    border-radius: 12px;
     font-size: .875rem;
     line-height: 130%;
     flex: 1 1 auto

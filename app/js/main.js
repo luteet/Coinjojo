@@ -699,17 +699,53 @@ body.addEventListener('click', function (event) {
 	// =-=-=-=-=-=-=-=-=-=-=-=- </promote-block-open-or-hide> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
-/* 
+
 	// =-=-=-=-=-=-=-=-=-=-=-=- <calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 	const calendarLink = $(".calendar tbody td a")
 	if(calendarLink) {
-	
+
 		event.preventDefault();
+		const calendar = calendarLink.closest('.calendar');
+
+		if(calendar) {
+			
+			const selectId = calendar.dataset.coinId;
+			
+			if(selectId) {
+				
+				const select = document.querySelector(`#${selectId}`);
+
+				if(select) {
+					
+					if(select.value || !select.required) {
+						if(select.required) {
+							calendarLink.setAttribute('href', `${calendarLink.getAttribute('href')}?${select.name}=${select.value}`);
+						} else {
+							calendarLink.setAttribute('href', `${calendarLink.getAttribute('href')}?${select.name}=none`);
+						}
+						
+						window.location.href = calendarLink.getAttribute('href');
+
+					} else {
+						if(select.closest('form')) {
+							const form = select.closest('form');
+							form.classList.add('error');
+							window.scrollTo({top: form.offsetTop, left: 0, behavior: "smooth"});
+							select.oninput = function () {
+								form.classList.remove('error');
+							}
+						}
+					}
+				}
+				
+
+			}
+		}
 	
 	}
 	
-	// =-=-=-=-=-=-=-=-=-=-=-=- </calendar-link> -=-=-=-=-=-=-=-=-=-=-=-= */
+	// =-=-=-=-=-=-=-=-=-=-=-=- </calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
 
 	
 	
@@ -883,6 +919,7 @@ checkInputFocus.forEach(input => {
 const calendar = document.querySelectorAll(".calendar");
 calendar.forEach(calendar => {
 	const 
+	calendarBase = calendar.dataset.base,
 	calendarWrapper = calendar.closest('.calendar-wrapper'),
 	calendarName = calendarWrapper.querySelector('.calendar-current'),
 	calendarPrev = calendarWrapper.querySelector('.calendar-arrow._prev'),
@@ -893,9 +930,13 @@ calendar.forEach(calendar => {
 	});
 
 	calendarElement.onDateRender(function(date, element, info) {
-		let text = element.textContent;
-		element.textContent = '';
-		element.insertAdjacentHTML('beforeend', `<a href="promote.html">${text}</a>`)
+		const dateArray = [date.getDate(),(date.getMonth()+1 < 9) ? '0' + (date.getMonth()+1) : (date.getMonth()+1), date.getFullYear()]
+		if(calendarBase) {
+			let text = element.textContent;
+			element.textContent = '';
+			element.insertAdjacentHTML('beforeend', `<a href="${calendarBase}?date=${dateArray[0]}-${dateArray[1]}-${dateArray[2]}">${text}</a>`)
+		}
+		
 
 		nowDate= new Date();
 		delta=nowDate.getTime()-date.getTime();

@@ -293,6 +293,10 @@
 			
 			fill: var(--secondary);
 
+			&.error label, &.error .select-wrapper select {
+				background: #362121;
+			}
+
 			svg {
 				width: 20px; height: 20px;
 			}
@@ -307,13 +311,15 @@
 				position: relative;
 				display: flex;
 				align-items: center;
+
+				transition: background .2s ease
 			}
 
-			label:has([required]) {
+			label {
 				padding-right: 7px;
 			}
 
-			label:has([required])::after {
+			label::after {
 				content: attr(data-required-text);
 				text-transform: uppercase;
 				padding: 8px; //min-height: 100%;
@@ -324,9 +330,33 @@
 				font-weight: 600;
 				margin: 4px 0;
 				font-size: 0.75rem;
+				
 			}
 
-			input {
+			.select-2 {
+				display: grid;
+				width: 100%;
+			
+				select {
+					grid-area: 1/1;
+					min-height: 40px;
+					cursor: pointer;
+					-webkit-appearance: none;
+					background: var(--shade-lighter);
+					padding-right: 40px;
+			
+					transition: background .2s ease;
+				}
+			
+				svg {
+					margin-right: 10px;
+					align-self: center;
+					grid-area: 1/1;
+					justify-self: end;
+				}
+			}
+
+			input, select {
 				width: 100%;
 				padding: 12px 8px;
 				background: transparent;
@@ -343,6 +373,8 @@
 				&:focus {
 					color: var(--white);
 				}
+
+				
 			}
 		}
 

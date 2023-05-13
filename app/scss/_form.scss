@@ -34,6 +34,9 @@ input, textarea {
 
 .select {
 	position: relative;
+	&._alt select {
+		background: var(--shade-lighter);
+	}
 
 	select {
 		cursor: pointer;
@@ -61,3 +64,5 @@ input, textarea {
 		pointer-events: none;
 	}
 }
+
+

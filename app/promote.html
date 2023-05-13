@@ -83,7 +83,18 @@
 										<svg width="16" height="16" viewBox="0 0 16 16">
 											<use xlink:href="img/sprites.svg#search"></use>
 										</svg>
-										<input type="search" name="coin" placeholder="Search coin" required>
+										<span class="select-2">
+											<select name="coin" id="coin-1" required>
+												<option value="" disabled selected>Select coin</option>
+												<option value="coin-1">coin-1</option>
+												<option value="coin-2">coin-2</option>
+												<option value="coin-3">coin-3</option>
+											</select>
+											<svg width="16" height="16" viewBox="0 0 16 16">
+												<use xlink:href="img/sprites.svg#select-arrow"></use>
+											</svg>
+										</span>
+										<!-- <input type="search" id="coin-1" name="coin" placeholder="Search coin" required> -->
 									</label>
 								</form>
 								<div class="promote__block--calendar calendar-wrapper">
@@ -100,7 +111,7 @@
 											</svg>
 										</button>
 									</div>
-									<div class="promote__block--calendar-element calendar" data-month-format="month YYYY"></div>
+									<div class="promote__block--calendar-element calendar" data-coin-id="coin-1" data-base="https://www.domain.com/add_item/"></div>
 								</div>
 							</div>
 						</div>
@@ -128,7 +139,18 @@
 										<svg width="16" height="16" viewBox="0 0 16 16">
 											<use xlink:href="img/sprites.svg#search"></use>
 										</svg>
-										<input type="search" name="coin" placeholder="Search coin" required>
+										<!-- <input type="search" id="coin-2" name="coin" placeholder="Search coin" required> -->
+										<span class="select-2">
+											<select name="coin" id="coin-2" required>
+												<option value="" disabled selected>Select coin</option>
+												<option value="coin-1">coin-1</option>
+												<option value="coin-2">coin-2</option>
+												<option value="coin-3">coin-3</option>
+											</select>
+											<svg width="16" height="16" viewBox="0 0 16 16">
+												<use xlink:href="img/sprites.svg#select-arrow"></use>
+											</svg>
+										</span>
 									</label>
 								</form>
 								<div class="promote__block--calendar calendar-wrapper">
@@ -145,7 +167,7 @@
 											</svg>
 										</button>
 									</div>
-									<div class="promote__block--calendar-element calendar"></div>
+									<div class="promote__block--calendar-element calendar" data-coin-id="coin-2" data-base="https://www.domain.com/add_item/"></div>
 								</div>
 							</div>
 						</div>
@@ -171,7 +193,18 @@
 								<form class="promote__block--form">
 									<div class="promote__block--input">
 										<label>
-											<input type="text" name="url-redirect" placeholder="Banner Redirect URL*" required class="input">
+											<!-- <input type="text" name="url-redirect" placeholder="Banner Redirect URL*" required class="input"> -->
+											<span class="select _alt">
+												<select name="redirect-select" id="redirect-select">
+													<option value="" disabled selected>Banner Redirect URL</option>
+													<option value="redirect-1">Redirect-1</option>
+													<option value="redirect-2">Redirect-2</option>
+													<option value="redirect-3">Redirect-3</option>
+												</select>
+												<svg width="16" height="16" viewBox="0 0 16 16">
+													<use xlink:href="img/sprites.svg#select-arrow"></use>
+												</svg>
+											</span>
 										</label>
 									</div>
 									<div class="promote__block--banner">
@@ -203,7 +236,7 @@
 											</svg>
 										</button>
 									</div>
-									<div class="promote__block--calendar-element calendar"></div>
+									<div class="promote__block--calendar-element calendar" data-coin-id="redirect-select" data-base="https://www.domain.com/add_item/"></div>
 								</div>
 							</div>
 						</div>
