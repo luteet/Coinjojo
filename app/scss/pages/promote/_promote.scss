@@ -420,6 +420,16 @@
 				}
 				
 				cursor: pointer;
+				user-select: none;
+				&.disabled {
+					cursor: default;
+					pointer-events: none;
+				}
+
+				a {
+					pointer-events: none;
+					color: var(--secondary);
+				}
 			}
 
 			&.jsCalendar tbody td, .jsCalendar thead .jsCalendar-week-days th {

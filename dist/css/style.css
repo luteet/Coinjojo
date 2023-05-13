@@ -1,9 +1,13 @@
+.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.switch__btn>*,.title-switch>* {
+    grid-area: 1/1
+}
+
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
+    top: 0;
     -o-object-fit: cover;
     width: 100%;
-    left: 0;
-    top: 0
+    left: 0
 }
 
 .hero__bg img {
@@ -206,11 +210,6 @@
     fill: var(--success-hover)
 }
 
-.contact-us__social ul a,.pagination__arrow {
-    fill: var(--success);
-    transition: background .2s ease
-}
-
 .filter__popup--close:active {
     fill: var(--success)
 }
@@ -259,10 +258,6 @@
     display: inline-grid
 }
 
-.filter__item--param>* {
-    grid-area: 1/1
-}
-
 .filter__item--param input {
     position: absolute;
     width: 1px;
@@ -309,7 +304,6 @@
 }
 
 .title-switch>* {
-    grid-area: 1/1;
     opacity: 0;
     transition: opacity .3s ease
 }
@@ -343,12 +337,10 @@
 
 .add-coin__question--btn input,.switch__input {
     width: 1px;
-    border: 0;
-    overflow: hidden;
-    position: absolute;
     padding: 0;
     white-space: nowrap;
-    -webkit-clip-path: inset(100%)
+    -webkit-clip-path: inset(100%);
+    overflow: hidden
 }
 
 .switch__btn {
@@ -356,13 +348,11 @@
     flex: 1 1 auto
 }
 
-.switch__btn>* {
-    grid-area: 1/1
-}
-
 .switch__input {
+    position: absolute;
     height: 1px;
     margin: -1px;
+    border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -413,7 +403,9 @@
     justify-content: center;
     border: 1px solid var(--shade);
     border-radius: 12px;
-    background: rgba(0,0,0,0)
+    fill: var(--success);
+    background: rgba(0,0,0,0);
+    transition: background .2s ease
 }
 
 .pagination__arrow:hover {
@@ -509,7 +501,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--shade)
+    background: var(--shade);
+    fill: var(--success);
+    transition: background .2s ease
 }
 
 .contact-us__social ul a svg {
@@ -555,9 +549,9 @@
     height: 126px
 }
 
-.coin__chain,.coin__info-block {
-    border-radius: 20px;
-    background: var(--shade-2)
+.coin__chain,.coin__info-block,.coin__min-info--element {
+    background: var(--shade-2);
+    border-radius: 20px
 }
 
 .coin__chain--footer,.coin__info-block--list li:not(:first-child) {
@@ -694,6 +688,10 @@
     margin: 4px
 }
 
+.coin__descr--title img,.promote__block--banner span:not(:first-child) svg {
+    margin-right: 8px
+}
+
 .coin__social a {
     display: flex;
     align-items: center;
@@ -728,10 +726,6 @@
     line-height: 121%
 }
 
-.coin__descr--title img {
-    margin-right: 8px
-}
-
 .coin__descr--text {
     padding-top: 12px;
     font-size: .875rem;
@@ -749,8 +743,6 @@
 .coin__min-info--element {
     display: flex;
     flex-direction: column;
-    background: var(--shade-2);
-    border-radius: 20px;
     padding: 14px 17px;
     font-size: .875rem;
     line-height: 128.571429%
@@ -823,10 +815,6 @@
     cursor: pointer
 }
 
-.add-coin__avatar label>* {
-    grid-area: 1/1
-}
-
 .add-coin__avatar b {
     display: flex;
     align-items: center;
@@ -881,8 +869,10 @@
 }
 
 .add-coin__question--btn input {
+    position: absolute;
     height: 1px;
     margin: -1px;
+    border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -890,10 +880,6 @@
 .add-coin__question--btn input:checked+span {
     background: var(--success);
     color: var(--background)
-}
-
-.add-coin__question--btn>* {
-    grid-area: 1/1
 }
 
 .add-coin__question--btn span {
@@ -1059,10 +1045,6 @@
     cursor: pointer
 }
 
-.promote__block--banner label>* {
-    grid-area: 1/1
-}
-
 .promote__block--banner span:first-child {
     font-weight: 700;
     line-height: 125%;
@@ -1079,10 +1061,6 @@
     line-height: 110%;
     background: var(--shade-lighter);
     border-radius: 12px
-}
-
-.promote__block--banner span:not(:first-child) svg {
-    margin-right: 8px
 }
 
 .promote__block--banner input {
@@ -1221,7 +1199,20 @@
     height: 36px;
     line-height: 2.25rem;
     font-size: .875rem;
-    cursor: pointer
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.promote__block--calendar-element tbody td.disabled {
+    cursor: default;
+    pointer-events: none
+}
+
+.promote__block--calendar-element tbody td a {
+    pointer-events: none;
+    color: var(--secondary)
 }
 
 .promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th,.promote__block--calendar-element.jsCalendar tbody td {

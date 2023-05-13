@@ -698,6 +698,19 @@ body.addEventListener('click', function (event) {
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </promote-block-open-or-hide> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const calendarLink = $(".calendar tbody td a")
+	if(calendarLink) {
+	
+		event.preventDefault();
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
+
 	
 	
 
@@ -865,6 +878,8 @@ checkInputFocus.forEach(input => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <calendar> -=-=-=-=-=-=-=-=-=-=-=-=
 
+
+
 const calendar = document.querySelectorAll(".calendar");
 calendar.forEach(calendar => {
 	const 
@@ -875,6 +890,20 @@ calendar.forEach(calendar => {
 
 	const calendarElement = jsCalendar.new(calendar, new Date(), {
 		monthFormat : "month YYYY",
+	});
+
+	calendarElement.onDateRender(function(date, element, info) {
+		let text = element.textContent;
+		element.textContent = '';
+		element.insertAdjacentHTML('beforeend', `<a href="#">${text}</a>`)
+
+		nowDate= new Date();
+		delta=nowDate.getTime()-date.getTime();
+		if(Math.floor(delta/1000/60/60/24) > 0 && !element.classList.contains('disabled')) {
+			element.classList.add('disabled');
+		}
+		
+		
 	});
 	
 	calendarElement.select(calendar.dataset.calendarDates.split(', '));
@@ -892,6 +921,8 @@ calendar.forEach(calendar => {
 		calendarElement.next();
 		if(calendarName) calendarName.textContent = calendarWrapper.querySelector('.jsCalendar-title-name').textContent;
 	})
+
+	
 
 	calendarElement.onDateClick(function(event, date){
 		if(!event.target.classList.contains('jsCalendar-next') && !event.target.classList.contains('jsCalendar-previous')) {
