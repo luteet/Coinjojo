@@ -1086,7 +1086,7 @@
     fill: var(--secondary)
 }
 
-.promote__block--search.error .select-wrapper select,.promote__block--search.error label {
+.promote__block--search.error .select-2 select,.promote__block--search.error label {
     background: #362121
 }
 
