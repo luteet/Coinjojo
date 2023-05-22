@@ -4,9 +4,9 @@
 		display: grid;
 		gap: 20px;
 
-		@include _768 {
+		/* @include _768 {
 			grid-template-columns: 255px auto;
-		}
+		} */
 	}
 
 	// .coin__header
@@ -19,7 +19,7 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			align-items: flex-end;
-			grid-column: 2 span;
+			//grid-column: 2 span;
 		}
 	}
 
@@ -182,7 +182,7 @@
 		gap: 20px; 
 
 		@include _768 {
-			grid-column: 2;
+			//grid-column: 2;
 			grid-template-columns: 60% auto;
 		}
 	}
@@ -318,13 +318,13 @@
 	&__descr {
 
 		
-		@include _768 {
+		/* @include _768 {
 			grid-column: 2 span;
 		}
 
 		@include _992 {
 			grid-column: auto;
-		}
+		} */
 
 		// .coin__descr--title
 

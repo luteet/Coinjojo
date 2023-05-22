@@ -2072,15 +2072,10 @@
         flex: 0 1 30%
     }
 
-    .coin__container {
-        grid-template-columns: 255px auto
-    }
-
     .coin__header {
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: flex-end;
-        grid-column: 2 span
+        align-items: flex-end
     }
 
     .coin__header-info,.coin__vote {
@@ -2098,11 +2093,10 @@
     }
 
     .coin__main {
-        grid-column: 2;
         grid-template-columns: 60% auto
     }
 
-    .coin__chain,.coin__descr {
+    .coin__chain {
         grid-column: 2 span
     }
 
@@ -2247,10 +2241,6 @@
 
     .coin__chain--address input {
         width: 389px
-    }
-
-    .coin__descr {
-        grid-column: auto
     }
 
     .add-coin__form {
