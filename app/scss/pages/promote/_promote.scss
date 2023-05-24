@@ -445,6 +445,7 @@
 			tbody td {
 				width: 36px; height: 36px; line-height: 2.25rem;
 				font-size: 0.875rem;
+				
 				@include _550 {
 					font-size: 1.125rem;
 					line-height: 3rem;
@@ -454,6 +455,7 @@
 				a {
 					cursor: pointer;
 				}
+				cursor: pointer;
 				user-select: none;
 				&.disabled a {
 					cursor: default;

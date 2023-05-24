@@ -1224,6 +1224,7 @@
     height: 36px;
     line-height: 2.25rem;
     font-size: .875rem;
+    cursor: pointer;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none

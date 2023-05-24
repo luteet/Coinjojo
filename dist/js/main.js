@@ -935,8 +935,6 @@ checkInputFocus.forEach(input => {
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <calendar> -=-=-=-=-=-=-=-=-=-=-=-=
 
-
-
 const calendar = document.querySelectorAll(".calendar");
 calendar.forEach(calendar => {
 	const 
@@ -955,14 +953,19 @@ calendar.forEach(calendar => {
 		if(calendarBase) {
 			let text = element.textContent;
 			element.textContent = '';
-			element.insertAdjacentHTML('beforeend', `<a href="${calendarBase}?date=${dateArray[0]}-${dateArray[1]}-${dateArray[2]}">${text}</a>`)
+			if(info.isSelected) {
+				element.insertAdjacentHTML('beforeend', `<input class="visually-hidden" checked type="checkbox" name="date" value="${dateArray[0]}-${dateArray[1]}-${dateArray[2]}"/>${text}`)
+			} else {
+				element.insertAdjacentHTML('beforeend', `<input class="visually-hidden" type="checkbox" name="date" value="${dateArray[0]}-${dateArray[1]}-${dateArray[2]}"/>${text}`)
+			}
+			
 		}
 		
 
 		nowDate= new Date();
 		delta=nowDate.getTime()-date.getTime();
-		if(Math.floor(delta/1000/60/60/24) >= 0 && !element.classList.contains('disabled')) {
-			element.classList.add('disabled');
+		if(Math.floor(delta/1000/60/60/24) >= 0 && !element.querySelector('input[type="checkbox"]').disabled) {
+			element.querySelector('input[type="checkbox"]').disabled = true;
 		}
 		
 		
@@ -986,7 +989,7 @@ calendar.forEach(calendar => {
 
 	
 
-/* 	calendarElement.onDateClick(function(event, date){
+	calendarElement.onDateClick(function(event, date){
 		if(!event.target.classList.contains('jsCalendar-next') && !event.target.classList.contains('jsCalendar-previous')) {
 			if(event.target.classList.contains('jsCalendar-selected')) {
 				calendarElement.unselect(date)
@@ -995,7 +998,7 @@ calendar.forEach(calendar => {
 			}
 		}
 		
-    }); */
+    });
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </calendar> -=-=-=-=-=-=-=-=-=-=-=-=
