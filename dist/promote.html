@@ -435,24 +435,25 @@
 									</form>
 								</div>
 							</div>
-							<script>
-								const calendarElements = document.querySelectorAll(".calendar"),
-									currentDate = new Date();
+							<!-- <script>
+							const calendarElements = document.querySelectorAll(".calendar"),
+								  currentDate = new Date();
 
 
-								calendarElements.forEach(calendar => {
-									calendar.dataset.calendarDates = "";
+							calendarElements.forEach(calendar => {
+								calendar.dataset.calendarDates = "";
 
-									for (let index = 1, lastChar = "", date; index <= 6; index++) {
-
-										date = new Date()
-										date.setDate(date.getDate() + index);
-
-										calendar.dataset.calendarDates += date.getDate() + "/" + (date.getMonth() + 1) + "/" + 2023;
-										calendar.dataset.calendarDates += (index == 6) ? lastChar : ", ";
-									}
-								})
-							</script>
+								for(let index = 1, lastChar = "", date; index <= 6; index++) {
+							
+									date = new Date()
+									date.setDate(date.getDate()+index);
+									
+									calendar.dataset.calendarDates += date.getDate() + "/" + (date.getMonth() + 1) + "/" + 2023;
+									calendar.dataset.calendarDates += (index == 6) ? lastChar : ", ";
+								}
+							})
+							
+						</script> -->
 						</div>
 					</div>
 					<div class="promote__aside">

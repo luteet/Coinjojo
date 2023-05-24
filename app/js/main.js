@@ -962,16 +962,28 @@ calendar.forEach(calendar => {
 		}
 		
 
-		nowDate= new Date();
+		nowDate = new Date();
+		let nextDate = new Date();
+		nextDate.setMonth(nowDate.getMonth() + 1)
 		delta=nowDate.getTime()-date.getTime();
-		if(Math.floor(delta/1000/60/60/24) >= 0 && !element.querySelector('input[type="checkbox"]').disabled) {
+		
+		if(Math.floor(delta/1000/60/60/24) > 0 && !element.querySelector('input[type="checkbox"]').disabled && !element.classList.contains('disabled')) {
+			
 			element.querySelector('input[type="checkbox"]').disabled = true;
+			element.classList.add('disabled')
+			
+		}
+
+		if(Math.floor((date - nextDate) / (1000 * 60 * 60 * 24)) > 0) {
+			element.querySelector('input[type="checkbox"]').disabled = true;
+			element.classList.add('disabled')
 		}
 		
 		
 	});
-	
-	calendarElement.select(calendar.dataset.calendarDates.split(', '));
+	//console.log(calendar.dataset.calendarDates)
+	if(calendar.dataset.calendarDates != undefined) calendarElement.select(calendar.dataset.calendarDates.split(', '));
+	calendarElement.refresh()
 
 	setTimeout(() => {
 		if(calendarName) calendarName.textContent = calendarWrapper.querySelector('.jsCalendar-title-name').textContent;

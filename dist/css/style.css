@@ -1,13 +1,13 @@
+.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.promote__block--search .select-2 select,.promote__block--search .select-2 svg,.switch__btn>*,.title-switch>* {
+    grid-area: 1/1
+}
+
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
     top: 0;
     -o-object-fit: cover;
     width: 100%;
     left: 0
-}
-
-.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.promote__block--search .select-2 select,.promote__block--search .select-2 svg,.switch__btn>*,.title-switch>* {
-    grid-area: 1/1
 }
 
 .hero__bg img {
@@ -149,7 +149,7 @@
     margin: 0 auto
 }
 
-.best {
+.best,.contact-us {
     margin-top: 20px
 }
 
@@ -315,13 +315,6 @@
     padding: 5px 6px
 }
 
-.add-coin__question--btn input,.switch__input {
-    padding: 0;
-    white-space: nowrap;
-    -webkit-clip-path: inset(100%);
-    overflow: hidden
-}
-
 .switch__wrapper {
     display: flex;
     position: relative;
@@ -342,17 +335,24 @@
     transition: width .2s ease,left .2s ease,transform .2s ease,-webkit-transform .2s ease
 }
 
+.add-coin__question--btn input,.switch__input {
+    width: 1px;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    overflow: hidden
+}
+
 .switch__btn {
     display: grid;
     flex: 1 1 auto
 }
 
 .switch__input {
-    position: absolute;
-    width: 1px;
     height: 1px;
     margin: -1px;
-    border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -453,7 +453,6 @@
 }
 
 .contact-us {
-    margin-top: 20px;
     display: flex;
     flex-direction: column
 }
@@ -521,11 +520,6 @@
     background: var(--secondary-accent)
 }
 
-.coin__chain,.coin__info-block {
-    background: var(--shade-2);
-    border-radius: 20px
-}
-
 .contact-us__image {
     min-height: 100%;
     max-width: 400px;
@@ -553,6 +547,11 @@
     border: 6px solid var(--background);
     width: 126px;
     height: 126px
+}
+
+.coin__chain,.coin__info-block {
+    border-radius: 20px;
+    background: var(--shade-2)
 }
 
 .coin__chain--footer,.coin__info-block--list li:not(:first-child) {
@@ -689,10 +688,6 @@
     margin: 4px
 }
 
-.coin__descr--title img,.promote__block--banner span:not(:first-child) svg {
-    margin-right: 8px
-}
-
 .coin__social a {
     display: flex;
     align-items: center;
@@ -725,6 +720,10 @@
     font-size: .875rem;
     font-weight: 700;
     line-height: 121%
+}
+
+.coin__descr--title img {
+    margin-right: 8px
 }
 
 .coin__descr--text {
@@ -872,11 +871,8 @@
 }
 
 .add-coin__question--btn input {
-    position: absolute;
-    width: 1px;
     height: 1px;
     margin: -1px;
-    border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -1067,6 +1063,10 @@
     border-radius: 12px
 }
 
+.promote__block--banner span:not(:first-child) svg {
+    margin-right: 8px
+}
+
 .promote__block--banner input {
     position: absolute;
     width: 1px;
@@ -1227,17 +1227,23 @@
     cursor: pointer;
     -webkit-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
+    background: var(--tertiary)
 }
 
 .promote__block--calendar-element tbody td a {
-    cursor: pointer;
-    color: var(--secondary)
+    cursor: pointer
 }
 
-.promote__block--calendar-element tbody td.disabled a {
+.promote__block--calendar-element tbody td.disabled {
     cursor: default;
-    pointer-events: none
+    pointer-events: none;
+    background: rgba(0,0,0,0);
+    color: #4e535c
+}
+
+.promote__block--calendar-element tbody td a {
+    color: var(--secondary)
 }
 
 .promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th,.promote__block--calendar-element.jsCalendar tbody td {
@@ -1248,13 +1254,24 @@
     color: var(--secondary)
 }
 
+.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th:hover,.promote__block--calendar-element.jsCalendar tbody td:hover {
+    background: var(--tertiary)
+}
+
+.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.disabled,.promote__block--calendar-element.jsCalendar tbody td.disabled {
+    color: #4e535c;
+    background: rgba(0,0,0,0)
+}
+
 .promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-next,.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-previous,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-next,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-previous {
     color: #4e535c;
+    background: rgba(0,0,0,0);
     cursor: default
 }
 
 .promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-next:hover,.promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th.jsCalendar-previous:hover,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-next:hover,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-previous:hover {
-    color: #4e535c
+    color: #4e535c;
+    background: rgba(0,0,0,0)
 }
 
 .promote__block--calendar-element.jsCalendar tbody td.jsCalendar-selected {
@@ -1264,12 +1281,16 @@
     font-size: .875rem;
     border: 0;
     border-radius: 50%;
-    background: var(--tertiary);
-    color: var(--secondary)
+    background: var(--primary);
+    color: var(--white)
 }
 
 .promote__block--calendar-element.jsCalendar tbody td.jsCalendar-current {
     border-radius: 50%;
+    background: var(--tertiary)
+}
+
+.order__wallet,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-current.jsCalendar-selected {
     background: var(--primary)
 }
 
@@ -1467,7 +1488,6 @@
 
 .order__wallet {
     padding: 16px;
-    background: var(--primary);
     border-radius: 20px
 }
 

@@ -457,9 +457,12 @@
 				}
 				cursor: pointer;
 				user-select: none;
-				&.disabled a {
+				background: var(--tertiary);
+				&.disabled {
 					cursor: default;
 					pointer-events: none;
+					background: transparent;
+					color: #4E535C;
 				}
 
 				a {
@@ -477,12 +480,22 @@
 					width: 48px; height: 48px;
 				}
 				color: var(--secondary);
+				&:hover {
+					background: var(--tertiary);
+				}
+				
+				&.disabled {
+					color: #4E535C;
+					background: transparent;
+				}
 
 				&.jsCalendar-next, &.jsCalendar-previous {
 					color: #4E535C;
+					background: transparent;
 					cursor: default;
 					&:hover {
 						color: #4E535C;
+						background: transparent;
 					}
 				}
 			}
@@ -497,13 +510,16 @@
 				}
 				border: 0;
 				border-radius: 50%;
-				background: var(--tertiary);
-				color: var(--secondary);
+				background: var(--primary);
+				color: var(--white);
 			}
 
 			&.jsCalendar tbody td.jsCalendar-current {
 				border-radius: 50%;
-				background: var(--primary);
+				background: var(--tertiary);
+				&.jsCalendar-selected {
+					background: var(--primary);
+				}
 			}
 
 			&.jsCalendar tbody td, .jsCalendar thead .jsCalendar-week-days th {
