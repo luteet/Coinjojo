@@ -284,99 +284,103 @@ function dropDown() {
 			  list = dropDown.querySelector('.drop-down__list');
 
 		dropDownArray.push({block: dropDown, target: target, list: list});
-		body.append(list);
+		if(list) body.append(list);
 	})
 
 	Array.from(dropDownArray).forEach(dropDownElement => {
 		const target = dropDownElement["target"],
 			  list = dropDownElement["list"],
 			  block = dropDownElement["block"];
+		if(list) {
 
-		target.addEventListener('click', function () {
-			if(!target.classList.contains('_animating')) {
-				target.classList.add('_animating');
-			
-				list.style.maxWidth = (target.offsetWidth * 2) + "px";
-				let heightDropDownList = list.offsetHeight, widthDropDownList = list.offsetWidth, dropDownCoords = {y: block.getBoundingClientRect().y + window.pageYOffset, x: block.getBoundingClientRect().x + window.pageXOffset};
-	
-				if(!block.classList.contains('_active') && !target.closest('.drop-down._active')) {
-	
-					Array.from(dropDownArray).forEach(dropDownElement => {
-						const target = dropDownElement["target"],
-							  list = dropDownElement["list"],
-							  block = dropDownElement["block"];
+		
+			target.addEventListener('click', function () {
+				if(!target.classList.contains('_animating')) {
+					target.classList.add('_animating');
 				
-						if(block.classList.contains('_active')) {
-							list.classList.remove("fade-in");
-							list.classList.add("fade-out");
-							block.classList.remove("_active");
-				
-							setTimeout(() => {
-								list.style.removeProperty("left");
-								list.style.removeProperty("top");
-								list.style.removeProperty("transform");
-								list.classList.remove("fade-out");
-								target.classList.remove('_animating');
-							},300)
+					list.style.maxWidth = (target.offsetWidth * 2) + "px";
+					let heightDropDownList = list.offsetHeight, widthDropDownList = list.offsetWidth, dropDownCoords = {y: block.getBoundingClientRect().y + window.pageYOffset, x: block.getBoundingClientRect().x + window.pageXOffset};
+		
+					if(!block.classList.contains('_active') && !target.closest('.drop-down._active')) {
+		
+						Array.from(dropDownArray).forEach(dropDownElement => {
+							const target = dropDownElement["target"],
+								  list = dropDownElement["list"],
+								  block = dropDownElement["block"];
+					
+							if(block.classList.contains('_active')) {
+								list.classList.remove("fade-in");
+								list.classList.add("fade-out");
+								block.classList.remove("_active");
+					
+								setTimeout(() => {
+									list.style.removeProperty("left");
+									list.style.removeProperty("top");
+									list.style.removeProperty("transform");
+									list.classList.remove("fade-out");
+									target.classList.remove('_animating');
+								},300)
+							}
+					
+						})
+		
+						list.style.display = "none";
+		
+						if(dropDownCoords.x >= widthDropDownList && dropDownCoords.x < (window.innerWidth - widthDropDownList)) {
+		
+							list.style.left = (dropDownCoords.x + target.offsetWidth / 2) + "px";
+							list.style.transform = "translate3d(-50%,0,0)";
+		
+						} else if(dropDownCoords.x + 15 > window.innerWidth - widthDropDownList) {
+							
+							list.style.left = (dropDownCoords.x - widthDropDownList + target.offsetWidth) + "px";
+							list.style.transform = "translate3d(0,0,0)";
+		
+							
+						} else if(dropDownCoords.x <= widthDropDownList) {
+		
+							list.style.left = dropDownCoords.x + "px";
+							list.style.transform = "translate3d(0,0,0)";
+		
 						}
-				
-					})
-	
-					list.style.display = "none";
-	
-					if(dropDownCoords.x >= widthDropDownList && dropDownCoords.x < (window.innerWidth - widthDropDownList)) {
-	
-						list.style.left = (dropDownCoords.x + target.offsetWidth / 2) + "px";
-						list.style.transform = "translate3d(-50%,0,0)";
-	
-					} else if(dropDownCoords.x + 15 > window.innerWidth - widthDropDownList) {
 						
-						list.style.left = (dropDownCoords.x - widthDropDownList + target.offsetWidth) + "px";
-						list.style.transform = "translate3d(0,0,0)";
-	
-						
-					} else if(dropDownCoords.x <= widthDropDownList) {
-	
-						list.style.left = dropDownCoords.x + "px";
-						list.style.transform = "translate3d(0,0,0)";
-	
-					}
-					
-					if(target.getBoundingClientRect().bottom + heightDropDownList >= window.innerHeight) {
-						
-						list.style.top = (dropDownCoords.y - heightDropDownList - 9) + "px";
-						
-					} else if(target.getBoundingClientRect().bottom + heightDropDownList < wrapper.offsetHeight) {
-						
-						list.style.top = (dropDownCoords.y + target.offsetHeight + 9) + "px";
-	
-					}
-	
-					list.style.removeProperty("display");
-	
-					block.classList.add("_active");
-					list.classList.add("fade-in");
-	
-					target.classList.remove('_animating');
-	
-				} else {
-					
-					list.classList.remove("fade-in");
-					list.classList.add("fade-out");
-					block.classList.remove("_active");
-	
-					setTimeout(() => {
-						list.style.removeProperty("left");
-						list.style.removeProperty("top");
-						list.style.removeProperty("transform");
-						list.classList.remove("fade-out");
+						if(target.getBoundingClientRect().bottom + heightDropDownList >= window.innerHeight) {
+							
+							list.style.top = (dropDownCoords.y - heightDropDownList - 9) + "px";
+							
+						} else if(target.getBoundingClientRect().bottom + heightDropDownList < wrapper.offsetHeight) {
+							
+							list.style.top = (dropDownCoords.y + target.offsetHeight + 9) + "px";
+		
+						}
+		
+						list.style.removeProperty("display");
+		
+						block.classList.add("_active");
+						list.classList.add("fade-in");
+		
 						target.classList.remove('_animating');
-					},300)
-	
+		
+					} else {
+						
+						list.classList.remove("fade-in");
+						list.classList.add("fade-out");
+						block.classList.remove("_active");
+		
+						setTimeout(() => {
+							list.style.removeProperty("left");
+							list.style.removeProperty("top");
+							list.style.removeProperty("transform");
+							list.classList.remove("fade-out");
+							target.classList.remove('_animating');
+						},300)
+		
+					}
+		
 				}
-	
-			}
-		})
+			})
+
+		}
 
 	})
 
@@ -387,7 +391,7 @@ function dropDown() {
 				  list = dropDownElement["list"],
 				  block = dropDownElement["block"];
 
-			if(block.classList.contains('_active')) {
+			if(block.classList.contains('_active') && list) {
 
 				let heightDropDownList = list.offsetHeight, 
 					widthDropDownList = list.offsetWidth, 
@@ -434,7 +438,7 @@ function dropDown() {
 					  list = dropDownElement["list"],
 					  block = dropDownElement["block"];
 		
-				if(block.classList.contains('_active')) {
+				if(block.classList.contains('_active') && list) {
 					list.classList.remove("fade-in");
 					list.classList.add("fade-out");
 					block.classList.remove("_active");
