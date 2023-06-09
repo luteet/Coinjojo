@@ -492,19 +492,21 @@ body.addEventListener('click', function (event) {
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <header-drop-down-open-on-mobile> -=-=-=-=-=-=-=-=-=-=-=-=
 	
-	const headerNavItem = $(".header__nav--list > li:has(ul)");
-	if(headerNavItem && getDeviceType() != "desktop") {
-	
-		if(!headerNavItem.classList.contains('active')) {
-			event.preventDefault();
-			headerNavItem.classList.toggle('active');
-			header.classList.add('_bg-active');
-		} else {
-			headerNavItem.classList.remove('active');
-			header.classList.remove('_bg-active');
+	const headerNavItem = $(".header__nav--list > li");
+	if(headerNavItem && getDeviceType() != "desktop" && windowSize >= 992) {
+		if(headerNavItem.classList.contains('has-list')) {
+
+			if(!headerNavItem.classList.contains('active')) {
+				event.preventDefault();
+				headerNavItem.classList.toggle('active');
+				header.classList.add('_bg-active');
+			} else {
+				headerNavItem.classList.remove('active');
+				header.classList.remove('_bg-active');
+			}
+
 		}
-		
-	
+			
 	} else if(document.querySelector('.header__nav--list li.active')) {
 
 		document.querySelector('.header__nav--list li.active').classList.remove('active');
