@@ -464,6 +464,8 @@ dropDown();
 
 // =-=-=-=-=-=-=-=-=-=- </drop-down> -=-=-=-=-=-=-=-=-=-=-
 
+
+
 // =-=-=-=-=-=-=-=-=-=- <click events> -=-=-=-=-=-=-=-=-=-=-
 
 body.addEventListener('click', function (event) {
@@ -752,6 +754,56 @@ body.addEventListener('click', function (event) {
 	}
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </calendar-link> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <click> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const tableCoinsSortBtn = $(".table-coins thead button")
+	if(tableCoinsSortBtn) {
+	
+		const tableCoins = tableCoinsSortBtn.closest('.table-coins'),
+		icon = tableCoinsSortBtn.querySelector('svg').querySelector('use');
+
+		/* if(!tableCoinsSortBtn.classList.contains('_active-up') && !tableCoinsSortBtn.classList.contains('_active-down')) {
+
+		} */
+
+		document.querySelectorAll('._active-up').forEach(button => {
+			const icon = button.querySelector('svg').querySelector('use');
+			if(button != tableCoinsSortBtn) {
+				button.classList.remove('_active-up');
+				icon.setAttribute('xlink:href', icon.getAttribute('xlink:href').split('#')[0] + '#arrows-up-down');
+			}
+			
+		})
+
+		document.querySelectorAll('._active-down').forEach(button => {
+			const icon = button.querySelector('svg').querySelector('use');
+			if(button != tableCoinsSortBtn) {
+				button.classList.remove('_active-down');
+				icon.setAttribute('xlink:href', icon.getAttribute('xlink:href').split('#')[0] + '#arrows-up-down');
+			}
+			
+		})
+
+		if(!tableCoinsSortBtn.classList.contains('_active-up') && !tableCoinsSortBtn.classList.contains('_active-down')) {
+			tableCoinsSortBtn.classList.add('_active-up');
+			icon.setAttribute('xlink:href', icon.getAttribute('xlink:href').split('#')[0] + '#arrow-up-active');
+		} else if(tableCoinsSortBtn.classList.contains('_active-up') && !tableCoinsSortBtn.classList.contains('_active-down')) {
+			tableCoinsSortBtn.classList.remove('_active-up');
+			tableCoinsSortBtn.classList.add('_active-down');
+			icon.setAttribute('xlink:href', icon.getAttribute('xlink:href').split('#')[0] + '#arrow-down-active');
+		} else {
+			tableCoinsSortBtn.classList.remove('_active-up');
+			tableCoinsSortBtn.classList.remove('_active-down');
+			icon.setAttribute('xlink:href', icon.getAttribute('xlink:href').split('#')[0] + '#arrows-up-down');
+		}
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </click> -=-=-=-=-=-=-=-=-=-=-=-=
 
 	
 	

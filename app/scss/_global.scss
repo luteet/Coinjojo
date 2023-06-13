@@ -390,8 +390,13 @@ svg {
 			color: var(--secondary-2);
 			fill: var(--tertiary);
 
-			& svg {
+			svg {
 				margin-left: 3px;
+				transition: fill 0s linear;
+			}
+			&._active-up svg, &._active-down svg {
+				fill: var(--primary);
+				
 			}
 		}
 	}
