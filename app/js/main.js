@@ -493,6 +493,13 @@ body.addEventListener('click', function (event) {
 
 
 	// =-=-=-=-=-=-=-=-=-=-=-=- <header-drop-down-open-on-mobile> -=-=-=-=-=-=-=-=-=-=-=-=
+
+	const headerNavLink = $('.header__nav--list a');
+	if(headerNavLink && windowSize < 992) {
+		menu.forEach(element => {
+			element.classList.remove('_mob-menu-active')
+		})	
+	}
 	
 	const headerNavItem = $(".header__nav--list > li");
 	if(headerNavItem && getDeviceType() != "desktop" && windowSize >= 992) {
@@ -516,6 +523,8 @@ body.addEventListener('click', function (event) {
 		
 
 	}
+
+	
 	
 	// =-=-=-=-=-=-=-=-=-=-=-=- </header-drop-down-open-on-mobile> -=-=-=-=-=-=-=-=-=-=-=-=
 

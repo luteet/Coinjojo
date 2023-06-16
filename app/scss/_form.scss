@@ -26,7 +26,13 @@ input, textarea {
 	&:focus {
 		color: var(--white);
 	}
+
+	&._alt {
+		background: var(--shade-lighter);
+	}
 }
+
+
 
 .textarea {
 	resize: none;

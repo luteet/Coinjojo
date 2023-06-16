@@ -285,11 +285,11 @@
 		// .promote__block--search
 
 		&--search {
-			display: flex;
-			margin: 17px 16px 0 16px;
-			@include _768 {
+			
+			
+			/* @include _768 {
 				margin: 17px 20px 0 20px;
-			}
+			} */
 			
 			fill: var(--secondary);
 
@@ -375,6 +375,31 @@
 				}
 
 				
+			}
+		}
+
+		&--row {
+			display: grid;
+			padding: 0 16px; margin-top: 16px;
+			gap: 16px;
+			@include _550 {
+				grid-template-columns: auto 200px;
+
+				& .btn {
+					justify-self: stretch;
+					align-self: center;
+				}
+			}
+
+			label input {
+				width: 100%;
+			}
+
+			& .btn {
+				justify-self: center;
+				justify-content: center;
+
+				min-width: 150px;
 			}
 		}
 

@@ -1,7 +1,3 @@
-.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.promote__block--search .select-2 select,.promote__block--search .select-2 svg,.switch__btn>*,.title-switch>* {
-    grid-area: 1/1
-}
-
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
     top: 0;
@@ -149,7 +145,7 @@
     margin: 0 auto
 }
 
-.best,.contact-us {
+.best {
     margin-top: 20px
 }
 
@@ -258,6 +254,10 @@
     display: inline-grid
 }
 
+.filter__item--param>* {
+    grid-area: 1/1
+}
+
 .filter__item--param input {
     position: absolute;
     width: 1px;
@@ -304,6 +304,7 @@
 }
 
 .title-switch>* {
+    grid-area: 1/1;
     opacity: 0;
     transition: opacity .3s ease
 }
@@ -313,6 +314,13 @@
     background: var(--shade-2);
     border-radius: 12px;
     padding: 5px 6px
+}
+
+.add-coin__question--btn input,.switch__input {
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    overflow: hidden
 }
 
 .switch__wrapper {
@@ -335,24 +343,21 @@
     transition: width .2s ease,left .2s ease,transform .2s ease,-webkit-transform .2s ease
 }
 
-.add-coin__question--btn input,.switch__input {
-    width: 1px;
-    padding: 0;
-    border: 0;
-    position: absolute;
-    white-space: nowrap;
-    -webkit-clip-path: inset(100%);
-    overflow: hidden
-}
-
 .switch__btn {
     display: grid;
     flex: 1 1 auto
 }
 
+.switch__btn>* {
+    grid-area: 1/1
+}
+
 .switch__input {
+    position: absolute;
+    width: 1px;
     height: 1px;
     margin: -1px;
+    border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -453,6 +458,7 @@
 }
 
 .contact-us {
+    margin-top: 20px;
     display: flex;
     flex-direction: column
 }
@@ -520,6 +526,11 @@
     background: var(--secondary-accent)
 }
 
+.coin__chain,.coin__info-block {
+    background: var(--shade-2);
+    border-radius: 20px
+}
+
 .contact-us__image {
     min-height: 100%;
     max-width: 400px;
@@ -547,11 +558,6 @@
     border: 6px solid var(--background);
     width: 126px;
     height: 126px
-}
-
-.coin__chain,.coin__info-block {
-    border-radius: 20px;
-    background: var(--shade-2)
 }
 
 .coin__chain--footer,.coin__info-block--list li:not(:first-child) {
@@ -688,6 +694,10 @@
     margin: 4px
 }
 
+.coin__descr--title img,.promote__block--banner span:not(:first-child) svg {
+    margin-right: 8px
+}
+
 .coin__social a {
     display: flex;
     align-items: center;
@@ -720,10 +730,6 @@
     font-size: .875rem;
     font-weight: 700;
     line-height: 121%
-}
-
-.coin__descr--title img {
-    margin-right: 8px
 }
 
 .coin__descr--text {
@@ -817,6 +823,10 @@
     cursor: pointer
 }
 
+.add-coin__avatar label>* {
+    grid-area: 1/1
+}
+
 .add-coin__avatar b {
     display: flex;
     align-items: center;
@@ -871,8 +881,11 @@
 }
 
 .add-coin__question--btn input {
+    position: absolute;
+    width: 1px;
     height: 1px;
     margin: -1px;
+    border: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -880,6 +893,10 @@
 .add-coin__question--btn input:checked+span {
     background: var(--success);
     color: var(--background)
+}
+
+.add-coin__question--btn>* {
+    grid-area: 1/1
 }
 
 .add-coin__question--btn span {
@@ -1045,6 +1062,10 @@
     cursor: pointer
 }
 
+.promote__block--banner label>* {
+    grid-area: 1/1
+}
+
 .promote__block--banner span:first-child {
     font-weight: 700;
     line-height: 125%;
@@ -1063,10 +1084,6 @@
     border-radius: 12px
 }
 
-.promote__block--banner span:not(:first-child) svg {
-    margin-right: 8px
-}
-
 .promote__block--banner input {
     position: absolute;
     width: 1px;
@@ -1082,8 +1099,6 @@
 }
 
 .promote__block--search {
-    display: flex;
-    margin: 17px 16px 0;
     fill: var(--secondary)
 }
 
@@ -1126,6 +1141,7 @@
 }
 
 .promote__block--search .select-2 select {
+    grid-area: 1/1;
     min-height: 40px;
     cursor: pointer;
     -webkit-appearance: none;
@@ -1137,6 +1153,7 @@
 .promote__block--search .select-2 svg {
     margin-right: 10px;
     align-self: center;
+    grid-area: 1/1;
     justify-self: end
 }
 
@@ -1167,6 +1184,23 @@
 
 .promote__block--search input:focus,.promote__block--search select:focus {
     color: var(--white)
+}
+
+.promote__block--row {
+    display: grid;
+    padding: 0 16px;
+    margin-top: 16px;
+    gap: 16px
+}
+
+.promote__block--row label input {
+    width: 100%
+}
+
+.promote__block--row .btn {
+    justify-self: center;
+    justify-content: center;
+    min-width: 150px
 }
 
 .promote__block--calendar {
@@ -1954,6 +1988,15 @@
         padding: 0 22px
     }
 
+    .promote__block--row {
+        grid-template-columns: auto 200px
+    }
+
+    .promote__block--row .btn {
+        justify-self: stretch;
+        align-self: center
+    }
+
     .promote__block--calendar-element .jsCalendar thead .jsCalendar-week-days th,.promote__block--calendar-element tbody td,.promote__block--calendar-element.jsCalendar tbody td,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-selected {
         font-size: 1.125rem;
         line-height: 3rem;
@@ -2162,10 +2205,6 @@
 
     .promote__block--input {
         padding: 0 22px
-    }
-
-    .promote__block--search {
-        margin: 17px 20px 0
     }
 
     .order__wallet {
@@ -3593,6 +3632,7 @@ svg {
 }
 
 .vote-btn {
+    min-width: 97px;
     border-radius: 12px;
     justify-content: center;
     fill: var(--white)
@@ -3877,6 +3917,10 @@ input:focus::placeholder,textarea:focus::placeholder {
     color: var(--secondary-2)
 }
 
+.input._alt,.select._alt select,.textarea._alt {
+    background: var(--shade-lighter)
+}
+
 .input::-webkit-input-placeholder,.textarea::-webkit-input-placeholder {
     color: var(--tertiary)
 }
@@ -3899,10 +3943,6 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .textarea {
     resize: none
-}
-
-.select._alt select {
-    background: var(--shade-lighter)
 }
 
 .select select {
