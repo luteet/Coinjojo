@@ -1,3 +1,7 @@
+.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.promote__block--search .select-2 select,.promote__block--search .select-2 svg,.switch__btn>*,.title-switch>* {
+    grid-area: 1/1
+}
+
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
     top: 0;
@@ -254,10 +258,6 @@
     display: inline-grid
 }
 
-.filter__item--param>* {
-    grid-area: 1/1
-}
-
 .filter__item--param input {
     position: absolute;
     width: 1px;
@@ -304,7 +304,6 @@
 }
 
 .title-switch>* {
-    grid-area: 1/1;
     opacity: 0;
     transition: opacity .3s ease
 }
@@ -314,13 +313,6 @@
     background: var(--shade-2);
     border-radius: 12px;
     padding: 5px 6px
-}
-
-.add-coin__question--btn input,.switch__input {
-    padding: 0;
-    white-space: nowrap;
-    -webkit-clip-path: inset(100%);
-    overflow: hidden
 }
 
 .switch__wrapper {
@@ -348,18 +340,18 @@
     flex: 1 1 auto
 }
 
-.switch__btn>* {
-    grid-area: 1/1
-}
-
 .switch__input {
     position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
+    padding: 0;
     border: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0)
+    clip: rect(0 0 0 0);
+    overflow: hidden
 }
 
 .switch__input:checked+.switch__element {
@@ -526,11 +518,6 @@
     background: var(--secondary-accent)
 }
 
-.coin__chain,.coin__info-block {
-    background: var(--shade-2);
-    border-radius: 20px
-}
-
 .contact-us__image {
     min-height: 100%;
     max-width: 400px;
@@ -558,6 +545,11 @@
     border: 6px solid var(--background);
     width: 126px;
     height: 126px
+}
+
+.coin__chain,.coin__info-block,.coin__min-info--element {
+    background: var(--shade-2);
+    border-radius: 20px
 }
 
 .coin__chain--footer,.coin__info-block--list li:not(:first-child) {
@@ -694,10 +686,6 @@
     margin: 4px
 }
 
-.coin__descr--title img,.promote__block--banner span:not(:first-child) svg {
-    margin-right: 8px
-}
-
 .coin__social a {
     display: flex;
     align-items: center;
@@ -732,6 +720,10 @@
     line-height: 121%
 }
 
+.coin__descr--title img {
+    margin-right: 8px
+}
+
 .coin__descr--text {
     padding-top: 12px;
     font-size: .875rem;
@@ -749,8 +741,6 @@
 .coin__min-info--element {
     display: flex;
     flex-direction: column;
-    background: var(--shade-2);
-    border-radius: 20px;
     padding: 14px 17px;
     font-size: .875rem;
     line-height: 128.571429%
@@ -823,10 +813,6 @@
     cursor: pointer
 }
 
-.add-coin__avatar label>* {
-    grid-area: 1/1
-}
-
 .add-coin__avatar b {
     display: flex;
     align-items: center;
@@ -850,6 +836,14 @@
 
 .add-coin__fieldset {
     padding: 16px 0
+}
+
+.add-coin__question--btn input,.promote__block--banner input {
+    position: absolute;
+    border: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    overflow: hidden
 }
 
 .add-coin__question {
@@ -881,11 +875,10 @@
 }
 
 .add-coin__question--btn input {
-    position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
-    border: 0;
+    padding: 0;
     clip-path: inset(100%);
     clip: rect(0 0 0 0)
 }
@@ -893,10 +886,6 @@
 .add-coin__question--btn input:checked+span {
     background: var(--success);
     color: var(--background)
-}
-
-.add-coin__question--btn>* {
-    grid-area: 1/1
 }
 
 .add-coin__question--btn span {
@@ -1062,10 +1051,6 @@
     cursor: pointer
 }
 
-.promote__block--banner label>* {
-    grid-area: 1/1
-}
-
 .promote__block--banner span:first-child {
     font-weight: 700;
     line-height: 125%;
@@ -1084,18 +1069,17 @@
     border-radius: 12px
 }
 
+.promote__block--banner span:not(:first-child) svg {
+    margin-right: 8px
+}
+
 .promote__block--banner input {
-    position: absolute;
     width: 1px;
     height: 1px;
     margin: -1px;
     padding: 0;
-    border: 0;
-    white-space: nowrap;
-    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden
+    clip: rect(0 0 0 0)
 }
 
 .promote__block--search {
@@ -1141,7 +1125,6 @@
 }
 
 .promote__block--search .select-2 select {
-    grid-area: 1/1;
     min-height: 40px;
     cursor: pointer;
     -webkit-appearance: none;
@@ -1153,7 +1136,6 @@
 .promote__block--search .select-2 svg {
     margin-right: 10px;
     align-self: center;
-    grid-area: 1/1;
     justify-self: end
 }
 
@@ -1324,7 +1306,7 @@
     background: var(--tertiary)
 }
 
-.order__wallet,.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-current.jsCalendar-selected {
+.promote__block--calendar-element.jsCalendar tbody td.jsCalendar-current.jsCalendar-selected {
     background: var(--primary)
 }
 
@@ -1381,10 +1363,6 @@
     width: 100%
 }
 
-.jsCalendar thead tr>*,.order__wallet--block label {
-    flex: 1 1 auto
-}
-
 .jsCalendar table {
     box-shadow: none;
     margin: 0 auto;
@@ -1397,6 +1375,10 @@
 
 .jsCalendar thead tr {
     display: flex
+}
+
+.jsCalendar thead tr>* {
+    flex: 1 1 auto
 }
 
 .jsCalendar tbody td,.jsCalendar thead .jsCalendar-week-days th {
@@ -1510,6 +1492,14 @@
     justify-content: space-between
 }
 
+.order-block__total--value {
+    display: block;
+    flex: 1 1 auto;
+    text-align: right;
+    padding-right: 15px;
+    color: var(--white)
+}
+
 .order-block__total b {
     color: var(--white)
 }
@@ -1522,6 +1512,7 @@
 
 .order__wallet {
     padding: 16px;
+    background: var(--primary);
     border-radius: 20px
 }
 
@@ -1539,6 +1530,10 @@
     margin-top: 12px;
     max-width: 461px;
     display: flex
+}
+
+.order__wallet--block label {
+    flex: 1 1 auto
 }
 
 .order__wallet--input {
@@ -3396,6 +3391,11 @@ svg {
     border-radius: 10px
 }
 
+.hero-banner__bg,.popup,.popup-bg,.section-bg {
+    top: 0;
+    height: 100%
+}
+
 .table-coins__number::before {
     counter-increment: table-coins-number;
     content: counter(table-coins-number);
@@ -3434,6 +3434,12 @@ svg {
     fill: var(--white)
 }
 
+.danger-value,.drop-value,.grow-value {
+    align-items: center;
+    fill: currentColor;
+    display: flex
+}
+
 .table-coins__btn svg {
     margin-right: 10px
 }
@@ -3448,20 +3454,11 @@ svg {
 }
 
 .grow-value {
-    display: flex;
-    align-items: center;
-    color: var(--success);
-    fill: currentColor
-}
-
-.danger-value,.drop-value,.page-address ul {
-    display: flex;
-    align-items: center
+    color: var(--success)
 }
 
 .danger-value,.drop-value {
-    color: var(--danger);
-    fill: currentColor
+    color: var(--danger)
 }
 
 .scroll-wrapper {
@@ -3473,11 +3470,9 @@ svg {
 .section-bg {
     position: absolute;
     left: 50%;
-    top: 0;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     width: 100%;
-    height: 100%;
     max-width: min(1333px,100% - var(--container-padding) *2);
     background: #0d111c;
     border-radius: 20px;
@@ -3499,6 +3494,11 @@ svg {
 
 .custom-scrollbar .os-scrollbar-track {
     background: var(--shade)
+}
+
+.page-address ul {
+    display: flex;
+    align-items: center
 }
 
 .page-address li svg {
@@ -3549,9 +3549,7 @@ svg {
 .hero-banner__bg {
     position: absolute;
     left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
     overflow: hidden;
     z-index: -1
 }
@@ -3736,9 +3734,7 @@ svg {
 .popup {
     position: fixed;
     left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     padding: 30px var(--container-padding);
@@ -3773,14 +3769,8 @@ svg {
 .popup-bg {
     position: absolute;
     left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
     background: rgba(0,0,0,.71)
-}
-
-.popup-body,.select {
-    position: relative
 }
 
 .popup-header {
@@ -3791,6 +3781,7 @@ svg {
 
 .popup-body {
     margin: auto;
+    position: relative;
     max-width: var(--container,700px);
     width: 100%;
     z-index: 2
@@ -3889,11 +3880,6 @@ input::placeholder,textarea::placeholder {
     opacity: 1
 }
 
-.header__search--input,.input,.textarea {
-    transition: color .2s ease;
-    border-radius: 12px
-}
-
 input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder {
     opacity: 0
 }
@@ -3910,10 +3896,26 @@ input:focus::placeholder,textarea:focus::placeholder {
     opacity: 0
 }
 
+input[hidden] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden
+}
+
 .input,.textarea {
     padding: 16px 24px;
     background: var(--shade-2);
+    border-radius: 12px;
     line-height: 150%;
+    transition: color .2s ease;
     color: var(--secondary-2)
 }
 
@@ -3943,6 +3945,10 @@ input:focus::placeholder,textarea:focus::placeholder {
 
 .textarea {
     resize: none
+}
+
+.select {
+    position: relative
 }
 
 .select select {
@@ -4202,7 +4208,9 @@ input:focus::placeholder,textarea:focus::placeholder {
 .header__search--input {
     background: var(--shade-2);
     color: var(--secondary);
+    transition: color .2s ease;
     padding: 12px 16px 12px 8px;
+    border-radius: 12px;
     font-size: .875rem;
     line-height: 130%;
     flex: 1 1 auto
