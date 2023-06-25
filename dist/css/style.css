@@ -2405,6 +2405,10 @@ progress,sub,sup {
     padding: 0
 }
 
+.drop-down__list,.to-order-btn {
+    -webkit-animation-duration: .3s
+}
+
 body {
     margin: 0
 }
@@ -2493,6 +2497,10 @@ legend {
 
 textarea {
     overflow: auto
+}
+
+.main,.visually-hidden,body._mob-menu-active,body._popup-active {
+    overflow: hidden
 }
 
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
@@ -3085,8 +3093,8 @@ body {
     padding-right: var(--popup-padding)
 }
 
-body._mob-menu-active,body._popup-active {
-    overflow: hidden
+.main-title,.section-title,.title {
+    font-family: var(--title-font)
 }
 
 .wrapper {
@@ -3096,9 +3104,9 @@ body._mob-menu-active,body._popup-active {
 }
 
 .main {
-    overflow: hidden;
     flex: 1 0 auto;
-    padding-bottom: 34px
+    padding-bottom: 34px;
+    min-height: 700px
 }
 
 .btn,.drop-down__target {
@@ -3183,8 +3191,7 @@ svg {
     white-space: nowrap;
     -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden
+    clip: rect(0 0 0 0)
 }
 
 .btn-2 svg,.drop-down__target svg {
@@ -3227,7 +3234,6 @@ svg {
     z-index: 2;
     opacity: 0;
     visibility: hidden;
-    -webkit-animation-duration: .3s;
     animation-duration: .3s;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
@@ -3269,8 +3275,8 @@ svg {
 }
 
 .name-section,.table-coins tbody td,.table-coins thead th,.table-coins__number::before {
-    font-size: .875rem;
-    line-height: 128.571429%
+    line-height: 128.571429%;
+    font-size: .875rem
 }
 
 .btn-2:hover {
@@ -3420,24 +3426,15 @@ svg {
     color: var(--white)
 }
 
-.header__nav--list>li>a,.page-address a,.table-coins__coin--abbreviation {
-    line-height: 128.571429%;
-    font-size: .875rem
-}
-
 .table-coins__coin--abbreviation {
-    color: var(--tertiary)
+    color: var(--tertiary);
+    font-size: .875rem;
+    line-height: 128.571429%
 }
 
 .table-coins__btn {
     justify-content: center;
     fill: var(--white)
-}
-
-.danger-value,.drop-value,.grow-value {
-    align-items: center;
-    fill: currentColor;
-    display: flex
 }
 
 .table-coins__btn svg {
@@ -3454,11 +3451,20 @@ svg {
 }
 
 .grow-value {
-    color: var(--success)
+    display: flex;
+    align-items: center;
+    color: var(--success);
+    fill: currentColor
+}
+
+.danger-value,.drop-value,.page-address ul {
+    display: flex;
+    align-items: center
 }
 
 .danger-value,.drop-value {
-    color: var(--danger)
+    color: var(--danger);
+    fill: currentColor
 }
 
 .scroll-wrapper {
@@ -3496,11 +3502,6 @@ svg {
     background: var(--shade)
 }
 
-.page-address ul {
-    display: flex;
-    align-items: center
-}
-
 .page-address li svg {
     fill: var(--secondary);
     margin: 0 9px
@@ -3509,6 +3510,8 @@ svg {
 .page-address a {
     color: var(--secondary);
     display: block;
+    font-size: .875rem;
+    line-height: 128.571429%;
     padding: 5px 0 9px;
     transition: color .2s ease
 }
@@ -3668,7 +3671,6 @@ svg {
     z-index: 2;
     box-shadow: 0 50px 50px 50px rgba(0,0,0,.8);
     justify-content: center;
-    -webkit-animation-duration: .3s;
     animation-duration: .3s;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
@@ -3682,14 +3684,12 @@ svg {
 }
 
 .main-title {
-    font-family: var(--title-font);
     font-weight: 700;
     line-height: 122.5%;
     font-size: 1.625rem
 }
 
 .title {
-    font-family: var(--title-font);
     font-weight: 700;
     font-size: 1.375rem;
     line-height: 122.727273%
@@ -3713,7 +3713,6 @@ svg {
 }
 
 .section-title {
-    font-family: var(--title-font);
     font-weight: 700
 }
 
@@ -3981,7 +3980,7 @@ input[hidden] {
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -4075,6 +4074,8 @@ input[hidden] {
     position: relative;
     display: flex;
     align-items: center;
+    font-size: .875rem;
+    line-height: 128.571429%;
     font-weight: 700;
     border-radius: 8px;
     background: var(--shade);
