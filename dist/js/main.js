@@ -633,10 +633,12 @@ body.addEventListener('click', function (event) {
 			filterBtn.classList.add('_active');
 			popup.classList.remove('fade-out');
 			popup.classList.add('fade-in');
+			popup.closest('section').style.minHeight = `${popup.offsetHeight + 150}px`;
 		} else {
 			filterBtn.classList.remove('_active');
 			popup.classList.remove('fade-in');
 			popup.classList.add('fade-out');
+			popup.closest('section').style.minHeight = `${0}px`;
 		}
 	
 	} else if(!$('.filter__btn') && !$('.filter__popup') || $('.filter__popup--close')) {
