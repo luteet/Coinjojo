@@ -9,6 +9,7 @@
   "author": "Shroomark",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^1.4.0",
     "browser-sync": "^2.26.13",
     "clipboard": "^2.0.11",
     "del": "^6.0.0",

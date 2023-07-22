@@ -1,0 +1,92 @@
+{% load static %}
+{% load poll_extras %}
+{% load i18n %}
+{% load humanize %}
+{% for coin in coins %}
+<tr>
+    <td>
+        <span class="table-coins__number"></span>
+    </td>
+    <td>
+        <div class="table-coins__coin">
+            <div class="table-coins__coin--avatar">
+                <picture>
+                    <source srcset="{{ coin.photo_coin.url }}" type="image/webp">
+                    <img src="{{ coin.photo_coin.url }}" alt="" width="32" height="32" loading="lazy">
+                </picture>
+            </div>
+            <a href="{{ coin.get_absolute_url }}"><h3 class="table-coins__coin--name">{{ coin.coin_name }}</h3></a>
+            <span class="table-coins__coin--abbreviation">{{ coin.coin_symbol }}</span>
+        </div>
+    </td>
+    <td>
+        {{ coin.category.name }}
+    </td>
+    <td>
+		<span class="table-coins__chain">
+			<img src="{{ coin.network_chain.photo.url }}" width="20" height="20" alt="">
+			<b>{{ coin.network_chain.name }}</b>
+		</span>
+    </td>
+    <td> {% if coin.price_24h > 0 %}
+        <b class="table-coins__value grow-value">
+            <svg width="16" height="16" viewBox="0 0 16 16">
+                <use xlink:href="{% static 'img/sprites.svg' %}#arrow-grow"></use>
+            </svg>
+            {{ coin.price_24h }}
+        </b>
+        {% else %}
+        <b class="table-coins__value danger-value">
+            <svg width="16" height="16" viewBox="0 0 16 16">
+                <use xlink:href="{% static 'img/sprites.svg' %}#arrow-drop"></use>
+            </svg>
+            {{ coin.price_24h }}
+        </b>
+        {% endif %}
+    </td>
+    <td>
+        ${{ coin.format_number }}
+    </td>
+    <td>
+        ${{ coin.price }}
+    </td>
+    <td>
+        7 July
+    </td>
+    <td>
+
+    </td>
+    <td>
+        <a href="#authorization-popup-2" class="vote-btn btn open-popup" type="button" data-coin-pk="{{ coin.pk }}">
+			<svg width="10" height="14" viewBox="0 0 10 14">
+				<use xlink:href="{% static 'img/sprites.svg' %}#arrow-to-up"></use>
+			</svg>
+            {{ coin.counter_like }}
+		</a>
+	</td>
+    {% if user in coin.favorite.all %}
+    <td>
+        <form action="{% url 'user:add_favorite' pk=coin.pk %}" method="GET">
+             <input type="hidden" name="previous_page" value="{{ request.path }}">
+            <button class="table-coins__favorite favorite-btn _active" title="Add to favorite" type="submit">
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                    <use xlink:href="{% static 'img/sprites.svg' %}#star"></use>
+                </svg>
+            </button>
+        </form>
+    </td>
+    {% else %}
+    <td>
+        <form action="{% url 'user:add_favorite' pk=coin.pk %}" method="GET">
+             <input type="hidden" name="previous_page" value="{{ request.path }}">
+            <button class="table-coins__favorite favorite-btn" title="Add to favorite" type="submit">
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                    <use xlink:href="{% static 'img/sprites.svg' %}#star"></use>
+                </svg>
+            </button>
+        </form>
+    </td>
+    {% endif %}
+</tr>
+{% endfor %}
+

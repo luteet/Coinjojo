@@ -4,6 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 
+	'unsafe-eval' http://46.101.128.217 http://46.101.128.217;child-src 'self' 'unsafe- 
+	inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217; object-src 'self' 
+	'unsafe-inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217; script-src 
+	'self' 'unsafe-inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217; img-src 
+	'self' 'unsafe-inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217;">
 	<title>Document</title>
 	<style>
 		.image-body {
@@ -251,7 +258,7 @@
 				</h2>
 				<div class="promoted__table">
 					<div class="promoted__table--wrapper scroll-wrapper">
-						<table class="table-coins">
+						<table class="table-coins" data-name="promote">
 							<colgroup>
 								<col>
 								<col>
@@ -280,7 +287,7 @@
 										Chain
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="price_24h">
 											24H
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -288,7 +295,7 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="market_cap">
 											Marketcap
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -296,7 +303,7 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="price">
 											Price
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -304,7 +311,7 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="launch_date">
 											Launch
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -312,15 +319,15 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
-											Submitted
+										<span>
+											Added
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
 											</svg>
-										</button>
+										</span>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="vote">
 											Votes
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -937,12 +944,12 @@
 						<div class="switch__wrapper">
 							<div class="switch__pseudo-btn"></div>
 							<label class="switch__btn">
-								<input type="radio" name="time" value="todays" checked class="switch__input" data-title-id="#best-title" data-title-class="_mode-1">
-								<a href="index.html" class="switch__element">Todays's Best</a>
+								<input type="radio" name="time_best" value="today" checked class="switch__input" data-title-id="#best-title" data-title-class="_mode-1">
+								<div class="switch__element">Todays's Best</div>
 							</label>
 							<label class="switch__btn">
-								<input type="radio" name="time" value="all-time" class="switch__input" data-title-id="#best-title" data-title-class="_mode-2">
-								<a href="index.html" class="switch__element">All Time Best</a>
+								<input type="radio" name="time_best" value="all_time" class="switch__input" data-title-id="#best-title" data-title-class="_mode-2">
+								<div class="switch__element">All Time Best</div>
 							</label>
 						</div>
 					</div>
@@ -961,104 +968,14 @@
 								<ul class="filter__item--list">
 									<li class="filter__item--element _full">
 										<label class="filter__item--param">
-											<input type="radio" name="category" checked value="value">
+											<input type="radio" name="category_name" checked value="all">
 											<span>All</span>
 										</label>
 									</li>
 									<li class="filter__item--element">
 										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>DeFi</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Adult</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
+											<input type="radio" name="category_name" value="gaming">
 											<span>Gaming</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Music</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Metaverse</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Exchange</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Yield Farm</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>DApp</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Launchpad</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Play2Earn</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>NFT</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Move2Earn</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Meme</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Web3</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Gambling</span>
-										</label>
-									</li>
-									<li class="filter__item--element">
-										<label class="filter__item--param">
-											<input type="radio" name="category" value="value">
-											<span>Other</span>
 										</label>
 									</li>
 								</ul>
@@ -1183,7 +1100,7 @@
 										Chain
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="price_24h">
 											24H
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -1191,7 +1108,7 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="market_cap">
 											Marketcap
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -1199,7 +1116,7 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="price">
 											Price
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -1207,7 +1124,23 @@
 										</button>
 									</th>
 									<th>
-										<button type="button">
+										<button type="button" data-sort-name="launch_date">
+											Launch
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</button>
+									</th>
+									<th>
+										<span>
+											Added
+											<svg width="10" height="14" viewBox="0 0 10 14">
+												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
+											</svg>
+										</span>
+									</th>
+									<th>
+										<button type="button" data-sort-name="vote">
 											Votes
 											<svg width="10" height="14" viewBox="0 0 10 14">
 												<use xlink:href="img/sprites.svg#arrows-up-down"></use>
@@ -1531,39 +1464,39 @@
 						Show more
 					</a>
 					<div class="table-footer__pagination pagination hide-on-tablet">
-						<a href="#" class="pagination__arrow _prev" title="Prev">
+						<button type="button" class="pagination__arrow _prev" title="Prev">
 							<svg width="16" height="16" viewBox="0 0 16 16">
 								<use xlink:href="img/sprites.svg#arrow-prev"></use>
 							</svg>
-						</a>
+						</button>
 						<div class="pagination__list">
-							<a href="#">
+							<button type="button" class="current" data-page="1">
 								1
-							</a>
-							<a href="#">
+							</button>
+							<button type="button" data-page="2">
 								2
-							</a>
-							<a href="#">
+							</button>
+							<button type="button" data-page="3">
 								3
-							</a>
-							<a href="#">
+							</button>
+							<button type="button" data-page="4">
 								...
-							</a>
-							<a href="#">
+							</button>
+							<button type="button" data-page="5">
 								8
-							</a>
-							<a href="#" class="current">
+							</button>
+							<button type="button" data-page="9">
 								9
-							</a>
-							<a href="#">
+							</button>
+							<button type="button" data-page="10">
 								10
-							</a>
+							</button>
 						</div>
-						<a href="#" class="pagination__arrow _next" title="Next">
+						<button type="button" class="pagination__arrow _next" title="Next">
 							<svg width="16" height="16" viewBox="0 0 16 16">
 								<use xlink:href="img/sprites.svg#arrow-next"></use>
 							</svg>
-						</a>
+						</button>
 					</div>
 				</div>
 			</section>
@@ -1810,10 +1743,11 @@
 		</div>
 	</div>
 
-
+	<input type="hidden" id="secret_field" value="5" class="visually-hidden">
 
 	<script src="js/libs.min.js" defer></script>
-	<script src="js/main.min.js" defer></script>
+	<script src="js/main.js" defer></script>
+	<script src="js/ajax.js" defer></script>
 
 </body>
 

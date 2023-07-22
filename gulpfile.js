@@ -75,6 +75,7 @@ function scriptsLib() {
 		'node_modules/clipboard/dist/clipboard.js', // Копирование в буфер обмена | npm i clipboard --save-dev | https://www.npmjs.com/package/clipboard
 		'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
 		'node_modules/vanilla-lazyload/dist/lazyload.min.js',
+		'node_modules/axios/dist/axios.min.js'
 	])
 	.pipe(concat('libs.min.js'))
 	//.pipe(uglify())
@@ -91,7 +92,7 @@ function scriptsMin() {
 }
 
 function scripts() {
-	return src('app/js/main.js')
+	return src('app/js/*.js')
 	.pipe(scriptsMin())
 	.pipe(dest('dist/js'))
 	.pipe(browserSync.stream())

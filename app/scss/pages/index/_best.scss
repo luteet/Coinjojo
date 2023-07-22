@@ -336,6 +336,20 @@
 		justify-content: flex-end;
 	}
 
+	&._hidden {
+		display: none;
+	}
+
+	&._disable-prev-arrow &__arrow:first-child {
+		pointer-events: none;
+		opacity: .5;
+	}
+
+	&._disable-next-arrow &__arrow:last-child {
+		pointer-events: none;
+		opacity: .5;
+	}
+
 	// .pagination__arrow
 
 	&__arrow {
@@ -351,7 +365,7 @@
 		fill: var(--success);
 		background: transparent;
 
-		transition: background .2s ease;
+		transition: background .2s ease, opacity .2s ease;
 		&:hover {
 			background: var(--shade-hover);
 		}

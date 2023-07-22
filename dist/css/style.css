@@ -1,7 +1,3 @@
-.add-coin__avatar label>*,.add-coin__question--btn>*,.filter__item--param>*,.promote__block--banner label>*,.promote__block--search .select-2 select,.promote__block--search .select-2 svg,.switch__btn>*,.title-switch>* {
-    grid-area: 1/1
-}
-
 .hero-banner__bg img,.hero__bg img {
     position: absolute;
     top: 0;
@@ -258,6 +254,10 @@
     display: inline-grid
 }
 
+.filter__item--param>* {
+    grid-area: 1/1
+}
+
 .filter__item--param input {
     position: absolute;
     width: 1px;
@@ -304,6 +304,7 @@
 }
 
 .title-switch>* {
+    grid-area: 1/1;
     opacity: 0;
     transition: opacity .3s ease
 }
@@ -338,6 +339,10 @@
 .switch__btn {
     display: grid;
     flex: 1 1 auto
+}
+
+.switch__btn>* {
+    grid-area: 1/1
 }
 
 .switch__input {
@@ -392,6 +397,15 @@
     justify-content: center
 }
 
+.pagination._hidden {
+    display: none
+}
+
+.pagination._disable-next-arrow .pagination__arrow:last-child,.pagination._disable-prev-arrow .pagination__arrow:first-child {
+    pointer-events: none;
+    opacity: .5
+}
+
 .pagination__arrow {
     width: 45px;
     height: 45px;
@@ -403,7 +417,7 @@
     border-radius: 12px;
     fill: var(--success);
     background: rgba(0,0,0,0);
-    transition: background .2s ease
+    transition: background .2s ease,opacity .2s ease
 }
 
 .pagination__arrow:hover {
@@ -813,6 +827,10 @@
     cursor: pointer
 }
 
+.add-coin__avatar label>* {
+    grid-area: 1/1
+}
+
 .add-coin__avatar b {
     display: flex;
     align-items: center;
@@ -886,6 +904,10 @@
 .add-coin__question--btn input:checked+span {
     background: var(--success);
     color: var(--background)
+}
+
+.add-coin__question--btn>* {
+    grid-area: 1/1
 }
 
 .add-coin__question--btn span {
@@ -1051,6 +1073,10 @@
     cursor: pointer
 }
 
+.promote__block--banner label>* {
+    grid-area: 1/1
+}
+
 .promote__block--banner span:first-child {
     font-weight: 700;
     line-height: 125%;
@@ -1125,6 +1151,7 @@
 }
 
 .promote__block--search .select-2 select {
+    grid-area: 1/1;
     min-height: 40px;
     cursor: pointer;
     -webkit-appearance: none;
@@ -1136,6 +1163,7 @@
 .promote__block--search .select-2 svg {
     margin-right: 10px;
     align-self: center;
+    grid-area: 1/1;
     justify-self: end
 }
 

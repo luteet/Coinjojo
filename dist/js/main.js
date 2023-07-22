@@ -466,7 +466,11 @@ dropDown();
 
 
 
+
+
 // =-=-=-=-=-=-=-=-=-=- <click events> -=-=-=-=-=-=-=-=-=-=-
+
+
 
 body.addEventListener('click', function (event) {
 
@@ -769,7 +773,7 @@ body.addEventListener('click', function (event) {
 
 
 
-	// =-=-=-=-=-=-=-=-=-=-=-=- <click> -=-=-=-=-=-=-=-=-=-=-=-=
+	// =-=-=-=-=-=-=-=-=-=-=-=- <table-coins-head-button> -=-=-=-=-=-=-=-=-=-=-=-=
 	
 	const tableCoinsSortBtn = $(".table-coins thead button")
 	if(tableCoinsSortBtn) {
@@ -777,9 +781,7 @@ body.addEventListener('click', function (event) {
 		const tableCoins = tableCoinsSortBtn.closest('.table-coins'),
 		icon = tableCoinsSortBtn.querySelector('svg').querySelector('use');
 
-		/* if(!tableCoinsSortBtn.classList.contains('_active-up') && !tableCoinsSortBtn.classList.contains('_active-down')) {
 
-		} */
 
 		document.querySelectorAll('._active-up').forEach(button => {
 			const icon = button.querySelector('svg').querySelector('use');
@@ -814,7 +816,33 @@ body.addEventListener('click', function (event) {
 	
 	}
 	
-	// =-=-=-=-=-=-=-=-=-=-=-=- </click> -=-=-=-=-=-=-=-=-=-=-=-=
+	// =-=-=-=-=-=-=-=-=-=-=-=- </table-coins-head-button> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+	// =-=-=-=-=-=-=-=-=-=-=-=- <pagination> -=-=-=-=-=-=-=-=-=-=-=-=
+	
+	const paginationButton = $(".pagination__list button")
+	if(paginationButton) {
+	
+		const tbody = paginationButton.closest('section').querySelector('.table-coins tbody'),
+		list = paginationButton.closest('.pagination__list'),
+		currentButton = paginationButton.parentElement.querySelector('.pagination__list button.current');
+
+		currentButton.classList.remove('current');
+		paginationButton.classList.add('current');
+	
+	}
+
+	const paginationArrow = $(".pagination__arrow")
+	if(paginationArrow) {
+
+		const currentButton = paginationArrow.parentElement.querySelector('.pagination__list button.current');
+		currentButton.classList.remove('current');
+	
+	}
+	
+	// =-=-=-=-=-=-=-=-=-=-=-=- </pagination> -=-=-=-=-=-=-=-=-=-=-=-=
 
 	
 	
@@ -825,20 +853,27 @@ body.addEventListener('click', function (event) {
 
 
 
+
+
+
+
 // =-=-=-=-=-=-=-=-=-=-=-=- <header-drop-down-on-hover> -=-=-=-=-=-=-=-=-=-=-=-=
 
-const headerNavLink = document.querySelectorAll(".header__nav--list > li:has(ul)");
+const headerNavLink = document.querySelectorAll(".header__nav--list > li");
 headerNavLink.forEach(headerNavLink => {
 
-	headerNavLink.addEventListener('pointerenter', function() {
-		if(getDeviceType() == "desktop") {
-			header.classList.add('_bg-active');
-		}
-	})
-
-	headerNavLink.addEventListener('pointerleave', function() {
-		header.classList.remove('_bg-active');
-	})
+	if(headerNavLink.querySelector('ul')) {
+		headerNavLink.addEventListener('pointerenter', function() {
+			if(getDeviceType() == "desktop") {
+				header.classList.add('_bg-active');
+			}
+		})
+	
+		headerNavLink.addEventListener('pointerleave', function() {
+			header.classList.remove('_bg-active');
+		})
+	}
+	
 
 })
 
@@ -933,9 +968,11 @@ switchInput.forEach(switchInput => {
 		window.onload = function () {
 			setTimeout(() => {
 				const btn = switchInput.closest('.switch__btn');
+				switchPseudoEl.style.transition = 'all 0s linear';
 				switchPseudoEl.style.width = btn.offsetWidth + "px";
-
-				
+				setTimeout(() => {
+					switchPseudoEl.style.removeProperty('transition')
+				},200)
 			},0)
 		}
 		const btn = switchInput.closest('.switch__btn');
@@ -961,6 +998,9 @@ switchInput.forEach(switchInput => {
 	
 	switchInput.addEventListener('change', function () {
 		const btn = switchInput.closest('.switch__btn');
+
+		table = switchInput.closest('section').querySelector('.table-coins tbody');
+		
 		if(btn == switchBlock.querySelectorAll('.switch__btn')[0]) {
 			switchPseudoEl.style.transform = "translate3d(0%,0,0)";
 			switchPseudoEl.style.left = "0%";
@@ -982,6 +1022,8 @@ switchInput.forEach(switchInput => {
 })
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </switch-in-form> -=-=-=-=-=-=-=-=-=-=-=-=
+
+
 
 
 

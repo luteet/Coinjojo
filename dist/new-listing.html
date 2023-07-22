@@ -4,6 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 
+	'unsafe-eval' http://46.101.128.217 http://46.101.128.217;child-src 'self' 'unsafe- 
+	inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217; object-src 'self' 
+	'unsafe-inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217; script-src 
+	'self' 'unsafe-inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217; img-src 
+	'self' 'unsafe-inline' 'unsafe-eval' http://46.101.128.217 http://46.101.128.217;">
 	<title>Document</title>
 	<style>
 		.image-body {
@@ -1171,10 +1178,11 @@
 		</div>
 	</div>
 
-
+	<input type="hidden" id="secret_field" value="5" class="visually-hidden">
 
 	<script src="js/libs.min.js" defer></script>
-	<script src="js/main.min.js" defer></script>
+	<script src="js/main.js" defer></script>
+	<script src="js/ajax.js" defer></script>
 
 </body>
 
